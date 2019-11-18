@@ -192,7 +192,7 @@ function serve () {
     gulp.watch(SOURCE_PATH + '/js/**/*.js', ['watch-js']);
 
     // Watches for updates to sass css preprocessor files.
-    gulp.watch(SOURCE_PATH + '/styles/**/*.scss', ['watch-sass']);
+    gulp.watch(SOURCE_PATH + '/scss/**/*.scss', ['watch-sass']);
 
     // Watches for updates in index.html
     gulp.watch(SOURCE_PATH + '/index.html', ['watch-html']);

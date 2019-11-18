@@ -1,3 +1,5 @@
-html {
-    background: goldenrod;
-}
+@import "base/variables.scss";
+@import "base/typography.scss";
+@import "base/base.scss";
+
+@import "components/jumbotron.scss";

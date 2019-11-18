@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'NunitoSans-Black';
+    src: url('../assets/fonts/NunitoSans-Black.eot?#iefix') format('embedded-opentype'),  url('../assets/fonts/NunitoSans-Black.woff') format('woff'), url('../assets/fonts/NunitoSans-Black.ttf')  format('truetype'), url('../assets/fonts/NunitoSans-Black.svg#NunitoSans-Black') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'NunitoSans-ExtraLight';
+    src: url('../assets/fonts/NunitoSans-ExtraLight.eot?#iefix') format('embedded-opentype'),  url('../assets/fonts/NunitoSans-ExtraLight.woff') format('woff'), url('../assets/fonts/NunitoSans-ExtraLight.ttf')  format('truetype'), url('../assets/fonts/NunitoSans-ExtraLight.svg#NunitoSans-ExtraLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin black {
+    font-family: 'NunitoSans-Black';
+}
+
+@mixin extraLight {
+    font-family: 'NunitoSans-ExtraLight';
+}
+  
+
+body {
+    @include extraLight;
+    line-height: 1.2;
+}
+
+h1,h2,h3,h4,h5 {
+    @include black;
+}
