@@ -12,20 +12,25 @@
     font-style: normal;
 }
 
-@mixin black {
+@mixin text-black {
     font-family: 'NunitoSans-Black';
 }
 
-@mixin extraLight {
+@mixin text-extraLight {
     font-family: 'NunitoSans-ExtraLight';
 }
   
 
 body {
-    @include extraLight;
+    @include text-extraLight;
+}
+
+h1,h2,h3,h4,h5,p,li,th,td,a,span,button,section {
     line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: $spacing-sm;
 }
 
 h1,h2,h3,h4,h5 {
-    @include black;
+    @include text-black;
 }

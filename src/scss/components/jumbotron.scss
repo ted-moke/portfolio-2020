@@ -1,5 +1,54 @@
 .jumbotron {
+    position: relative;
+    display: flex;
+    height: 50vh;
+    width: 100vw;
+    padding: 0 15vw;
+
     h1,h2,h3,h4,h5 {
         text-transform: uppercase;
     }
+
+    .jumbotron-content {
+        position: relative;
+        flex:1;
+        @include flex-col;
+        @include flex-center-j;
+        @include flex-center-a;
+    }
+
+    h2 {
+        font-size: 77px;
+        line-height: 1;
+        margin-bottom: 0;
+    }
+
+    h1 {
+        font-size: 72px;
+
+        span {
+            line-height: 1;
+        }
+    }
+}
+
+#text-ted {
+    font-size: 115px;
+    margin-left: 8px
+}
+
+#text-interactive {
+    font-size: 64.7px;
+}
+
+#text-front-end {
+    font-size: 73px;
+}
+
+#text-javascript {
+    font-size: 71px;
+}
+
+#text-developer {
+    font-size: 72px;
 }

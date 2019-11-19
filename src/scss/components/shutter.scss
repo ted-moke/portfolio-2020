@@ -1,0 +1,25 @@
+.shutter {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    overflow: hidden;
+}
+
+.slat {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-left: $spacing-lg;
+    margin: 0;
+    transform: translateY(100%);
+
+    p {
+        @include text-black;
+        color: $white;
+        font-size: 72px;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+}
