@@ -1,0 +1,41 @@
+nav {
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+
+    .social-link {
+        height: 50px;
+        box-sizing: content-box;
+        display: inline-block;
+        padding: $spacing-sm;
+    }
+
+    a {
+        margin-bottom: 0;
+    }
+    
+}
+
+.nav-social {
+    text-align: center;
+}
+
+.social-sub {
+    position: absolute;
+    overflow: hidden;
+    
+    & path {
+        fill: $fourth;
+    }
+
+    &.social-left {
+        right: calc(50% + #{$spacing-xs});
+    }
+
+    &.social-right {
+        left: calc(50% + #{$spacing-xs});
+        path {
+            fill: $white;
+        }
+    }
+}

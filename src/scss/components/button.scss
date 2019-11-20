@@ -1,0 +1,18 @@
+.button {
+    display: inline-block;
+    height: 54px;
+    padding: 0 $spacing-lg;
+    border-radius: $spacing-lg;
+    background: $fourth;
+    color: $white;
+    margin-top: $spacing-sm;
+    vertical-align: top;
+    
+    h4 {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+}

@@ -1,6 +1,8 @@
 var config = {
     TRANSITION_DURATION: 0.5,
-    colors: ['#F48907', '#D95D39', '#575366', '#0E1428']
+    colors: ['#F48907', '#D95D39', '#575366', '#0E1428'],
+    DESCRIPTION_CYCLE_INTERVAL_SHORT: 3500,
+    DESCRIPTION_CYCLE_INTERVAL_LONG: 7500
 };
 
 export default config;

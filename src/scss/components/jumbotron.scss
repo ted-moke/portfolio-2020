@@ -1,7 +1,7 @@
 .jumbotron {
     position: relative;
     display: flex;
-    height: 50vh;
+    height: 100vh;
     width: 100vw;
     padding: 0 15vw;
 
@@ -29,6 +29,15 @@
         span {
             line-height: 1;
         }
+    }
+
+    &::after {
+        @include psuedo;
+
+        height: 3px;
+        background-color: $fourth;
+        top: auto;
+        bottom: -3px;
     }
 }
 

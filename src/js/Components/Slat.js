@@ -21,15 +21,19 @@ export default class Slat {
         this.el.id = 'text-' + this.content;
     }
 
-    setContent(newContent) {
+    setContent(newContent, callback) {
         this.contentEl.innerHTML = newContent;
+
+        if (callback) {
+            callback();
+        }
     }
     
-    open() {
-        gsap.to(this.el, {y: 0, duration: config.TRANSITION_DURATION})
+    open(callback) {
+        gsap.to(this.el, {y: 0, duration: config.TRANSITION_DURATION, onComplete: ()=>{if (callback){callback()}}})
     }
     
-    close() {
-        gsap.to(this.el, {y: '100%', duration: config.TRANSITION_DURATION})
+    close(callback) {
+        gsap.to(this.el, {y: '100%', duration: config.TRANSITION_DURATION, onComplete: ()=>{if (callback){callback()}}})
     }
 }
