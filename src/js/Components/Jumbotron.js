@@ -1,5 +1,6 @@
 import config from '../config';
 import Shutter from './Shutter';
+import Spawner from './Spawner';
 
 export default class Jumbotron {
     constructor() {
@@ -24,6 +25,10 @@ export default class Jumbotron {
         this.jobDescSlat = this.Shutter.Slats[1];
 
         this.rotateDescriptions(config.DESCRIPTION_CYCLE_INTERVAL_SHORT);
+
+        this.elBounding = this.el.getBoundingClientRect();
+        this.Spawner = new Spawner(this.el);
+        this.Spawner.init(this.elBounding.width / 2, this.elBounding.height);
 
         window.setTimeout(()=>{
             console.log('firing inf loop');
