@@ -15,8 +15,8 @@ export default class Spawner {
             buildingWidthMax: .30,
             buildingHeightMin: .1,
             buildingHeightMax: .9,
-            windowHeightMin: .015,
-            windowHeightMax: .125,
+            windowHeightMin: 10,
+            windowHeightMax: 40,
             windowWidthMin: .05,
             windowWidthMax: .2,
             windowGutterMin: .025,
@@ -49,10 +49,11 @@ export default class Spawner {
                 let currBuildingWidth = this.c.width * Utils.random(this.config.buildingWidthMin, this.config.buildingWidthMax, 3);
                 let currBuildingHeight = this.c.height * Utils.random(this.config.buildingHeightMin, this.config.buildingHeightMax, 3);
 
-                let windowWidth = currBuildingWidth * Utils.random(this.config.windowWidthMin, this.config.windowWidthMax, 3);
-                let windowHeight = currBuildingHeight * Utils.random(this.config.windowHeightMin, this.config.windowHeightMax, 3);
+                let windowWidth = (currBuildingWidth * Utils.random(this.config.windowWidthMin, this.config.windowWidthMax, 3)) + 1;
+                let windowHeight = Utils.random(this.config.windowHeightMin, this.config.windowHeightMax);
                 let windowGutter = currBuildingWidth * Utils.random(this.config.windowGutterMin, this.config.windowGutterMax, 3);
                 let numWindows = Math.floor((currBuildingWidth - windowGutter) / (windowWidth + windowGutter));
+                windowGutter = (currBuildingWidth - (numWindows * windowWidth)) / (numWindows + 1);
                 
                 this.Buildings.push({
                     xOrigin: lastX,
@@ -93,8 +94,6 @@ export default class Spawner {
                 this.ctx.clearRect(0, 0, this.c.width, this.c.height);
     
                 this.Buildings.forEach((b, i) => {
-                    // if (!b.w) b.w = 1;
-                    // if (!b.h) b.h = 1;
                     if (!b.windowW) b.windowW = 0;
                     if (!b.windowH) b.windowH = 0;
 
@@ -124,8 +123,8 @@ export default class Spawner {
                                   b.windowW = b.windowWidth;
                                   b.windowH = b.windowHeight;
                                   
-                                  this.ctx.fillStyle = 'rgb(200, 200, 200)';
-                                  this.ctx.fillRect(b.xOrigin + b.windowGutter + (n * (b.windowWidth + b.windowGutter) + (b.windowWidth / 2)), windowStartHeight, b.windowW, b.windowH);
+                                  this.ctx.fillStyle = 'rgb(210, 210, 210)';
+                                  this.ctx.fillRect(b.xOrigin + b.windowGutter + (n * (b.windowWidth + b.windowGutter)), windowStartHeight, b.windowW, b.windowH);
                                 }
                                 windowStartHeight += b.windowHeight + b.windowGutter;
                               }
