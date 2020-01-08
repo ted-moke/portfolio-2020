@@ -43,14 +43,12 @@ export default class Jumbotron {
                 this.currentDesc = 0;
 
                 if (!infinite) {
-                    console.log('finished first loop')
                     window.clearInterval(this.rotateInterval);
                 }
             } else {
                 this.currentDesc++;
             }
 
-            console.log('switching', this.currentDesc)
 
             this.jobDescSlat.close(()=> {
                 this.jobDescSlat.setContent(this.JOB_DESC[this.currentDesc], ()=>{

@@ -15,10 +15,12 @@ export default class Spawner {
             buildingWidthMax: .30,
             buildingHeightMin: .1,
             buildingHeightMax: .9,
-            windowHeightMin: 10,
-            windowHeightMax: 40,
-            windowGutterMin: 3,
-            windowGutterMax: 10
+            windowHeightMin: .015,
+            windowHeightMax: .125,
+            windowWidthMin: .05,
+            windowWidthMax: .2,
+            windowGutterMin: .025,
+            windowGutterMax: .175
         }
     }
     
@@ -36,8 +38,6 @@ export default class Spawner {
     reset() {
         this.frame = 0;
         this.ctxDrawing = false;
-        this.ctx.fillStyle = 'rgb(230, 230, 230)';
-        this.ctx.strokeStyle = 'rgb(190, 190, 190)';
     }
 
     preSpawn(type) {
@@ -47,21 +47,32 @@ export default class Spawner {
             let lastX = 0;
             while (totalWidth < this.c.width) {
                 let currBuildingWidth = this.c.width * Utils.random(this.config.buildingWidthMin, this.config.buildingWidthMax, 3);
+                let currBuildingHeight = this.c.height * Utils.random(this.config.buildingHeightMin, this.config.buildingHeightMax, 3);
+
+                let windowWidth = currBuildingWidth * Utils.random(this.config.windowWidthMin, this.config.windowWidthMax, 3);
+                let windowHeight = currBuildingHeight * Utils.random(this.config.windowHeightMin, this.config.windowHeightMax, 3);
+                let windowGutter = currBuildingWidth * Utils.random(this.config.windowGutterMin, this.config.windowGutterMax, 3);
+                let numWindows = Math.floor((currBuildingWidth - windowGutter) / (windowWidth + windowGutter));
+                
                 this.Buildings.push({
                     xOrigin: lastX,
                     width: currBuildingWidth,
-                    height: this.c.height * Utils.random(this.config.buildingHeightMin, this.config.buildingHeightMax, 3),
+                    height: currBuildingHeight,
                     hasSpire: Utils.random(0, .7),
+                    stagger: Utils.random(this.config.buildStaggerMin, this.config.buildStaggerMax),
+                    buildTime: Utils.random(this.config.buildTimeMin, this.config.buildTimeMax),
+                    windowWidth: windowWidth,
+                    windowHeight: windowHeight,
+                    windowGutter: windowGutter,
+                    numWindows: numWindows,
+                    windowsDrawn: 0,
                     w: 1,
                     h: 1,
-                    stagger: Utils.random(this.config.buildStaggerMin, this.config.buildStaggerMax),
-                    buildTime: Utils.random(this.config.buildTimeMin, this.config.buildTimeMax)
                 })
 
 
                 totalWidth += currBuildingWidth;
                 lastX += currBuildingWidth;
-                console.log(totalWidth, this.c.width, lastX);
             }
         }
         
@@ -74,14 +85,21 @@ export default class Spawner {
 
     render(type) {
         this.frame++;
-        console.log(this.frame);
+
+        this.ctxDrawing = false;
 
         if (type === 'city') {
-
                 this.reqAnim = requestAnimationFrame(() => this.render(type));
                 this.ctx.clearRect(0, 0, this.c.width, this.c.height);
     
                 this.Buildings.forEach((b, i) => {
+                    // if (!b.w) b.w = 1;
+                    // if (!b.h) b.h = 1;
+                    if (!b.windowW) b.windowW = 0;
+                    if (!b.windowH) b.windowH = 0;
+
+                    this.ctx.strokeStyle = 'rgb(190, 190, 190)';
+                    this.ctx.fillStyle = 'rgb(230, 230, 230)';
                     let staggerPos = this.frame - (i * b.stagger);
                     if (staggerPos > 0) {
                         if (b.w < b.width) {
@@ -95,6 +113,24 @@ export default class Spawner {
                         } else {
                             this.ctx.fillRect(b.xOrigin, this.c.height - b.h, b.w, b.h);
                             this.ctx.strokeRect(b.xOrigin, this.c.height - b.h, b.w, b.h);
+
+                            let windowRowHeight = b.windowGutter;
+                            let windowStartHeight = this.c.height - b.height + windowRowHeight;
+                            // if (b.windowsDrawn <= b.numWindows) {
+                              while (windowRowHeight < this.c.height) {
+                                windowRowHeight = windowStartHeight;
+                                
+                                for (let n = 0; n < b.numWindows; n++) {
+                                  b.windowW = b.windowWidth;
+                                  b.windowH = b.windowHeight;
+                                  
+                                  this.ctx.fillStyle = 'rgb(200, 200, 200)';
+                                  this.ctx.fillRect(b.xOrigin + b.windowGutter + (n * (b.windowWidth + b.windowGutter) + (b.windowWidth / 2)), windowStartHeight, b.windowW, b.windowH);
+                                }
+                                windowStartHeight += b.windowHeight + b.windowGutter;
+                              }
+                            // }
+                            // if (!this.ctxDrawing) this.ctxDrawing = true;
                         }
                     }
                 })
