@@ -13,14 +13,14 @@ export default class Spawner {
             buildStaggerMax: 15,
             buildingWidthMin: .035,
             buildingWidthMax: .30,
-            buildingHeightMin: .1,
+            buildingHeightMin: .2,
             buildingHeightMax: .9,
             windowHeightMin: 10,
             windowHeightMax: 40,
             windowWidthMin: .05,
             windowWidthMax: .2,
             windowGutterMin: .025,
-            windowGutterMax: .175
+            windowGutterMax: .125
         }
     }
     
@@ -123,7 +123,7 @@ export default class Spawner {
                                   b.windowW = b.windowWidth;
                                   b.windowH = b.windowHeight;
                                   
-                                  this.ctx.fillStyle = 'rgb(210, 210, 210)';
+                                  this.ctx.fillStyle = 'rgb(215, 215, 215)';
                                   this.ctx.fillRect(b.xOrigin + b.windowGutter + (n * (b.windowWidth + b.windowGutter)), windowStartHeight, b.windowW, b.windowH);
                                 }
                                 windowStartHeight += b.windowHeight + b.windowGutter;
