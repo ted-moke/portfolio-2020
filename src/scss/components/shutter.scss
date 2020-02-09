@@ -1,27 +1,86 @@
+.shutter-wrapper {
+    width: 40%;
+    // border: 5px solid #CCC;
+}
+
 .shutter {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    left: 50%;
-    overflow: hidden;
+    position: relative;
+    height: 80vh;
 }
 
 .slat {
-    @include boxShadow;
     
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding-left: $spacing-lg;
+    padding: 0 $spacing-lg;
     margin: 0;
     transform: translateY(100%);
 
     p {
         @include text-black;
         color: $white;
-        font-size: 72px;
         text-transform: uppercase;
+        font-size: $spacing-xl;
         line-height: 1;
     }
 
+    &.client {
+        p {
+            font-size: $spacing-xxl;
+        }
+
+        .slat-label {
+            background: $fourth;
+        }
+    }
+
+    &.project {
+        .slat-label {
+            background: $tertiary;
+        }
+    }
+
+    &.role {
+        .slat-label {
+            background: $secondary;
+        }
+    }
+
+    &.description {
+
+        p {
+            @include text-extraLight();
+            text-transform: initial;
+            font-size: $spacing-lg;
+        }
+
+        .slat-label {
+            background: $primary;
+        }
+    }
+
+    &.small {
+        p {
+            font-size: $spacing-lg;
+        }
+    }
+}
+
+.slat-label {
+    position: absolute;
+    left: -31px;
+    top: 23px;
+    padding: $spacing-sm;
+    width: 31px;
+
+    label {
+        @include text-black;
+        color: white;
+        display: block;
+        transform: rotate(180deg);
+        writing-mode: vertical-rl;
+        text-transform: uppercase;
+        line-height: 1;
+    }
 }

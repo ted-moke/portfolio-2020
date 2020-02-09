@@ -5,7 +5,8 @@ import Utils from '../Utils';
 export default class Spawner {
     constructor(parent) {
         this.parent = parent;
-        
+        this.disabled = true;
+
         this.config = {
             buildTimeMin: 45,
             buildTimeMax: 75,
@@ -25,6 +26,7 @@ export default class Spawner {
     }
     
     init(vWidth, vHeight) {
+        if (this.disabled) return;
         this.c = document.querySelector('canvas');
         this.ctx = this.c.getContext('2d');
         this.c.width = vWidth;

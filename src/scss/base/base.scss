@@ -10,17 +10,31 @@ body {
   overflow-x: hidden;
 }
 
-#wrapper {
+.wrapper {
+  position: relative;
+  background: $white;
   min-width: 100vw;
   min-height: 100vh;
 }
 
-.container {
+section {
+  background: $white;
+  position: relative;
   max-width: 1400px;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
   padding: $spacing-lg;
+  margin: auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+}
+
+.project-wrapper {
+  @include boxShadow;
+  display: flex;
+  margin-bottom: $spacing-lg;
+  margin-left: 30px;
 }
 
 img,
@@ -37,4 +51,24 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  section {
+      padding: $spacing-xl;
+  }
+
+  .project-wrapper {
+    margin-bottom: 15vh;
+  }
+
+  .section-header {
+    margin-bottom: $spacing-xl;
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  section {
+    padding: $spacing-xxl;
+  }
 }

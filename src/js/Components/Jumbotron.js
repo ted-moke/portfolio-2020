@@ -5,13 +5,19 @@ import Spawner from './Spawner';
 export default class Jumbotron {
     constructor() {
         this.JOB_DESC = ['javascript', 'front-end', 'interactive'];
-        this.JUMBO_RIGHT_TEXT = ['', this.JOB_DESC[0], 'developer', ''];
+        this.shutterContent = {
+            client: '',
+            project: this.JOB_DESC[0],
+            role: 'developer',
+            description: ''
+        }
+        
         this.el = document.querySelector('.jumbotron');
         this.currentDesc = 0;
     }
 
     init() {
-        this.Shutter = new Shutter(this.JUMBO_RIGHT_TEXT, config.colors);
+        this.Shutter = new Shutter(this.shutterContent, config.colors, {bottomExpands: false});
         this.el.append(this.Shutter.el);
         
         // this.jumboHeight = this.el.getBoundingClientRect().height;

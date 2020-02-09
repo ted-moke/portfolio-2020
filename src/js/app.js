@@ -1,6 +1,7 @@
 import config from './config';
 import Jumbotron from './Components/Jumbotron';
 import Shutter from './Components/Shutter';
+import Work from './Sections/Work';
 
 class App {
     constructor() {
@@ -10,6 +11,8 @@ class App {
     init() {
         this.Jumbotron = new Jumbotron();
         this.Jumbotron.init();
+
+        this.Work = new Work();
     }
 }
 

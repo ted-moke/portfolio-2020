@@ -4,14 +4,19 @@
     height: 100vh;
     width: 100vw;
     padding: 0 15vw;
+    margin: 0;
 
-    h1,h2,h3,h4,h5 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
         text-transform: uppercase;
     }
 
     .jumbotron-content {
         position: relative;
-        flex:1;
+        flex: 1;
         @include flex-col;
         @include flex-center-j;
         @include flex-center-a;
@@ -39,6 +44,32 @@
         top: auto;
         bottom: -3px;
     }
+
+    .shutter {
+        @include boxShadow;
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        left: 50%;
+        overflow: hidden;
+    }
+
+    .slat {
+        position: fixed;
+        width: 100%;
+        padding-right: 0;
+
+        &:last-child {
+            position: absolute;
+            bottom: 0;
+        }
+
+        p {
+            font-size: 72px;
+        }
+    }
+
+
 }
 
 #text-ted {

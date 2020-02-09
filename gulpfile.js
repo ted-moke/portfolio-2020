@@ -25,8 +25,6 @@ var ASSET_SOURCE_PATH = SOURCE_PATH + '/assets';
 var INPUT_JAVASCRIPT_FILE = SOURCE_PATH + '/js/app.js';
 var OUTPUT_JAVASCRIPT_FILE_NAME = 'app.min.js';
 
-
-
 /*************************************************************
 **
 **  Deletes the entire contents of the build directory
@@ -79,7 +77,7 @@ function processJavascriptDev () {
         entries: [INPUT_JAVASCRIPT_FILE],
         debug: true
     });
-
+    
     // converts ES6 to vanilla javascript. Note that presets are an NPM dependency
     browserified.transform(babelify, { "presets": ["@babel/preset-env"]} );
     browserified.transform(hoganify, { live:false, ext:'.html,.mustache' } );
@@ -189,7 +187,7 @@ function serve () {
     browserSync(options);
 
     // Watches for changes in files inside the './src' folder.
-    gulp.watch(SOURCE_PATH + '/js/**/*.js', ['watch-js']);
+    gulp.watch([SOURCE_PATH + '/**/*.js', SOURCE_PATH + '/**/*.mustache'], ['watch-js']);
 
     // Watches for updates to sass css preprocessor files.
     gulp.watch(SOURCE_PATH + '/scss/**/*.scss', ['watch-sass']);
