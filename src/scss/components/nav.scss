@@ -2,6 +2,7 @@ nav {
     position: fixed;
     width: 100vw;
     z-index: 10;
+    display: flex;
 
     .social-link {
         height: 50px;
@@ -14,10 +15,46 @@ nav {
         margin-bottom: 0;
     }
     
+    &.inner {
+        &::before {
+            @include psuedo;
+            height: 20%;
+            background: rgba($secondary, 0.9);
+        }
+    }
+}
+
+.nav-section {
+    padding: 0 5vw;
+    
+    .inner & {
+        background-color: rgba($secondary, .9);
+        
+    }
+}
+
+.nav-left {
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.35s ease-in-out;
+
+    .inner & {
+        max-width: 100%;
+    }
 }
 
 .nav-social {
     text-align: center;
+
+    .inner & {
+        position: absolute;
+        right: 0;
+        width: 500px;
+        height: 77px;
+
+        .social-sub {
+        }
+    }
 }
 
 .social-sub {
@@ -38,4 +75,11 @@ nav {
             fill: $white;
         }
     }
+}
+
+.icon-tm {
+    box-sizing: content-box;
+    width: 80px;
+    height: auto;
+    padding: 8px 8px 4px;
 }

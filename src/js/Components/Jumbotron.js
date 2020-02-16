@@ -8,7 +8,7 @@ export default class Jumbotron {
         this.shutterContent = {
             client: '',
             project: this.JOB_DESC[0],
-            role: 'developer',
+            roles: 'developer',
             description: ''
         }
         

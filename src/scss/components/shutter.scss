@@ -41,7 +41,7 @@
         }
     }
 
-    &.role {
+    &.roles {
         .slat-label {
             background: $secondary;
         }
@@ -70,7 +70,7 @@
 .slat-label {
     position: absolute;
     left: -31px;
-    top: 23px;
+    top: $spacing-sm;
     padding: $spacing-sm;
     width: 31px;
 

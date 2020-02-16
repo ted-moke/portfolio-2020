@@ -20,7 +20,7 @@ export default class Work {
             let projectContent = {
                 client: project.client,
                 project: project.project,
-                role: project.role,
+                roles: project.roles,
                 description: project.description
             }
 
