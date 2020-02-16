@@ -2,6 +2,7 @@ import config from './config';
 import Jumbotron from './Components/Jumbotron';
 import Shutter from './Components/Shutter';
 import Work from './Sections/Work';
+import Nav from './Components/Nav';
 
 class App {
     constructor() {
@@ -13,6 +14,7 @@ class App {
         this.Jumbotron.init();
 
         this.Work = new Work();
+        this.Nav = new Nav();
     }
 }
 

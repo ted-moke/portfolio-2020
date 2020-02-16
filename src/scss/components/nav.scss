@@ -8,59 +8,48 @@ nav {
         height: 50px;
         box-sizing: content-box;
         display: inline-block;
-        padding: $spacing-sm;
+        padding: 12px $spacing-sm;
+        overflow: hidden;
     }
 
     a {
         margin-bottom: 0;
     }
-    
+
+    &::before {
+        @include psuedo;
+        height: 20%;
+        background: rgba($secondary, 0.9);
+        opacity: 0;
+        transition: opacity 0.35s ease-in-out;
+    }
+
     &.inner {
         &::before {
-            @include psuedo;
-            height: 20%;
-            background: rgba($secondary, 0.9);
+            opacity: 1;
         }
     }
 }
 
 .nav-section {
     padding: 0 5vw;
-    
-    .inner & {
-        background-color: rgba($secondary, .9);
-        
-    }
+    transition: background-color 0.35 ease-in-out;
 }
 
 .nav-left {
     max-width: 0;
     overflow: hidden;
-    transition: max-width 0.35s ease-in-out;
-
-    .inner & {
-        max-width: 100%;
-    }
+    padding: 0;
 }
 
 .nav-social {
     text-align: center;
-
-    .inner & {
-        position: absolute;
-        right: 0;
-        width: 500px;
-        height: 77px;
-
-        .social-sub {
-        }
-    }
 }
 
 .social-sub {
     position: absolute;
     overflow: hidden;
-    
+
     & path {
         fill: $fourth;
     }
@@ -71,6 +60,7 @@ nav {
 
     &.social-right {
         left: calc(50% + #{$spacing-xs});
+
         path {
             fill: $white;
         }
@@ -82,4 +72,13 @@ nav {
     width: 80px;
     height: auto;
     padding: 8px 8px 4px;
+
+    rect,path {
+        fill: white;
+    }
+
+    .stroke-only {
+        fill: none;
+        stroke: white;
+    }
 }
