@@ -1,18 +1,68 @@
 .button {
+    --btn-offset-x: 5px;
+    --btn-offset-y: 3px;
+    
     display: inline-block;
     height: 54px;
     padding: 0 $spacing-xxl;
-    border-radius: $spacing-xxl;
+    border-radius: $border-radius;
     background: $fourth;
     color: $white;
     margin-top: 12px;
+    margin: calc(12px - var(--btn-offset-y) / 2) 0 0 calc(var(--btn-offset-x) / 2);
     vertical-align: top;
+    position: relative;
     
+    * {
+        user-select: none;
+        
+    }
+
     h4 {
         display: flex;
         height: 100%;
         align-items: center;
         margin-bottom: 0;
         font-size: 20px;
+    }
+
+    &.contact {
+        position: relative;
+    }
+
+    &::after {
+        @include psuedo;
+        height: calc(100% + 1px);
+        left: var(--btn-offset-x);
+        top: var(--btn-offset-y);
+        background-color: lighten($fourth, 15%);
+        background-color: darken($neutral, 35%);
+
+        z-index: -1;
+        border-radius: $border-radius;
+    }
+
+    &:active {
+        transform: translate(5px, 3px);
+z-index: 2;
+        &::after {
+            top: 0;
+            left: 0;
+            background-color: $fourth;
+        }
+
+        &.primary {
+            &::after {
+                background-color: $primary;
+            }
+        }
+    }
+
+    &.primary {
+        background-color: $primary;
+
+        &::after {
+            background-color: darken($secondary, 20%);
+        }
     }
 }

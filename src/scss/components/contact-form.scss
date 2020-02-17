@@ -1,0 +1,68 @@
+.contact-form {
+    @include boxShadow;
+    background: $tertiary;
+    padding: $spacing-xl;
+    position: absolute;
+    top: calc(100% + 5px);
+    color: $white;
+    width: 550px;
+    right: 0;
+    text-align: left;
+    z-index: 20;
+
+    &::before {
+        @include psuedo;
+        width: 0;
+        height: 0;
+        left: auto;
+        right: 15px;
+        top: -9px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $tertiary
+    } 
+    
+    p {
+        font-size: $spacing-lg;
+        margin-bottom: 0;
+    }
+}
+
+.form-section {
+    text-align: left;
+    margin-bottom: $spacing-md;
+    display: flex;
+    align-items: flex-start;
+}
+
+$labelWidth: 80px;
+
+label {
+    min-width: 80px;
+    display: inline-block;
+    margin: 3px 0 0;
+}
+
+input, textarea {
+    width: calc(99% - #{$labelWidth});
+    background: $white;
+}
+
+input {
+    border: none;
+    padding: $spacing-xs;
+    
+    &[type="textarea"] {
+        height: 150px;
+    }
+}
+
+form {
+    text-align: center;
+    width: 100%;
+}
+
+.social-section {
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -48,7 +48,7 @@ nav {
 
 .social-sub {
     position: absolute;
-    overflow: hidden;
+    // overflow-x: hidden;
 
     & path {
         fill: $fourth;

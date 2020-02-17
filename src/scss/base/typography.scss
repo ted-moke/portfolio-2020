@@ -20,12 +20,15 @@
     font-family: 'NunitoSans-ExtraLight';
 }
   
+.bold {
+    @include text-black;
+}
 
 body {
     @include text-extraLight;
 }
 
-h1,h2,h3,h4,h5,p,li,th,td,a,span,button,section {
+h1,h2,h3,h4,h5,p,li,th,td,a,span,button,section, label {
     line-height: 1.2;
     margin-top: 0;
     margin-bottom: $spacing-sm;
@@ -43,12 +46,12 @@ h2 {
     font-size: $spacing-lg;
 }
 
-h3 {
+h3, label {
     font-size: $spacing-md;
 }
 
 h4, p {
-    font-size: calc(#{{spacing-md}} - #{{spacing-xs}});
+    font-size: 12px;
 }
 
 @media screen and (min-width: $breakpoint-sm) {
