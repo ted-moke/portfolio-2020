@@ -1,15 +1,16 @@
 .button {
-    --btn-offset-x: 5px;
-    --btn-offset-y: 3px;
-    
+    --button-color: $fourth;
+    --button-text: $white;
+    --button-drop: darken($neutral, 35%);
+
     display: inline-block;
-    height: 54px;
+    height: 52px;
     padding: 0 $spacing-xxl;
     border-radius: $border-radius;
-    background: $fourth;
-    color: $white;
+    background: var(--button-color);
+    color: var(--button-text);
     margin-top: 12px;
-    margin: calc(12px - var(--btn-offset-y) / 2) 0 0 calc(var(--btn-offset-x) / 2);
+    margin: calc(12px - #{{dropOffsetY}} / 2) 0 0 calc(#{{dropOffsetX}} / 2);
     vertical-align: top;
     position: relative;
     
@@ -29,16 +30,9 @@
     &.contact {
         position: relative;
     }
-
+    
     &::after {
-        @include psuedo;
-        height: calc(100% + 1px);
-        left: var(--btn-offset-x);
-        top: var(--btn-offset-y);
-        background-color: lighten($fourth, 15%);
-        background-color: darken($neutral, 35%);
-
-        z-index: -1;
+        @include dropBox(var(--button-drop));
         border-radius: $border-radius;
     }
 
@@ -48,21 +42,18 @@ z-index: 2;
         &::after {
             top: 0;
             left: 0;
-            background-color: $fourth;
-        }
-
-        &.primary {
-            &::after {
-                background-color: $primary;
-            }
         }
     }
 
     &.primary {
-        background-color: $primary;
-
-        &::after {
-            background-color: darken($secondary, 20%);
-        }
+        --button-color: $primary;
+        --button-drop: darken($secondary, 20%);
+        --button-text: $fourth;
+    }
+    
+    &.white {
+        --button-color: $white;
+        --button-drop: darken($white, 20%);
+        --button-text: $fourth;
     }
 }

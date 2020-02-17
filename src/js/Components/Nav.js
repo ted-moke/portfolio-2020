@@ -21,12 +21,13 @@ export default class Nav {
         this.scrollControl = new ScrollMagic.Controller();
         this.scrollScene = new ScrollMagic.Scene({duration: this.sizes.windowHeight / 2, offset: 50}).addTo(this.scrollControl);
 
-        this.tl = gsap.timeline({defaults: {ease: "power2.inOut", duration: 0.35}});
-        this.tl.to(".social-link .icon", {x: 200}, 0);
+        this.tl = gsap.timeline({defaults: {ease: "power2.inOut", duration: config.TRANSITION_DURATION}});
+        this.tl.to(".social-link .icon", {x: -200}, 0);
 
-        let socRightOffset = this.sizes.docWidth * 0.95 - this.sizes.socialRight;
-        this.tl.to(".social-right", {left: socRightOffset}, 0);
-        this.tl.to("nav .button.contact", {backgroundColor: "#F48907"}, 0);
+        // let socRightOffset = this.sizes.docWidth * 0.95 - this.sizes.socialRight;
+        this.tl.to(".social-right", {left: '175px'}, 0);
+        this.tl.to("[data-modal=contact]", {"--left-offset": "0%", "--left-offset-carrot": "24px"},0);
+        this.tl.to("nav .button.contact", {"--button-color": "#F48907", "--button-drop": "#90361c"}, 0);
 
         this.tl.to(".nav-left", {maxWidth: "300px", paddingLeft: this.sizes.docWidth * 0.05}, 0);
         this.tl.to("nav", {backgroundColor: "#0E1428"}, 0);

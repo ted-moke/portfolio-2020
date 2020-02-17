@@ -24,6 +24,11 @@
     display: none;
 }
 
+.hidden {
+    display: block;
+    visibility: hidden;
+}
+
 .divider {
     width: 97.5%;
     height: 1px;

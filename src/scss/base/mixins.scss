@@ -12,5 +12,14 @@
 }
 
 @mixin boxShadow($opacity: .3) {
-    box-shadow: 2px 6px 22px 10px rgba(0,0,0, $opacity);
+    box-shadow: 2px 6px 22px 10px rgba(0, 0, 0, $opacity);
+}
+
+@mixin dropBox($color: $neutral) {
+    @include psuedo;
+    height: calc(100% + 1px);
+    left: $dropOffsetX;
+    top: $dropOffsetY;
+    background-color: $color;
+    z-index: -1;
 }
