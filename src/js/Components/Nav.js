@@ -25,7 +25,7 @@ export default class Nav {
         this.tl.to(".social-link .icon", {x: -200}, 0);
 
         // let socRightOffset = this.sizes.docWidth * 0.95 - this.sizes.socialRight;
-        this.tl.to(".social-right", {left: '175px'}, 0);
+        this.tl.fromTo(".social-right", {left: '50%'}, {left: '175px'}, 0);
         this.tl.to("[data-modal=contact]", {"--left-offset": "0%", "--left-offset-carrot": "24px"},0);
         this.tl.to("nav .button.contact", {"--button-color": "#F48907", "--button-drop": "#90361c"}, 0);
 
@@ -35,7 +35,6 @@ export default class Nav {
         this.tl.to(".scroll-prompt", {height: 0}, 0);
 
         this.scrollScene.setTween(this.tl);
-
     }
 
     getDomEls() {
@@ -48,5 +47,6 @@ export default class Nav {
         this.sizes.windowHeight = window.innerHeight;
         this.sizes.socialRight = this.socialRight.getBoundingClientRect().width;
     }
+
 
 }

@@ -4,6 +4,7 @@ import Shutter from './Components/Shutter';
 import Work from './Sections/Work';
 import Nav from './Components/Nav';
 import Modal from './Components/Modal';
+import utils from './Utils';
 
 class App {
     constructor() {
@@ -25,6 +26,13 @@ class App {
             let modalName = el.dataset.modalTarget;
             this.Modals[modalName] = new Modal(el);
         }
+
+        window.addEventListener('resize', utils.throttle(()=>{
+            console.log('on resize')
+            this.Work.Projects.forEach((p,i)=>{p.setSlatHeight();});
+            this.Jumbotron.Shutter.setSlatHeight();
+            this.Nav.getSizes();
+        }, 100));
     }
 }
 

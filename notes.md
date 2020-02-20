@@ -9,7 +9,6 @@ Important
 Lesser
 * add resume/phone num? to contact
 * modal hide on click outside
-* Resize to relayout jumbotron/all shutters
 * think about adding section
 
 Nice to have
