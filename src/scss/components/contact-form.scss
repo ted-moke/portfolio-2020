@@ -1,11 +1,12 @@
 .form-section {
+    --labelWidth: 80px;
+
     text-align: left;
-    margin-bottom: $spacing-md;
+    margin-bottom: var(--spacing-md);
     display: flex;
     align-items: flex-start;
 }
 
-$labelWidth: 80px;
 
 label {
     min-width: 80px;
@@ -14,13 +15,13 @@ label {
 }
 
 input, textarea {
-    width: calc(99% - #{$labelWidth});
-    background: $white;
+    width: calc(99% - #{var(--labelWidth)});
+    background: var(--base);
 }
 
 input {
     border: none;
-    padding: $spacing-xs;
+    padding: var(--spacing-xs);
     
     &[type="textarea"] {
         height: 150px;

@@ -15,11 +15,11 @@
     box-shadow: 2px 6px 22px 10px rgba(0, 0, 0, $opacity);
 }
 
-@mixin dropBox($color: $neutral) {
+@mixin dropBox($color: var(--neutral)) {
     @include psuedo;
     height: calc(100% + 1px);
-    left: $dropOffsetX;
-    top: $dropOffsetY;
+    left: var(--dropOffsetX);
+    top: var(--dropOffsetY);
     background-color: $color;
     z-index: -1;
 }

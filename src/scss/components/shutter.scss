@@ -14,37 +14,37 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 0 $spacing-lg;
+    padding: 0 var(--spacing-lg);
     margin: 0;
     transform: translateY(100%);
 
     p {
         @include text-black;
-        color: $white;
+        color: var(--base);
         text-transform: uppercase;
-        font-size: $spacing-xl;
+        font-size: var(--spacing-xl);
         line-height: 1;
     }
 
     &.client {
         p {
-            font-size: $spacing-xxl;
+            font-size: var(--spacing-xxl);
         }
 
         .slat-label {
-            background: $fourth;
+            background: var(--fourth);
         }
     }
 
     &.project {
         .slat-label {
-            background: $tertiary;
+            background: var(--tertiary);
         }
     }
 
     &.roles {
         .slat-label {
-            background: $secondary;
+            background: var(--secondary);
         }
     }
 
@@ -53,17 +53,17 @@
         p {
             @include text-extraLight();
             text-transform: initial;
-            font-size: $spacing-lg;
+            font-size: var(--spacing-lg);
         }
 
         .slat-label {
-            background: $primary;
+            background: var(--primary);
         }
     }
 
     &.small {
         p {
-            font-size: $spacing-lg;
+            font-size: var(--spacing-lg);
         }
     }
 }
@@ -71,8 +71,8 @@
 .slat-label {
     position: absolute;
     left: -31px;
-    top: $spacing-sm;
-    padding: $spacing-sm;
+    top: var(--spacing-sm);
+    padding: var(--spacing-sm);
     width: 31px;
 
     label {

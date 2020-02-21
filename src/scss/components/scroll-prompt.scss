@@ -1,7 +1,7 @@
 .scroll-prompt {
     --arrow-width: 80px;
     position: fixed;
-    bottom: $spacing-md;
+    bottom: var(--spacing-md);
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -10,19 +10,19 @@
 
 
     .icon.arrow {
-        margin: 0 $spacing-lg;
+        margin: 0 var(--spacing-lg);
         width: var(--arrow-width);
 
         polyline {
-            stroke: $secondary;
+            stroke: var(--secondary);
         }
     }
 
     span {
-        color: $fourth;
-        font-size: $spacing-lg;
+        color: var(--fourth);
+        font-size: var(--spacing-lg);
         &:last-of-type {
-            color: $white;
+            color: var(--base);
         }
     }
 }

@@ -44,7 +44,7 @@
         @include psuedo;
 
         height: 3px;
-        background-color: $fourth;
+        background-color: var(--fourth);
         top: auto;
         bottom: -3px;
     }

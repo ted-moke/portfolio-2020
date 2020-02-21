@@ -8,20 +8,12 @@ nav {
         height: 50px;
         box-sizing: content-box;
         display: inline-block;
-        padding: 12px $spacing-sm;
+        padding: 12px var(--spacing-sm);
         overflow: hidden;
     }
 
     a {
         margin-bottom: 0;
-    }
-
-    &::before {
-        @include psuedo;
-        height: 20%;
-        background: rgba($secondary, 0.9);
-        opacity: 0;
-        transition: opacity 0.35s ease-in-out;
     }
 
     &.inner {
@@ -56,18 +48,18 @@ nav {
     // overflow-x: hidden;
 
     & path {
-        fill: $fourth;
+        fill: var(--fourth);
     }
 
     &.social-left {
-        right: calc(50% + #{$spacing-xs});
+        right: calc(50% + #{var(--spacing-xs)});
     }
 
     &.social-right {
-        left: calc(50% + #{$spacing-xs});
+        left: calc(50% + #{var(--spacing-xs)});
 
         path {
-            fill: $white;
+            fill: var(--base);
         }
     }
 }
@@ -75,6 +67,7 @@ nav {
 .icon-tm {
     box-sizing: content-box;
     width: 80px;
+    width: 60px;
     height: auto;
     padding: 8px 8px 4px;
 

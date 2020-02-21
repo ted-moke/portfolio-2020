@@ -32,6 +32,6 @@
 .divider {
     width: 97.5%;
     height: 1px;
-    background-color: $neutral;
-    margin: $spacing-lg 0% $spacing-lg 2.5%;
+    background-color: var(--neutral);
+    margin: var(--spacing-lg) 0% var(--spacing-lg) 2.5%;
 }

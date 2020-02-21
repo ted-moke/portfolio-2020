@@ -31,7 +31,7 @@ body {
 h1,h2,h3,h4,h5,p,li,th,td,a,span,button,section, label {
     line-height: 1.2;
     margin-top: 0;
-    margin-bottom: $spacing-sm;
+    margin-bottom: var(--spacing-sm);
 }
 
 h1,h2,h3,h4,h5 {
@@ -39,35 +39,35 @@ h1,h2,h3,h4,h5 {
 }
 
 h1 {
-    font-size: $spacing-xl;
+    font-size: var(--spacing-xl);
 }
 
 h2 {
-    font-size: $spacing-lg;
+    font-size: var(--spacing-lg);
 }
 
 h3, label {
-    font-size: $spacing-md;
+    font-size: var(--spacing-md);
 }
 
 h4, p {
     font-size: 12px;
 }
 
-@media screen and (min-width: $breakpoint-sm) {
+@media screen and (min-width: var(--breakpoint-sm)) {
     h1 {
-        font-size: $spacing-xxl;
+        font-size: var(--spacing-xxl);
     }
     
     h2 {
-        font-size: $spacing-xl;
+        font-size: var(--spacing-xl);
     }
     
     h3 {
-        font-size: $spacing-lg;
+        font-size: var(--spacing-lg);
     }
     
     h4, p {
-        font-size: $spacing-md;
+        font-size: var(--spacing-md);
     }
 }

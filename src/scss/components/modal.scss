@@ -6,11 +6,11 @@
     --left-offset-neg: calc(var(--left-offset) * -1);
     --left-offset-carrot: -50%;
     @include boxShadow;
-    background: $tertiary;
-    padding: $spacing-xl;
+    background: var(--tertiary);
+    padding: var(--spacing-xl);
     position: absolute;
     top: calc(100% + 18px);
-    color: $white;
+    color: var(--base);
     min-width: var(--min-width);
     left: var(--left-offset);
     transform: translate(var(--left-offset-neg), 0);
@@ -27,11 +27,11 @@
         top: -9px;
         border-left: var(--carrot-width) solid transparent;
         border-right: var(--carrot-width) solid transparent;
-        border-bottom: var(--carrot-width) solid $tertiary
+        border-bottom: var(--carrot-width) solid var(--tertiary)
     }
 
     p {
-        font-size: $spacing-lg;
+        font-size: var(--spacing-lg);
         margin-bottom: 0;
     }
 }

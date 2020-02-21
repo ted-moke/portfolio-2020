@@ -1,16 +1,16 @@
 .button {
-    --button-color: $fourth;
-    --button-text: $white;
-    --button-drop: darken($neutral, 35%);
+    --button-color: var(--fourth);
+    --button-text: var(--base);
+    --button-drop: var(--neutral-dk);
 
     display: inline-block;
     height: 52px;
-    padding: 0 $spacing-xxl;
-    border-radius: $border-radius;
+    padding: 0 var(--spacing-xxl);
+    border-radius: var(--border-radius);
     background: var(--button-color);
     color: var(--button-text);
     margin-top: 12px;
-    margin: calc(12px - #{{dropOffsetY}} / 2) 0 0 calc(#{{dropOffsetX}} / 2);
+    margin: calc(12px - #{var(--dropOffsetY)} / 2) 0 0 calc(#{var(--dropOffsetX)} / 2);
     vertical-align: top;
     position: relative;
     
@@ -33,7 +33,7 @@
     
     &::after {
         @include dropBox(var(--button-drop));
-        border-radius: $border-radius;
+        border-radius: var(--border-radius);
     }
 
     &:active {
@@ -43,17 +43,17 @@ z-index: 2;
             top: 0;
             left: 0;
         }
-    }
+    } 
 
     &.primary {
-        --button-color: $primary;
-        --button-drop: darken($secondary, 20%);
-        --button-text: $fourth;
+        --button-color: var(--primary);
+        --button-drop: var(--primary-dk);
+        --button-text: var(--fourth);
     }
     
     &.white {
-        --button-color: $white;
-        --button-drop: darken($white, 20%);
-        --button-text: $fourth;
+        --button-color: var(--base);
+        --button-drop: var(--neutral-dk);
+        --button-text: var(--fourth);
     }
 }
