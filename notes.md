@@ -1,17 +1,24 @@
 TO DO
 Important
-* record/enter content
+* mobile nav
 * mobile layout
-* mobile hamburger
+* restructure to SPA
+* nav redesign
+* scroll detection
+* record/enter content
 * contact form functionality
-* logo animation in
 
 Lesser
 * add resume/phone num? to contact
 * modal hide on click outside
-* think about adding section
 
 Nice to have
+* paint bucket color switcher
+* logo animation in
+* create dribble
+* cool button animation
+* think about adding demos section
 * funky jumbo effect
 * sticky scroll on sections
 * sections collapse open on scroll down
+* case studies
