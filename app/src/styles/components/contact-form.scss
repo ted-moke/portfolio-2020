@@ -1,0 +1,39 @@
+.form-section {
+    --labelWidth: 80px;
+
+    text-align: left;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: flex-start;
+}
+
+
+label {
+    min-width: 80px;
+    display: inline-block;
+    margin: 3px 0 0;
+}
+
+input, textarea {
+    width: calc(99% - #{var(--labelWidth)});
+    background: var(--base);
+}
+
+input {
+    border: none;
+    padding: var(--spacing-xs);
+    
+    &[type="textarea"] {
+        height: 150px;
+    }
+}
+
+form {
+    text-align: center;
+    width: 100%;
+}
+
+.social-section {
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -13,7 +13,7 @@
 
 <script>
 // @ is an alias to /src
-import Globals from "Pages/Globals.vue"
+import Globals from "@/views/Pages/Globals.vue"
 import Utils from "@/js/utils.js";
 
 // import router from "@/router";
@@ -57,7 +57,7 @@ export default {
   },
   components: {
     Globals,
-    Nav
+    // Nav
   }
 };
 </script>

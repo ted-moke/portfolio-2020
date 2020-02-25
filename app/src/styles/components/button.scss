@@ -1,0 +1,59 @@
+.button {
+    --button-color: var(--fourth);
+    --button-text: var(--base);
+    --button-drop: var(--neutral-dk);
+
+    display: inline-block;
+    height: 52px;
+    padding: 0 var(--spacing-xxl);
+    border-radius: var(--border-radius);
+    background: var(--button-color);
+    color: var(--button-text);
+    margin-top: 12px;
+    margin: calc(12px - #{var(--dropOffsetY)} / 2) 0 0 calc(#{var(--dropOffsetX)} / 2);
+    vertical-align: top;
+    position: relative;
+    
+    * {
+        user-select: none;
+        
+    }
+
+    h4 {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+
+    &.contact {
+        position: relative;
+    }
+    
+    &::after {
+        @include dropBox(var(--button-drop));
+        border-radius: var(--border-radius);
+    }
+
+    &:active {
+        transform: translate(5px, 3px);
+z-index: 2;
+        &::after {
+            top: 0;
+            left: 0;
+        }
+    } 
+
+    &.primary {
+        --button-color: var(--primary);
+        --button-drop: var(--primary-dk);
+        --button-text: var(--fourth);
+    }
+    
+    &.white {
+        --button-color: var(--base);
+        --button-drop: var(--neutral-dk);
+        --button-text: var(--fourth);
+    }
+}

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Nav msg="bar of dreams"></Nav>
-    <Modal>
-      <div v-slot:modal-body>
+    <Nav msg="bar of dreams" v-on:triggerModal="setModal"></Nav>
+    <Modal v-if="modalActive === 'contact'" ref="contact" name="contact" @close="setModal(null)">
+      <template v-slot:modal-body>
         <p>
           <span class="bold">Email:</span> iam@tedmoke.com
         </p>
@@ -50,21 +50,62 @@
             </svg>
           </a>
         </div>
-      </div>
+      </template>
     </Modal>
+    <div v-if="modalActive" ref="overlay" class="overlay" v-on:click="closeModal"></div>
   </div>
 </template>
 
 <script>
+import gsap from 'gsap';
+
 // @ is an alias to /src
-import Nav from "@/views/components/Nav.vue";
-import Form from "@/views/components/Form.vue";
+import Nav from "@/views/Components/Nav.vue";
+import Form from "@/views/Components/Form.vue";
+import Modal from "@/views/Components/Modal.vue";
 
 export default {
   name: "globals",
+  data: function() {
+    return {
+      modalActive: null,
+      overlayActive: false
+    };
+  },
   components: {
     Form,
-    Nav,
+    Modal,
+    Nav
+  },
+  methods: {
+    setModal(name) {
+      
+      this.modalActive = name || null;
+
+        if (!this.overlayActive && name) {
+          this.$nextTick(function() {
+            this.showOverlay();
+          })
+        }
+    },
+    closeModal() {
+      this.$refs[this.modalActive].close();
+      this.hideOverlay();
+    },
+    showOverlay() {
+      this.overlayActive = true;
+      const overlay = this.$refs.overlay;
+      const ROOT = this.$root;
+      
+      gsap.to(overlay, {opacity: 1, duration: ROOT.TRANSITION_DURATION, ease: ROOT.TRANSITION_EASE})
+    },
+    hideOverlay() {
+      this.overlayActive = false;
+      const overlay = this.$refs.overlay;
+      const ROOT = this.$root;
+
+      gsap.to(overlay, {opacity: 0, duration: ROOT.TRANSITION_DURATION, ease: ROOT.TRANSITION_EASE})
+    },
   }
 };
 </script>

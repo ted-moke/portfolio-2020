@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'NunitoSans-Black';
+    src: url('/assets/fonts/NunitoSans-Black.eot?#iefix') format('embedded-opentype'),  url('/assets/fonts/NunitoSans-Black.woff') format('woff'), url('/assets/fonts/NunitoSans-Black.ttf')  format('truetype'), url('/assets/fonts/NunitoSans-Black.svg#NunitoSans-Black') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'NunitoSans-ExtraLight';
+    src: url('/assets/fonts/NunitoSans-ExtraLight.eot?#iefix') format('embedded-opentype'),  url('/assets/fonts/NunitoSans-ExtraLight.woff') format('woff'), url('/assets/fonts/NunitoSans-ExtraLight.ttf')  format('truetype'), url('/assets/fonts/NunitoSans-ExtraLight.svg#NunitoSans-ExtraLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin text-black {
+    font-family: 'NunitoSans-Black';
+}
+
+@mixin text-extraLight {
+    font-family: 'NunitoSans-ExtraLight';
+}
+  
+.bold {
+    @include text-black;
+}
+
+body {
+    @include text-extraLight;
+}
+
+h1,h2,h3,h4,h5,p,li,th,td,a,span,button,section, label {
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+}
+
+h1,h2,h3,h4,h5 {
+    @include text-black;
+}
+
+h1 {
+    font-size: var(--spacing-xl);
+}
+
+h2 {
+    font-size: var(--spacing-lg);
+}
+
+h3, label {
+    font-size: var(--spacing-md);
+}
+
+h4, p {
+    font-size: 12px;
+}
+
+@media screen and (min-width: var(--breakpoint-sm)) {
+    h1 {
+        font-size: var(--spacing-xxl);
+    }
+    
+    h2 {
+        font-size: var(--spacing-xl);
+    }
+    
+    h3 {
+        font-size: var(--spacing-lg);
+    }
+    
+    h4, p {
+        font-size: var(--spacing-md);
+    }
+}

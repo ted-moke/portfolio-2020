@@ -1,0 +1,87 @@
+.shutter-wrapper {
+    width: 40%;
+    // border: 5px solid #CCC;
+}
+
+.shutter {
+    position: relative;
+    height: 80vh;
+    max-height: 800px;
+}
+
+.slat {
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0 var(--spacing-lg);
+    margin: 0;
+    transform: translateY(100%);
+
+    p {
+        @include text-black;
+        color: var(--base);
+        text-transform: uppercase;
+        font-size: var(--spacing-xl);
+        line-height: 1;
+    }
+
+    &.client {
+        p {
+            font-size: var(--spacing-xxl);
+        }
+
+        .slat-label {
+            background: var(--fourth);
+        }
+    }
+
+    &.project {
+        .slat-label {
+            background: var(--tertiary);
+        }
+    }
+
+    &.roles {
+        .slat-label {
+            background: var(--secondary);
+        }
+    }
+
+    &.description {
+
+        p {
+            @include text-extraLight();
+            text-transform: initial;
+            font-size: var(--spacing-lg);
+        }
+
+        .slat-label {
+            background: var(--primary);
+        }
+    }
+
+    &.small {
+        p {
+            font-size: var(--spacing-lg);
+        }
+    }
+}
+
+.slat-label {
+    position: absolute;
+    left: -31px;
+    top: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    width: 31px;
+
+    label {
+        @include text-black;
+        color: white;
+        display: block;
+        transform: rotate(180deg);
+        writing-mode: vertical-rl;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+}

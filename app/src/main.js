@@ -11,6 +11,10 @@ console.log(NunitoBlack, NunitoXLight);
 Vue.config.productionTip = false
 
 new Vue({
+  data: {
+    TRANSITION_DURATION: .35,
+    TRANSITION_EASE: "power2.inOut"
+  },
   router,
   render: h => h(App)
 }).$mount('#app')
