@@ -1,4 +1,4 @@
-.button {
+button {
     --button-color: var(--fourth);
     --button-text: var(--base);
     --button-drop: var(--neutral-dk);
@@ -13,10 +13,10 @@
     margin: calc(12px - #{var(--dropOffsetY)} / 2) 0 0 calc(#{var(--dropOffsetX)} / 2);
     vertical-align: top;
     position: relative;
-    
+
     * {
         user-select: none;
-        
+
     }
 
     h4 {
@@ -30,7 +30,7 @@
     &.contact {
         position: relative;
     }
-    
+
     &::after {
         @include dropBox(var(--button-drop));
         border-radius: var(--border-radius);
@@ -38,19 +38,20 @@
 
     &:active {
         transform: translate(5px, 3px);
-z-index: 2;
+        z-index: 2;
+
         &::after {
             top: 0;
             left: 0;
         }
-    } 
+    }
 
     &.primary {
         --button-color: var(--primary);
         --button-drop: var(--primary-dk);
         --button-text: var(--fourth);
     }
-    
+
     &.white {
         --button-color: var(--base);
         --button-drop: var(--neutral-dk);

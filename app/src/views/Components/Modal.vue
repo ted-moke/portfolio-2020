@@ -37,20 +37,11 @@ export default {
     const { modal, content } = this.$refs;
 
     let modalDim = this.getDimensions(modal);
-    console.log(modalDim);
+
 
     gsap.set(content, { maxHeight: 0 });
-
     this.tl.to(content, { maxHeight: modalDim.height }, 0);
-    this.tl.to(
-      modal,
-      {
-        paddingTop: modalDim.padding[0],
-        paddingBottom: modalDim.padding[2],
-        opacity: 1
-      },
-      0
-    );
+    this.tl.to(modal, { paddingTop: modalDim.padding[0], paddingBottom: modalDim.padding[2], opacity: 1 }, 0);
 
     this.tl.play();
   },
