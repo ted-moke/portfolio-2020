@@ -28,7 +28,6 @@ class App {
         }
 
         window.addEventListener('resize', utils.throttle(()=>{
-            console.log('on resize')
             this.Work.Projects.forEach((p,i)=>{p.setSlatHeight();});
             this.Jumbotron.Shutter.setSlatHeight();
             this.Nav.getSizes();

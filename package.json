@@ -19,6 +19,7 @@
     "browserify": "^13.0.1",
     "connect-history-api-fallback": "^1.2.0",
     "del": "^2.2.1",
+    "file-loader": "^5.1.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-buffer": "0.0.2",
@@ -30,6 +31,7 @@
     "gulp-util": "^3.0.7",
     "hogan.js": "^3.0.2",
     "hoganify": "^0.2.0",
+    "node-sass": "^4.13.1",
     "path": "^0.12.7",
     "vinyl-source-stream": "^1.1.0"
   },
