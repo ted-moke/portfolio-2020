@@ -1,6 +1,7 @@
 <template>
   <div id="app" @click="handleClick">
     <Globals></Globals>
+    <h1>Test bold</h1>
     <router-view></router-view>
   </div>
 </template>
@@ -47,13 +48,13 @@ export default {
   },
   mounted: function() {
     this.$nextTick(function() {
-      this.$router.push({ path: '/home' })
+      // this.$router.push({ path: '/home' })
     })
   },
   watch: {
-    $route(to) {
-      console.log('Routing', to)
-    }
+    // $route(to) {
+    //   console.log('Routing', to)
+    // }
   },
   components: {
     Globals,

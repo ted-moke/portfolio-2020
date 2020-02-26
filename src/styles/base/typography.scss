@@ -13,11 +13,11 @@
 }
 
 @mixin text-black {
-    font-family: 'NunitoSans-Black';
+    font-family: 'NunitoSans-Black', serif;
 }
 
 @mixin text-extraLight {
-    font-family: 'NunitoSans-ExtraLight';
+    font-family: 'NunitoSans-ExtraLight', serif;
 }
   
 .bold {

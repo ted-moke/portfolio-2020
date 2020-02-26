@@ -1,32 +1,24 @@
-var random = function(a, b, c) {
-    return parseFloat((Math.random() * ((a ? a : 1) - (b ? b : 0)) + (b ? b : 0)).toFixed(c ? c : 0))
-};
-
-const debounce = (func, delay) => {
-    let inDebounce
-    return function() {
-      const context = this
-      const args = arguments
-      clearTimeout(inDebounce)
-      inDebounce = setTimeout(() => func.apply(context, args), delay)
+var getParentPath = function(val) {
+    let newStr = val;
+    if (val.indexOf('/') === 0) {
+        newStr = newStr.slice(1);
     }
-  }
-
-  const throttle = (func, limit) => {
-    let inThrottle
-    return function() {
-      const args = arguments
-      const context = this
-      if (!inThrottle) {
-        func.apply(context, args)
-        inThrottle = true
-        setTimeout(() => inThrottle = false, limit)
-      }
+    let slashPos = newStr.indexOf('/');
+    if (slashPos >= 0) {
+        newStr = newStr.substring(0,slashPos);
     }
-  }
+    return newStr;
+} 
+
+var stripSlashes = function (val) {
+    let newStr = val;
+    if (val.indexOf('/') === 0) {
+        newStr = newStr.slice(1);
+    }
+    return newStr.replace(/\//g, '-');
+}
 
 export default {
-    debounce,
-    random,
-    throttle
-}
+    getParentPath,
+    stripSlashes
+};

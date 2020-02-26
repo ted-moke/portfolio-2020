@@ -1,0 +1,29 @@
+module.exports = {
+    assetsDir: 'assets/',
+    publicPath: '/',
+    css: {
+        sourceMap: true,
+        loaderOptions: {
+            sass: {
+                data: `@import "@/styles/main.scss";`
+            }
+        }
+    },
+
+    chainWebpack: config => {
+        config.module
+            .rule("fonts")
+            .test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/, )
+            .use("url-loader")
+            .loader("url-loader")
+            // .tap(options => Object.assign(options, { limit: 10240 }))
+            .tap(options => {	
+              options = {	
+                name: '/assets/fonts/[name].[ext]',	
+              }	
+      
+              return options	
+            })	
+            .end()
+    }
+};
