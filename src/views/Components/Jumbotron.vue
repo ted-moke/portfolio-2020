@@ -2,7 +2,7 @@
   <div ref="jumbotron" class="jumbotron">
     <canvas></canvas>
     <div class="jumbotron-content content-left">
-      <!-- <svg class="logo logo-tedmoke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 717 527.47">
+      <svg class="logo logo-tedmoke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 717 527.47">
         <title>logo-block-old</title>
         <rect
           x="11"
@@ -48,10 +48,10 @@
           transform="translate(53.56 462.95)"
           style="font-size: 206.1366424560547px;fill: #0e1428;font-family: NunitoSans-Black, Nunito Sans;font-weight: 800"
         >MOKE</text>
-      </svg>-->
+      </svg>
     </div>
     <div class="jumbotron-content content-right">
-      <Shutter v-bind:content="JOB_DESC"></Shutter>
+      <Shutter v-bind:content="shutterContent"></Shutter>
     </div>
     <div class="scroll-prompt">
       <span>SCROLL TO</span>
@@ -87,15 +87,27 @@ export default {
   },
   computed: {
     el: function() {
-      return this.$refs.jumbotron
+      return this.$refs.jumbotron;
     },
     shutterContent: function() {
-      return {
-        client: "",
-        project: this.JOB_DESC[0].job,
-        roles: "developer",
-        description: ""
-      };
+      return [
+        {
+          title: "client",
+          content: ""
+        },
+        {
+          title: "project",
+          content: this.JOB_DESC[0].job
+        },
+        {
+          title: "roles",
+          content: "developer"
+        },
+        {
+          title: "description",
+          content: ""
+        }
+      ];
     }
   },
   mounted() {},

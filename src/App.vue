@@ -1,7 +1,6 @@
 <template>
   <div id="app" @click="handleClick">
     <Globals></Globals>
-    <h1>Test bold</h1>
     <router-view></router-view>
   </div>
 </template>

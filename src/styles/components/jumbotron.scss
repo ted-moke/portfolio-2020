@@ -16,7 +16,8 @@
 
     .jumbotron-content {
         position: relative;
-        flex: 1;
+        flex-basis: 50%;
+        
         @include flex-col;
         @include flex-center-j;
         @include flex-center-a;
@@ -52,9 +53,10 @@
     .shutter {
         @include boxShadow;
         position: absolute;
-        width: 50%;
+        // width: 50%;
+        width: 100%;
         height: 100%;
-        left: 50%;
+        // left: 50%;
         overflow: hidden;
         max-height: none;
     }
@@ -63,14 +65,15 @@
         position: fixed;
         width: 100%;
         padding-right: 0;
+        font-size: 72px;
 
-        &:last-child {
-            position: absolute;
-            bottom: 0;
-        }
+        // &:last-child {
+        //     position: absolute;
+        //     bottom: 0;
+        // }
 
         p {
-            font-size: 72px;
+            font-size: inherit;
         }
     }
 

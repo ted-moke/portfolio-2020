@@ -1,6 +1,6 @@
 <template>
-  <div ref="slat" class="slat">
-    <p>{{ job }}</p>
+  <div ref="slat" class="slat" v-bind:style="{ 'height': height, 'background-color': color, 'padding-top': 'calc(' + this.margin + ' / 2 - 1.2em)' }">
+    <p>{{ content }}</p>
   </div>
 </template>
 
@@ -9,7 +9,10 @@ import gsap from 'gsap';
 
 export default {
   props: {
-    job: String,
+    color: String,
+    height: String,
+    content: String,
+    margin: String,
     open: Boolean
   },
   computed: {
