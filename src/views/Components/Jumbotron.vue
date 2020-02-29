@@ -93,24 +93,23 @@ export default {
       return [
         {
           title: "client",
-          content: ""
+          text: ""
         },
         {
           title: "project",
-          content: this.JOB_DESC[0].job
+          text: this.JOB_DESC[0].job
         },
         {
           title: "roles",
-          content: "developer"
+          text: "developer"
         },
         {
           title: "description",
-          content: ""
+          text: ""
         }
       ];
     }
   },
-  mounted() {},
   components: {
     Shutter
   }

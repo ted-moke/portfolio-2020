@@ -7,6 +7,18 @@
     position: relative;
     height: 80vh;
     max-height: 800px;
+
+    &.horizontal {
+        height: 100px;
+        max-height: none;
+        width: 100vw;
+        max-width: 1200px;
+
+        .slat {
+            height: 100%;
+            text-align: right;
+        }
+    }
 }
 
 .slat {
@@ -17,6 +29,13 @@
     padding: 0 var(--spacing-lg);
     margin: 0;
     transform: translateY(100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .horizontal & {
+        transform: translateX(-100%);
+    }
 
     p {
         @include text-black;

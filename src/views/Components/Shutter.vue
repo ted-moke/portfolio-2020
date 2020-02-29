@@ -1,15 +1,19 @@
 <template>
-  <div ref="shutter" class="shutter">
+  <div ref="shutter" class="shutter" v-bind:class="{ 'horizontal': horizontal }">
     <Slat
       ref="slat"
       v-for="(piece, i) in content"
       v-bind:key="piece.title"
-      v-bind:content="piece.content"
+      v-bind:content="piece.text"
+      v-bind:link="piece.link"
       v-bind:open="shutterOpen"
       v-bind:color="theColors[i]"
-      v-bind:height="setSlatHeight(i)"
-      v-bind:margin="getSlatMargin()"
-    />
+      v-bind:size="setSlatSize(i)"
+      v-bind:margin="getSlatMargin(i)"
+      v-bind:horizontal="horizontal"
+    >
+      <slot v-if="piece.component"></slot>
+    </Slat>
   </div>
 </template>
 
@@ -22,10 +26,12 @@ export default {
     bottomExpands: Boolean,
     colors: Array,
     content: Array,
-    desc: Array
+    desc: Array,
+    horizontal: Boolean
   },
   data: function() {
     return {
+      fixed: Boolean,
       Slats: Array,
       slatHeight: 120,
       shutterOpen: true
@@ -34,6 +40,17 @@ export default {
   computed: {
     theColors() {
       return this.colors || this.$root.COLORS
+    },
+    unit() {
+      if (this.fixed) {
+        if (this.horizontal) {
+          return 'vw'
+        } else {
+          return 'vh'
+        }
+      } else {
+        return '%'
+      }
     }
   },
   mounted() {
@@ -41,16 +58,16 @@ export default {
     this.shutter = this.$refs.shutter;
   },
   methods: {
-    getSlatMargin: function() {
+    getSlatMargin: function(i) {
       if (!this.bottomExpands) {
-        return (100 / this.content.length) + "%";
+        return (100 / this.content.length) * (this.content.length - i - 1) + this.unit;
       } else {
         return this.slatHeight + "px";
       }
     },
-    setSlatHeight: function(i) {
+    setSlatSize: function(i) {
       if (!this.bottomExpands) {
-        return (100 / this.content.length) * (this.content.length - i) + "%";
+        return (100 / this.content.length) * (this.content.length - i) + this.unit;
       } else {
         return "calc(100% - " + this.slatHeight * (this.content.length - i - 1) + "px)";
       }
