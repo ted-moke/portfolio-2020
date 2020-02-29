@@ -1,10 +1,8 @@
 <template>
-  <!-- <router-link v-bind:to="link ? link : false"> -->
-    <div ref="slat" class="slat" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color, [horizontal ? 'padding-left': 'padding-bottom']: this.margin }">
-        <p>{{ content }}</p>
-        <slot></slot>
-    </div>
-  <!-- </router-link> -->
+  <div ref="slat" class="slat" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color, [horizontal ? 'padding-left': 'padding-bottom']: this.margin }">
+      <p>{{ content }}</p>
+      <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -26,7 +24,8 @@ export default {
     },
   },
   mounted: function() {
-    if (open) {
+    console.log(this.open);
+    if (this.open) {
       this.show()
     } else {
       this.hide();
@@ -35,9 +34,9 @@ export default {
   methods: {
     show: function(callback) {
       if (this.horizontal) {
-        gsap.to(this.el, {x: 0, duration: .5, onComplete: ()=>{if (callback){console.log(this.el); callback()}}})
+        gsap.to(this.el, {x: '0%', duration: .5, onComplete: ()=>{if (callback){console.log(this.el); callback()}}})
       } else {
-        gsap.to(this.el, {y: 0, duration: .5, onComplete: ()=>{if (callback){console.log(this.el); callback()}}})
+        gsap.to(this.el, {y: '0%', duration: .5, onComplete: ()=>{if (callback){console.log(this.el); callback()}}})
       }
     },
     

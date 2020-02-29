@@ -1,6 +1,6 @@
 <template>
-  <button v-on:click="emitEvent" v-bind:class="[white ? 'white' : '', primary ? 'primary' : '' ]">
-    <slot><h4>{label}</h4></slot>
+  <button v-on:click="emitEvent" v-bind:class="[white ? 'white' : '', primary ? 'primary' : '', small ? 'small': '' ]">
+    <h4><slot></slot></h4>
   </button>
 </template>
 
@@ -10,8 +10,8 @@ export default {
   name: "Button",
   props: {
     clickEvent: String,
-    label: String,
     primary: Boolean,
+    small: Boolean,
     white: Boolean,
   },
   methods: {

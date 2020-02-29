@@ -2,15 +2,18 @@ button {
     --button-color: var(--fourth);
     --button-text: var(--base);
     --button-drop: var(--neutral-dk);
+    --button-height: 52px;
+    --button-padding: 0 var(--spacing-xxl);
 
     display: inline-block;
-    height: 52px;
-    padding: 0 var(--spacing-xxl);
+    height: var(--button-height);
+    padding: var(--button-padding);
+    border: none;
     border-radius: var(--border-radius);
     background: var(--button-color);
     color: var(--button-text);
-    margin-top: 12px;
-    margin: calc(12px - #{var(--dropOffsetY)} / 2) 0 0 calc(#{var(--dropOffsetX)} / 2);
+    // margin-top: 12px;
+    margin:  0 calc(#{var(--dropOffsetX)} / 2) calc(#{var(--dropOffsetY)} / 2) 0;
     vertical-align: top;
     position: relative;
 
@@ -49,12 +52,17 @@ button {
     &.primary {
         --button-color: var(--primary);
         --button-drop: var(--primary-dk);
-        --button-text: var(--fourth);
+        --button-text: var(--base);
     }
 
     &.white {
         --button-color: var(--base);
         --button-drop: var(--neutral-dk);
         --button-text: var(--fourth);
+    }
+
+    &.small {
+        --button-height: auto;
+        --button-padding: var(--spacing-xs) var(--spacing-xl);
     }
 }

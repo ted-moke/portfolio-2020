@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nav msg="bar of dreams" v-on:triggerModal="setModal"></Nav>
+    <Nav v-if="currentRoute != '/'" v-on:triggerModal="setModal"></Nav>
     <Modal v-if="modalActive === 'contact'" ref="contact" name="contact" @close="setModal(null)">
       <template v-slot:modal-body>
         <p>
@@ -53,6 +53,7 @@
       </template>
     </Modal>
     <div v-if="modalActive" ref="overlay" class="overlay" v-on:click="closeModal"></div>
+    <button @click="$router.push('work')">test work</button>
   </div>
 </template>
 
@@ -68,14 +69,16 @@ export default {
   name: "globals",
   data: function() {
     return {
+      navActive: false,
       modalActive: null,
       overlayActive: false
     };
   },
-  components: {
-    Form,
-    Modal,
-    Nav
+  computed: {
+    currentRoute: function() {
+      console.log(this.$route.path);
+      return this.$route.path;
+    }
   },
   methods: {
     setModal(name) {
@@ -106,6 +109,11 @@ export default {
 
       gsap.to(overlay, {opacity: 0, duration: ROOT.TRANSITION_DURATION, ease: ROOT.TRANSITION_EASE})
     },
-  }
+  },
+  components: {
+    Form,
+    Modal,
+    Nav
+  },
 };
 </script>

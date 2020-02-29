@@ -1,25 +1,22 @@
 <template>
-  <nav class="nav">
-    <div class="nav-section">
+  <nav class="nav" v-bind:class="[padding ? 'no-fill' : '']" v-bind:style="{'background-color': getBgColor(this.$root.COLORS_GRAY[3])}">
+    <div class="nav-section" v-bind:style="{'padding': '0 ' + padding + 'vw'}">
       <Shutter
         horizontal
+        open
+        v-bind:padding="padding"
         v-bind:content="navContent"
         v-bind:colors="this.$root.COLORS_GRAY"
         @triggerModal="triggerModal(modalName)"
       >
-        <Button white clickEvent="triggerModal" @triggerModal="triggerModal('contact')">Contact</Button>
+        <Button primary small clickEvent="triggerModal" @triggerModal="triggerModal('contact')">Contact</Button>
       </Shutter>
-      <!-- <div class="link-container">
-          <router-link to="/">Home</router-link>
-          <router-link to="/work">work</router-link>
-          <router-link to="/demos">demos</router-link>
-          <Button white clickEvent="triggerModal" @triggerModal="triggerModal('contact')">Contact</Button>
-      </div>-->
     </div>
   </nav>
 </template>
 
 <script>
+import Color from 'color';
 import Button from "@/views/Components/Button";
 import Shutter from "@/views/Components/Shutter";
 
@@ -30,6 +27,7 @@ export default {
   },
   data: function() {
     return {
+      padding: 20,
       navContent: [
         {
           title: "Contact",
@@ -51,6 +49,9 @@ export default {
   methods: {
     triggerModal(modalName) {
       this.$emit("triggerModal", modalName);
+    },
+    getBgColor(color) {
+      return Color(color).alpha(0.5)
     }
   },
   components: {

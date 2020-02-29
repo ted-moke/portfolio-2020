@@ -13,9 +13,9 @@
         <label for="message">Message:</label>
         <textarea rows="4" id="message"></textarea>
       </div>
-      <a class="button primary" id="formSubmit">
-        <h4>Send</h4>
-      </a>
+        <Button primary>
+          Send
+        </Button>
     </form>
   </div>
 </template>

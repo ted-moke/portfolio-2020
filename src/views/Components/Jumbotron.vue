@@ -49,9 +49,11 @@
           style="font-size: 206.1366424560547px;fill: #0e1428;font-family: NunitoSans-Black, Nunito Sans;font-weight: 800"
         >MOKE</text>
       </svg>
+
+      <button @click="shutterOpen = !shutterOpen">Test</button>
     </div>
     <div class="jumbotron-content content-right">
-      <Shutter v-bind:content="shutterContent"></Shutter>
+      <Shutter v-bind:open="shutterOpen" v-bind:content="shutterContent"></Shutter>
     </div>
     <div class="scroll-prompt">
       <span>SCROLL TO</span>
@@ -82,7 +84,8 @@ export default {
         { job: "front-end" },
         { job: "interactive" }
       ],
-      currentDesc: 0
+      currentDesc: 0,
+      shutterOpen: false
     };
   },
   computed: {
