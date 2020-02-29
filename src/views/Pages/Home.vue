@@ -1,7 +1,13 @@
 <template>
-  <div class="page-wrapper idle">
-    <div class="page-container blur-bg">
-        <h1>Home</h1>
-    </div>
-  </div>
+  <Jumbotron></Jumbotron>
 </template>
+
+<script>
+import Jumbotron from '../Components/Jumbotron';
+
+export default {
+  components: {
+    Jumbotron
+  }
+};
+</script>

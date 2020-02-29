@@ -3,13 +3,14 @@ import App from './App.vue'
 import router from './router'
 
 // Fonts need to be called in js for webpack to see and copy over
-// import styles from './styles/main.scss';
+import styles from './styles/main.scss'; // eslint-disable-line no-unused-vars
 
 // // eslint-disable-next-line
-import NunitoBlack from './assets/fonts/NunitoSans-Black.ttf'; // eslint-disable-line no-unused-vars
-import NunitoXLight from './assets/fonts/NunitoSans-ExtraLight.ttf'; // eslint-disable-line no-unused-vars
+// import NunitoBlack from './assets/fonts/NunitoSans-Black.ttf'; // eslint-disable-line no-unused-vars
+// import NunitoXLight from './assets/fonts/NunitoSans-ExtraLight.ttf'; // eslint-disable-line no-unused-vars
 
-console.log(NunitoBlack, NunitoXLight);
+// console.log(NunitoBlack);
+// console.log(NunitoXLight);
 
 Vue.config.productionTip = false
 

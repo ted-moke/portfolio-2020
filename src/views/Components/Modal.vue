@@ -14,11 +14,6 @@ export default {
   props: {
     name: String
   },
-  data: function() {
-    return {
-      elPadding: Array
-    };
-  },
   computed: {
     tl: function() {
       let ROOT = this.$root;
