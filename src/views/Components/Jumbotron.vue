@@ -1,6 +1,5 @@
 <template>
   <div ref="jumbotron" class="jumbotron">
-    <canvas></canvas>
     <div class="jumbotron-content content-left">
       <svg class="logo logo-tedmoke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 717 527.47">
         <title>logo-block-old</title>
@@ -51,6 +50,7 @@
       </svg>
 
       <button @click="shutterOpen = !shutterOpen">Test</button>
+      <button @click="$router.push('work')" style="position: absolute;">test work</button>
     </div>
     <div class="jumbotron-content content-right">
       <Shutter v-bind:open="shutterOpen" v-bind:content="shutterContent"></Shutter>

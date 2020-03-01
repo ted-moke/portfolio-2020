@@ -5,14 +5,19 @@ import router from './router'
 // Fonts need to be called in js for webpack to see and copy over
 import styles from './styles/main.scss'; // eslint-disable-line no-unused-vars
 
-// // eslint-disable-next-line
-// import NunitoBlack from './assets/fonts/NunitoSans-Black.ttf'; // eslint-disable-line no-unused-vars
-// import NunitoXLight from './assets/fonts/NunitoSans-ExtraLight.ttf'; // eslint-disable-line no-unused-vars
-
-// console.log(NunitoBlack);
-// console.log(NunitoXLight);
-
 Vue.config.productionTip = false
+
+Vue.directive('scroll', {
+  inserted: function (el, binding) {
+    let f = function (evt) {
+      if (binding.value(evt, el)) {
+        window.removeEventListener('scroll', f);
+      }
+    };
+    window.addEventListener('scroll', f);
+  },
+});
+
 
 new Vue({
   data: {

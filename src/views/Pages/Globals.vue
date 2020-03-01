@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="globals">
     <Nav v-if="currentRoute != '/'" v-on:triggerModal="setModal"></Nav>
     <Modal v-if="modalActive === 'contact'" ref="contact" name="contact" @close="setModal(null)">
       <template v-slot:modal-body>
@@ -53,7 +53,6 @@
       </template>
     </Modal>
     <div v-if="modalActive" ref="overlay" class="overlay" v-on:click="closeModal"></div>
-    <button @click="$router.push('work')">test work</button>
   </div>
 </template>
 

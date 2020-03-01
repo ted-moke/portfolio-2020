@@ -1,8 +1,9 @@
 nav {
     position: fixed;
-    width: 100vw;
+    width: 0vw;
     z-index: 10;
     display: flex;
+    overflow: hidden;
 
     .social-link {
         height: 50px;

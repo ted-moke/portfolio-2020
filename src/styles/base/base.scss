@@ -1,6 +1,10 @@
 /* ======================================================================================
 // Base Styling
 // -------------------------------------------------------------------------------------- */
+html {
+  min-width: 100vw;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -56,6 +60,48 @@ canvas {
   top: 0;
   left: 0;
 }
+
+.divider {
+  width: 97.5%;
+  height: 1px;
+  background-color: var(--neutral);
+  margin: var(--spacing-lg) 0% var(--spacing-lg) 2.5%;
+}
+
+.full-page {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.page-wrapper {
+  background: var(--base);
+  position: relative;
+}
+
+.page-placeholder {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+// ::-webkit-scrollbar-track {
+//   background-color: transparent;
+//   // border-radius: 15px;
+// }
+
+// ::-webkit-scrollbar {
+//   width: 5px;
+//   background-color: transparent;
+//   // border-radius: 15px;
+//   // border: 1px solid rgba(255, 255, 255, 0.25);
+
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background-color: var(--fourth);
+//   backdrop-filter: invert(70%);
+//   border-radius: 15px;
+//   width:5px;
+// }
 
 @media screen and (min-width: var(--breakpoint-sm)) {
   section {

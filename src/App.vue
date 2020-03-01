@@ -1,7 +1,10 @@
 <template>
-  <div id="app" @click="handleClick">
+  <div ref="app" id="app" @click="handleClick" @scroll="handleScroll">
     <Globals></Globals>
-    <router-view></router-view>
+    <Jumbotron></Jumbotron>
+    <PageWrapper>
+      <router-view></router-view>
+    </PageWrapper>
   </div>
 </template>
 
@@ -13,30 +16,19 @@
 
 <script>
 // @ is an alias to /src
-import Globals from "@/views/Pages/Globals.vue"
+import Globals from "@/views/Pages/Globals.vue";
+import Jumbotron from "@/views/Components/Jumbotron.vue";
+import PageWrapper from "@/views/Pages/PageWrapper.vue";
 import Utils from "@/js/utils.js";
-
-// import router from "@/router";
-
-// // import { TimelineLite, Power3 } from "gsap";
-
-// router.beforeEach((to, from, next) => {
-
-//   console.log(to, from, next)
-// });
 
 export default {
   name: "app",
-  data: function() {
-    return {
-      navShown: false,
-    };
-  },
-  computed: {
-  },
   methods: {
     handleClick() {
       console.log('handling click')
+    },
+    handleScroll() {
+      console.log('scrolling')
     },
     navClick(item = 'some item') {
       console.log('Nav click: ', item)
@@ -45,19 +37,15 @@ export default {
       return Utils[func](...val);
     }
   },
-  mounted: function() {
-    this.$nextTick(function() {
-      // this.$router.push({ path: '/home' })
-    })
-  },
   watch: {
-    // $route(to) {
-    //   console.log('Routing', to)
-    // }
+    $route(to) {
+      console.log('Routing', to)
+    }
   },
   components: {
     Globals,
-    // Nav
+    Jumbotron,
+    PageWrapper
   }
 };
 </script>

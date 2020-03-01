@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav" v-bind:class="[padding ? 'no-fill' : '']" v-bind:style="{'background-color': getBgColor(this.$root.COLORS_GRAY[3])}">
+  <nav ref="nav" class="nav" v-bind:class="[padding ? 'no-fill' : '']" v-bind:style="{'background-color': getBgColor(this.$root.COLORS_GRAY[3])}">
     <div class="nav-section" v-bind:style="{'padding': '0 ' + padding + 'vw'}">
       <Shutter
         horizontal
@@ -17,6 +17,7 @@
 
 <script>
 import Color from 'color';
+import gsap from 'gsap';
 import Button from "@/views/Components/Button";
 import Shutter from "@/views/Components/Shutter";
 
@@ -45,6 +46,14 @@ export default {
         },
       ]
     };
+  },
+  computed: {
+    el: function() {
+      return this.$refs.nav
+    },
+  },
+  mounted: function(callback) {
+    gsap.to(this.el, {minWidth: '100vw', duration: .5, onComplete: ()=>{if (callback){callback()}}})
   },
   methods: {
     triggerModal(modalName) {
