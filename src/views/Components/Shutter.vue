@@ -4,6 +4,7 @@
       ref="slat"
       v-for="(piece, i) in content"
       v-bind:key="piece.title"
+      v-bind:title="piece.title"
       v-bind:content="piece.text"
       v-bind:link="piece.link"
       v-bind:open="open"
@@ -25,6 +26,7 @@ export default {
   props: {
     bottomExpands: Boolean,
     colors: Array,
+    gray: Boolean,
     content: Array,
     desc: Array,
     open:{
@@ -46,6 +48,9 @@ export default {
   },
   computed: {
     theColors() {
+      if (this.gray) {
+        return this.$root.COLORS_GRAY
+      }
       return this.colors || this.$root.COLORS
     },
     unit() {
@@ -69,14 +74,17 @@ export default {
       if (!this.bottomExpands) {
         return ((100 - this.padding * 2) / this.content.length) * (this.content.length - i - 1) + this.unit;
       } else {
-        return this.slatHeight + "px";
+        if (i === this.content.length - 1) {
+          return 0
+        }
+        return "calc(100% - " + this.slatHeight * (i - this.content.length + 3) + "px)";
       }
     },
     setSlatSize: function(i) {
       if (!this.bottomExpands) {
         return ((100 - this.padding * 2) / this.content.length) * (this.content.length - i) + this.unit;
       } else {
-        return "calc(100% - " + this.slatHeight * (this.content.length - i - 1) + "px)";
+        return "calc(100% - " + this.slatHeight * (i) + "px)";
       }
     },
     show: function(callback) {

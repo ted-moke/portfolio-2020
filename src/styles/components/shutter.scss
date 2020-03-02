@@ -4,8 +4,9 @@
 
 .shutter {
     position: relative;
-    height: 80vh;
-    max-height: 800px;
+    // height: 80vh;
+    height: 100%;
+    // max-height: 800px;
 
     &.horizontal {
         height: 50px;

@@ -19,7 +19,7 @@ Vue.directive('scroll', {
 });
 
 var eventHub = new Vue();
-// console.log(eventHub);
+
 
 new Vue({
   data: {

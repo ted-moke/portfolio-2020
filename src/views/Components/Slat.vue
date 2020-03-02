@@ -1,5 +1,5 @@
 <template>
-  <div ref="slat" class="slat" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color, [horizontal ? 'padding-left': 'padding-bottom']: this.margin }">
+  <div ref="slat" class="slat" v-bind:class="title" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color, [horizontal ? 'padding-left': 'padding-bottom']: this.margin }">
       <p>{{ content }}</p>
       <slot></slot>
   </div>
@@ -17,6 +17,7 @@ export default {
     margin: String,
     open: Boolean,
     size: String,
+    title: String
   },
   computed: {
     el: function() {
