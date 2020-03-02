@@ -18,13 +18,16 @@ Vue.directive('scroll', {
   },
 });
 
+var eventHub = new Vue();
+// console.log(eventHub);
 
 new Vue({
   data: {
     TRANSITION_DURATION: .35,
     TRANSITION_EASE: "power2.inOut",
     COLORS: ['#F48907', '#D95D39', '#575366', '#0E1428'],
-    COLORS_GRAY: ['#888', '#666', '#444', '#222']
+    COLORS_GRAY: ['#888', '#666', '#444', '#222'],
+    eventHub: eventHub,
   },
   router,
   render: h => h(App)

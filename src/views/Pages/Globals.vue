@@ -1,6 +1,7 @@
 <template>
   <div class="globals">
     <Nav v-if="currentRoute != '/'" v-on:triggerModal="setModal"></Nav>
+    <Prompt  v-if="this.$route.path === '/'"></Prompt>
     <Modal v-if="modalActive === 'contact'" ref="contact" name="contact" @close="setModal(null)">
       <template v-slot:modal-body>
         <p>
@@ -62,6 +63,7 @@ import gsap from 'gsap';
 // @ is an alias to /src
 import Nav from "@/views/Components/Nav.vue";
 import Form from "@/views/Components/Form.vue";
+import Prompt from "@/views/Components/Prompt.vue";
 import Modal from "@/views/Components/Modal.vue";
 
 export default {
@@ -112,7 +114,8 @@ export default {
   components: {
     Form,
     Modal,
-    Nav
+    Nav,
+    Prompt
   },
 };
 </script>

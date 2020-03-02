@@ -1,5 +1,5 @@
 <template>
-  <div class="page-wrapper idle" v-on:click="emitRoute">
+  <div class="page-wrapper idle">
     <div class="page-container blur-bg">
       <div class="header-container">
         <h1>Demos Page</h1>

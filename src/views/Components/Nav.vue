@@ -53,7 +53,17 @@ export default {
     },
   },
   mounted: function(callback) {
-    gsap.to(this.el, {minWidth: '100vw', duration: .5, onComplete: ()=>{if (callback){callback()}}})
+    let ROOT = this.$root;
+
+    gsap.to(this.el, {minWidth: '100vw', duration: .5, ease: ROOT.TRANSITION_EASE, onComplete: ()=>{if (callback){callback()}}})
+
+    ROOT.eventHub.$on('routing', ()=> {
+      let cb = ()=> {
+        ROOT.eventHub.$emit('transitionComplete', false)
+      }
+
+      gsap.to(this.el, {minWidth: '0vw', duration: .5, ease: ROOT.TRANSITION_EASE, onComplete: ()=>{if (cb){cb()}}})
+    })
   },
   methods: {
     triggerModal(modalName) {

@@ -1,0 +1,63 @@
+.prompt-wrapper {
+    height: 50px;
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    bottom: var(--spacing-md);
+}
+
+.prompt {
+    --arrow-width: 80px;
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    @include flex;
+    overflow: hidden;
+
+    span {
+        min-width: 150px;
+        color: var(--fourth);
+        font-size: var(--spacing-lg);
+
+        &:last-of-type {
+            color: var(--base);
+            text-align: right;
+        }
+    }
+}
+
+.icon {
+    &.arrow {
+        height: 40px;
+        width: 80px;
+
+        polygon {
+            fill: var(--primary);
+        }
+    }
+}
+
+.arrow-container {
+    .arrow {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+
+        &:first-child {
+            height: 16px;
+            width: auto;
+            bottom: 48px;
+        }
+
+        &:nth-child(2) {
+            height: 24px;
+            width: auto;
+            bottom: 28px;
+        }
+    }
+}

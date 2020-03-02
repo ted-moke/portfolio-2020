@@ -48,27 +48,9 @@
           style="font-size: 206.1366424560547px;fill: #0e1428;font-family: NunitoSans-Black, Nunito Sans;font-weight: 800"
         >MOKE</text>
       </svg>
-
-      <button @click="shutterOpen = !shutterOpen">Test</button>
-      <button @click="$router.push('work')" style="position: absolute;">test work</button>
     </div>
     <div class="jumbotron-content content-right">
       <Shutter v-bind:open="shutterOpen" v-bind:content="shutterContent"></Shutter>
-    </div>
-    <div class="scroll-prompt">
-      <span>SCROLL TO</span>
-      <svg class="icon arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 58.3">
-        <title>Asset 3</title>
-        <g id="Layer_2" data-name="Layer 2">
-          <g id="Content">
-            <polyline
-              style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 10px;"
-              points="5 5 75 53.3 145 5"
-            />
-          </g>
-        </g>
-      </svg>
-      <span>SEE WORK</span>
     </div>
   </div>
 </template>
@@ -85,7 +67,7 @@ export default {
         { job: "interactive" }
       ],
       currentDesc: 0,
-      shutterOpen: false
+      shutterOpen: true
     };
   },
   computed: {
