@@ -49,10 +49,18 @@ export default {
     return {
       fixed: Boolean,
       Slats: Array,
-      slatHeight: 120,
     };
   },
   computed: {
+    slatHeight() {
+      if (window.innerHeight < 860) {
+        return window.innerHeight / 12;
+      } else if (window.innerWidth < 1200) {
+        return 80;
+      } else {
+        return 100;
+      }
+    },  
     theColors() {
       if (this.gray) {
         return this.$root.COLORS_GRAY

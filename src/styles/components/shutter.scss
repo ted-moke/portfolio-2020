@@ -139,3 +139,47 @@
         line-height: 1;
     }
 }
+
+@media screen and (max-height: 860px) {
+    .slat {
+        p {
+            font-size: var(--spacing-lg);
+        }
+
+        &.client {
+            p {
+                font-size: var(--spacing-xl)
+            }
+        }
+    }
+
+    .slat-label {
+        width: 26px;
+        left: -26px;
+        label {
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-lg) {
+    .slat {
+        p {
+            // font-size: var(--spacing-lg);
+        }
+
+        &.client {
+            p {
+                // font-size: var(--spacing-xl)
+            }
+        }
+    }
+
+    .slat-label {
+        width: 26px;
+        left: -26px;
+        label {
+            font-size: 12px;
+        }
+    }
+}
