@@ -1,7 +1,7 @@
 <template>
   <div class="project-wrapper">
     <div class="shutter-wrapper">
-      <Shutter gray bottomExpands v-bind:open="shutterOpen" v-bind:content="projectContent.slats"></Shutter>
+      <Shutter gray bottomExpands label v-bind:open="shutterOpen" v-bind:content="projectContent.slats"></Shutter>
     </div>
     
     <div class="screencap-wrapper">

@@ -25,20 +25,24 @@ h1,h2,h3,h4,h5 {
 }
 
 h1 {
-    font-size: var(--spacing-xl);
+    font-size: var(--spacing-xxl);
 }
 
 h2 {
+    font-size: var(--spacing-xl);
+}
+
+h3 {
     font-size: var(--spacing-lg);
 }
 
-h3, label {
+label, h4,p {
     font-size: var(--spacing-md);
 }
 
-h4, p {
-    font-size: 12px;
-}
+// h4, p {
+//     font-size: 12px;
+// }
 
 @media screen and (min-width: var(--breakpoint-sm)) {
     h1 {

@@ -1,7 +1,10 @@
 <template>
   <!-- <div class="page-container page-work"> -->
     <section>
-    <ProjectWrapper v-bind:projectContent="projectContent"></ProjectWrapper>
+      <div class="section-header-container">
+        <h2 class="section-header">My Work</h2>
+      </div>
+      <ProjectWrapper v-bind:projectContent="projectContent"></ProjectWrapper>
 
     </section>
 </template>

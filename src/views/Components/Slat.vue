@@ -1,8 +1,11 @@
 <template>
-  <div ref="slat" class="slat" v-bind:class="[title, horizontal]" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color }">
+  <div @click="this.hide" ref="slat" class="slat" v-bind:class="[title, horizontal]" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color }">
     <div class="content-container" v-bind:style="{ [horizontal ? 'width': 'height']: contentSize, [horizontal ? 'right': 'top']: 0}">
       <p>{{ content }}</p>
       <slot></slot>
+    </div>
+    <div v-if="label" class="slat-label">
+      <label>{{title}}</label>
     </div>
   </div>
 </template>
@@ -16,6 +19,10 @@ export default {
     content: String,
     contentSize: String,
     horizontal: Boolean,
+    label: {
+      type: Boolean,
+      default: false
+    },
     link: String,
     open: Boolean,
     size: String,

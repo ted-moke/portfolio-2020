@@ -12,6 +12,7 @@
       v-bind:size="setSlatSize(i)"
       v-bind:contentSize="getSlatContentSize(i)"
       v-bind:horizontal="horizontal"
+      v-bind:label="label"
     >
       <slot v-if="piece.component"></slot>
     </Slat>
@@ -29,6 +30,10 @@ export default {
     gray: Boolean,
     content: Array,
     desc: Array,
+    label: {
+      type: Boolean,
+      default: false
+    },
     open:{
       type: Boolean,
       default: false

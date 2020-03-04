@@ -1,6 +1,7 @@
 /* ======================================================================================
 // Base Styling
 // -------------------------------------------------------------------------------------- */
+
 html {
   min-width: 100vw;
 }
@@ -29,19 +30,29 @@ section {
   padding: var(--spacing-lg);
   margin: auto;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.section-header-container {
+  height: 100%;
+  flex-grow: 1;
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .section-header {
-  text-align: center;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 0;
 }
 
 .project-wrapper {
   @include boxShadow;
   display: flex;
-  height: 80vh;
   width: 100%;
+  margin-left: 30px;
+  height: calc(80vh - 50px);
 
   .slat {
     .content-container {
@@ -96,21 +107,13 @@ canvas {
   min-height: 100vh;
 }
 
-@media screen and (min-width: var(--breakpoint-sm)) {
+@media screen and (min-width: $breakpoint-sm) {
   section {
       padding: var(--spacing-xl);
   }
-
-  .project-wrapper {
-    margin-bottom: 15vh;
-  }
-
-  .section-header {
-    margin-bottom: var(--spacing-xl);
-  }
 }
 
-@media screen and (min-width: var(--breakpoint-lg)) {
+@media screen and (min-width: $breakpoint-lg) {
   section {
     padding: var(--spacing-xxl);
   }

@@ -1,12 +1,12 @@
 <template>
-  <nav ref="nav" class="nav" v-bind:class="[padding ? 'no-fill' : '']" v-bind:style="{'background-color': getBgColor(this.$root.COLORS_GRAY[3])}">
+  <nav ref="nav" class="nav" v-bind:class="[padding ? 'no-fill' : '']" >
     <div class="nav-section" v-bind:style="{'padding': '0 ' + padding + 'vw'}">
       <Shutter
         horizontal
-        open
+        v-bind:open="open"
         v-bind:padding="padding"
         v-bind:content="navContent"
-        v-bind:colors="this.$root.COLORS_GRAY"
+        v-bind:colors="['#EDEDED']"
         @triggerModal="triggerModal(modalName)"
       >
         <Button primary small clickEvent="triggerModal" @triggerModal="triggerModal('contact')">Contact</Button>
@@ -23,11 +23,9 @@ import Shutter from "@/views/Components/Shutter";
 
 export default {
   name: "Nav",
-  props: {
-    msg: String
-  },
   data: function() {
     return {
+      open: true,
       padding: 20,
       navContent: [
         {
@@ -61,7 +59,7 @@ export default {
       let cb = ()=> {
         ROOT.eventHub.$emit('transitionComplete', false)
       }
-
+      // this.open = false;
       gsap.to(this.el, {minWidth: '0vw', duration: .5, ease: ROOT.TRANSITION_EASE, onComplete: ()=>{if (cb){cb()}}})
     })
   },
