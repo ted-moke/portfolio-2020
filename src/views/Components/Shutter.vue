@@ -13,8 +13,8 @@
       v-bind:contentSize="getSlatContentSize(i)"
       v-bind:horizontal="horizontal"
       v-bind:label="label"
+      v-bind:button="buttons"
     >
-      <slot v-if="piece.component"></slot>
     </Slat>
   </div>
 </template>
@@ -26,6 +26,7 @@ import gsap from 'gsap';
 export default {
   props: {
     bottomExpands: Boolean,
+    buttons: Boolean,
     colors: Array,
     gray: Boolean,
     content: Array,

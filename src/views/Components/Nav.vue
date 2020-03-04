@@ -2,15 +2,14 @@
   <nav ref="nav" class="nav" v-bind:class="[padding ? 'no-fill' : '']" >
     <div class="nav-section" v-bind:style="{'padding': '0 ' + padding + 'vw'}">
       <Shutter
+        buttons
         horizontal
         v-bind:open="open"
         v-bind:padding="padding"
         v-bind:content="navContent"
-        v-bind:colors="['#EDEDED']"
+        v-bind:colors="['#444']"
         @triggerModal="triggerModal(modalName)"
-      >
-        <Button primary small clickEvent="triggerModal" @triggerModal="triggerModal('contact')">Contact</Button>
-      </Shutter>
+      ></Shutter>
     </div>
   </nav>
 </template>
@@ -18,7 +17,6 @@
 <script>
 import Color from 'color';
 import gsap from 'gsap';
-import Button from "@/views/Components/Button";
 import Shutter from "@/views/Components/Shutter";
 
 export default {
@@ -30,12 +28,17 @@ export default {
       navContent: [
         {
           title: "Contact",
-          component: true
+          text: "Contact"
         },
         {
           title: "Work",
           text: "Work",
           link: "/work"
+        },
+        {
+          title: "Demos",
+          text: "Demos",
+          link: "/demos"
         },
         {
           title: "Home",
@@ -72,7 +75,6 @@ export default {
     }
   },
   components: {
-    Button,
     Shutter
   }
 };

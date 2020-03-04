@@ -1,8 +1,8 @@
 <template>
-  <div @click="this.hide" ref="slat" class="slat" v-bind:class="[title, horizontal]" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color }">
+  <div ref="slat" class="slat" v-bind:class="[title, horizontal]" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color }">
     <div class="content-container" v-bind:style="{ [horizontal ? 'width': 'height']: contentSize, [horizontal ? 'right': 'top']: 0}">
-      <p>{{ content }}</p>
-      <slot></slot>
+      <p v-if="!button">{{ content }}</p>
+      <Button v-if="button" v-bind:active="this.$route.name === content" small v-bind:white="content != 'Contact'" v-bind:primary="content === 'Contact'" clickEvent="triggerModal" @triggerModal="triggerModal('contact')">{{content}}</Button>
     </div>
     <div v-if="label" class="slat-label">
       <label>{{title}}</label>
@@ -12,9 +12,11 @@
 
 <script>
 import gsap from 'gsap';
+import Button from "../Components/Button";
 
 export default {
   props: {
+    button: Boolean,
     color: String,
     content: String,
     contentSize: String,
@@ -66,6 +68,9 @@ export default {
         this.hide();
       }
     }
+  },
+  components: {
+    Button
   }
 };
 </script>

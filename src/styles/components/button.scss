@@ -39,16 +39,6 @@ button {
         border-radius: var(--border-radius);
     }
 
-    &:active {
-        transform: translate(5px, 3px);
-        z-index: 2;
-
-        &::after {
-            top: 0;
-            left: 0;
-        }
-    }
-
     &.primary {
         --button-color: var(--primary);
         --button-drop: var(--primary-dk);
@@ -64,5 +54,17 @@ button {
     &.small {
         --button-height: auto;
         --button-padding: var(--spacing-xs) var(--spacing-xl);
+    }
+
+    &:active, &.active {
+        transform: translate(5px, 3px);
+        z-index: 2;
+        // --button-drop: var(--button-color);
+
+        &::after {
+            top: 0;
+            left: 0;
+            transform: translate(0px, 0px);
+        }
     }
 }
