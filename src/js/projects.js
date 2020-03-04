@@ -21,16 +21,32 @@ let data = {
               text: 'As one of two developers, I was responsible for developing the instructions, menu and shop user interfaces; a reusable virtual ‘trainer’ terminal; and the app’s sound design. Built in JavaScript for a browser frontend with a custom framework.',
             }
           ],
-          videoUrl: "https://www.stevensegallery.com/720/480",
+          video: "https://www.stevensegallery.com/720/480",
+          thumbnail: "https://www.stevensegallery.com/80/80"
       },
-      // stepCounter: {
-      //     id:'step-counter',
-      //     client: 'Pharma Clients',
-      //     project: 'Pressure Sensor Conference Gamified Experiences',
-      //     roles: [{name:'Lead Developer'}, {name:'Electrical Engineer'}],
-      //     description: "Interactive gamified and charity experiences built with: custom step sensors, Node.js backend, Chrome frontend, and Adruino physical computing. Utilized on displays up to 13’ video wall at international healthcare conference booths and company events. Built as sole developer and electrical technician. On-site installation and client support given.",
-      //     videoUrl: "https://www.stevensegallery.com/1000/600"
-      // }
+      stepCounter: {
+          id: 'step-counter',
+          slats: [
+            {
+              title: 'client',
+              text: 'Various'
+            },
+            {
+              title: 'project',
+              text: "Step Counter Game",
+            },
+            {
+              title: 'roles',
+              text: 'Lead Developer<br>Electrical Technician',
+            },
+            {
+              title: 'description',
+              text: 'Interactive gamified and charity experiences built with: custom step sensors, Node.js backend, Chrome frontend, and Adruino physical computing. Utilized on displays up to 13’ video wall at international healthcare conference booths and company events. Built as sole developer and electrical technician. On-site installation and client support given.',
+            }
+          ],
+          video: "https://www.stevensegallery.com/720/480",
+          thumbnail: "https://www.stevensegallery.com/g/80/80"
+      },
     }
 };
 

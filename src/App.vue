@@ -22,7 +22,7 @@
 import Globals from "@/views/Pages/Globals.vue";
 import Jumbotron from "@/views/Components/Jumbotron.vue";
 import PageWrapper from "@/views/Pages/PageWrapper.vue";
-import Utils from "@/js/utils.js";
+import Utils from "@/js/Utils.js";
 
 export default {
   name: "app",

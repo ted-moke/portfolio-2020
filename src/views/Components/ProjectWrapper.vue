@@ -5,7 +5,7 @@
     </div>
     
     <div class="screencap-wrapper">
-      <img v-bind:src="projectContent.videoUrl" class="screencap" />
+      <img v-bind:src="projectContent.video" class="screencap" />
     </div>
   </div>
 </template>
