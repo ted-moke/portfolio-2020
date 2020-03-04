@@ -51,6 +51,30 @@
         margin-bottom: 0;
     }
 
+    .content-container {
+        position: absolute;
+        width: 100%;
+        padding: var(--spacing-md);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shutter.horizontal & {
+        .content-container {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    .shutter.bottom-expands & {
+        &:last-child {
+            .content-container {
+                align-items: flex-start;
+            }
+        }
+    }
+
     &.client {
         p {
             font-size: var(--spacing-xxl);

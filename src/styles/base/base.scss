@@ -40,10 +40,14 @@ section {
 .project-wrapper {
   @include boxShadow;
   display: flex;
-  // margin-bottom: var(--spacing-lg);
-  // margin-left: 30px;
   height: 80vh;
   width: 100%;
+
+  .slat {
+    .content-container {
+      justify-content: flex-start;
+    }
+  }
 }
 
 .page-work {

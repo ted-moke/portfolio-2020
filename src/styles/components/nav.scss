@@ -31,6 +31,12 @@ nav {
         margin-left: 8px;
         margin-right: 8px;
     }
+
+    .slat {
+        .content-container {
+            padding: var(--spacing-sm);
+        }
+    }
 }
 
 .nav-section {

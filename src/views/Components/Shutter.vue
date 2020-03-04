@@ -1,5 +1,5 @@
 <template>
-  <div ref="shutter" class="shutter" v-bind:class="[{ 'horizontal': horizontal}, open ? '' : 'closed'] ">
+  <div ref="shutter" class="shutter" v-bind:class="[{ 'horizontal': horizontal}, { 'bottom-expands': bottomExpands}, open ? '' : 'closed'] ">
     <Slat
       ref="slat"
       v-for="(piece, i) in content"
@@ -10,7 +10,7 @@
       v-bind:open="open"
       v-bind:color="theColors[i]"
       v-bind:size="setSlatSize(i)"
-      v-bind:margin="getSlatMargin(i)"
+      v-bind:contentSize="getSlatContentSize(i)"
       v-bind:horizontal="horizontal"
     >
       <slot v-if="piece.component"></slot>
@@ -70,14 +70,15 @@ export default {
     this.shutter = this.$refs.shutter;
   },
   methods: {
-    getSlatMargin: function(i) {
+    getSlatContentSize(i) {
       if (!this.bottomExpands) {
-        return ((100 - this.padding * 2) / this.content.length) * (this.content.length - i - 1) + this.unit;
+        return ((100 - this.padding * 2) / this.content.length)+ this.unit
       } else {
         if (i === this.content.length - 1) {
-          return 0
+          return '100%';
+        } else {
+          return this.slatHeight + 'px';
         }
-        return "calc(100% - " + this.slatHeight * (i - this.content.length + 3) + "px)";
       }
     },
     setSlatSize: function(i) {

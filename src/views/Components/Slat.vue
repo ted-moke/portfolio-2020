@@ -1,7 +1,9 @@
 <template>
-  <div ref="slat" class="slat" v-bind:class="title" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color, [horizontal ? 'padding-left': 'padding-bottom']: this.margin }">
+  <div ref="slat" class="slat" v-bind:class="[title, horizontal]" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color }">
+    <div class="content-container" v-bind:style="{ [horizontal ? 'width': 'height']: contentSize, [horizontal ? 'right': 'top']: 0}">
       <p>{{ content }}</p>
       <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -12,9 +14,9 @@ export default {
   props: {
     color: String,
     content: String,
+    contentSize: String,
     horizontal: Boolean,
     link: String,
-    margin: String,
     open: Boolean,
     size: String,
     title: String
