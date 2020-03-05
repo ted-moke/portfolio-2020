@@ -2,9 +2,7 @@ TO DO
 Important
 * mobile nav
 * mobile layout
-* restructure to SPA
 * nav redesign
-* scroll detection
 * record/enter content
 * contact form functionality
 
@@ -13,6 +11,7 @@ Lesser
 * modal hide on click outside
 
 Nice to have
+* scroll detection
 * paint bucket color switcher
 * logo animation in
 * create dribble

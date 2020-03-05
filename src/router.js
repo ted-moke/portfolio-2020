@@ -19,7 +19,7 @@ const router = new Router({
     //   // component: Placeholder,
     // },
     {
-      path: '/work',
+      path: '/work/:project',
       name: 'Work',
       component: Work,
     },

@@ -44,7 +44,10 @@ export default {
     }
   },
   methods: {
-    show: function(callback) {
+    show: function() {
+      var callback = ()=>{
+        this.$emit('SHOW_COMPLETE')
+      }
       if (this.horizontal) {
         gsap.to(this.el, {x: '0%', duration: .5, onComplete: ()=>{if (callback){console.log(this.el); callback()}}})
       } else {
@@ -52,7 +55,10 @@ export default {
       }
     },
     
-    hide: function(callback) {
+    hide: function() {
+      var callback = ()=>{
+        this.$emit('HIDE_COMPLETE')
+      }
       if (this.horizontal) {
         gsap.to(this.el, {x: '-100%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
       } else {

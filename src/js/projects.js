@@ -2,7 +2,7 @@ let data = {
   order: ['nike', 'stepCounter'],
   list: {
       nike: {
-          id: 'train-n-play',
+          id: 'nike',
           slats: [
             {
               title: 'client',
@@ -25,7 +25,7 @@ let data = {
           thumbnail: "https://www.stevensegallery.com/80/80"
       },
       stepCounter: {
-          id: 'step-counter',
+          id: 'stepCounter',
           slats: [
             {
               title: 'client',
@@ -44,7 +44,7 @@ let data = {
               text: 'Interactive gamified and charity experiences built with: custom step sensors, Node.js backend, Chrome frontend, and Adruino physical computing. Utilized on displays up to 13’ video wall at international healthcare conference booths and company events. Built as sole developer and electrical technician. On-site installation and client support given.',
             }
           ],
-          video: "https://www.stevensegallery.com/720/480",
+          video: "https://www.stevensegallery.com/1020/800",
           thumbnail: "https://www.stevensegallery.com/g/80/80"
       },
     }

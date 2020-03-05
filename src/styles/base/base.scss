@@ -43,19 +43,6 @@ section {
   margin-bottom: 0;
 }
 
-.project-wrapper {
-  @include boxShadow;
-  display: flex;
-  width: 100%;
-  height: calc(85vh - 50px);
-
-  .slat {
-    .content-container {
-      justify-content: flex-start;
-    }
-  }
-}
-
 .project-nav {
   --project-padding: var(--spacing-md);
   position: absolute;

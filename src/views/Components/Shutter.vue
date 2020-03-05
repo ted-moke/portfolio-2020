@@ -14,6 +14,7 @@
       v-bind:horizontal="horizontal"
       v-bind:label="label"
       v-bind:button="buttons"
+      @HIDE_COMPLETE="ON_HIDE_COMPLETE(i)"
     >
     </Slat>
   </div>
@@ -52,6 +53,9 @@ export default {
     };
   },
   computed: {
+    lastContentIdx() {
+      return this.content.length - 1;
+    },
     slatHeight() {
       if (window.innerHeight < 860) {
         return window.innerHeight / 12;
@@ -102,19 +106,21 @@ export default {
         return "calc(100% - " + this.slatHeight * (i) + "px)";
       }
     },
-    show: function(callback) {
+    show: function() {
+      var callback = ()=>{
+        this.$emit('SHOW_COMPLETE');
+        }
       gsap.to(this.shutter, {height: '100%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
     },
-    hide: function(callback) {
+    hide: function() {
+      var callback = ()=>{
+        this.$emit('HIDE_COMPLETE');
+        }
       gsap.to(this.shutter, {height: '0%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
-    }
-  },
-  watch: {
-    open: function(newVal) {
-      if (newVal) {
-        this.show();
-      } else {
-        this.hide();
+    },
+    ON_HIDE_COMPLETE: function(i) {
+      if (i === this.lastContentIdx) {
+        this.$emit('HIDE_COMPLETE')
       }
     }
   },

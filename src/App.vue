@@ -24,6 +24,8 @@ import Jumbotron from "@/views/Components/Jumbotron.vue";
 import PageWrapper from "@/views/Pages/PageWrapper.vue";
 import Utils from "@/js/Utils.js";
 
+import PROJECT_DATA from '@/js/projects.js';
+
 export default {
   name: "app",
   data: function() {
@@ -52,6 +54,10 @@ export default {
         return;
       });
 
+      // eventHub.$on("projectReady", () => {
+        
+      // })
+
       if (to.path === "/") {
         eventHub.$emit("routing", true);
         return;
@@ -75,7 +81,7 @@ export default {
       }
 
       if (window.scrollY > this.windowHeight / 2 && this.$route.path === "/") {
-        this.$router.push("/work");
+        this.$router.push("/work/" + PROJECT_DATA.order[0]);
       } else if (
         window.scrollY < this.windowHeight / 2 &&
         this.$route.path === "/work"
