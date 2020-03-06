@@ -7,14 +7,12 @@
       v-bind:title="piece.title"
       v-bind:content="piece.text"
       v-bind:link="piece.link"
-      v-bind:open="open"
       v-bind:color="theColors[i]"
       v-bind:size="setSlatSize(i)"
       v-bind:contentSize="getSlatContentSize(i)"
       v-bind:horizontal="horizontal"
       v-bind:label="label"
       v-bind:button="buttons"
-      @HIDE_COMPLETE="ON_HIDE_COMPLETE(i)"
     >
     </Slat>
   </div>
@@ -56,8 +54,15 @@ export default {
     lastContentIdx() {
       return this.content.length - 1;
     },
+    SHUTTER_STAGGER_ADJ() {
+      if (this.bottomExpands) {
+        return this.$root.SHUTTER_STAGGER
+      } else {
+        return this.$root.SHUTTER_STAGGER * 2
+      }
+    },
     slatHeight() {
-      if (window.innerHeight < 860) {
+      if (window.innerHeight < 768) {
         return window.innerHeight / 12;
       } else if (window.innerWidth < 1200) {
         return 80;
@@ -86,6 +91,8 @@ export default {
   mounted() {
     this.Slats = this.$refs.slat;
     this.shutter = this.$refs.shutter;
+
+    this.toggleSlats(this.open, this.$root.SHUTTER_PAUSE)
   },
   methods: {
     getSlatContentSize(i) {
@@ -97,6 +104,23 @@ export default {
         } else {
           return this.slatHeight + 'px';
         }
+      }
+    },
+    toggleSlats(toShow, pauseAfter) {
+      for (let i in this.Slats) {
+        window.setTimeout(()=> {
+          this.Slats[i].toggle();
+
+          if (i == this.Slats.length - 1) {
+            if (toShow) {
+              console.log('firing OSH');
+              window.setTimeout(this.ON_SHOW_COMPLETE, pauseAfter)
+              } else {
+                console.log('firing OHC');
+              window.setTimeout(this.ON_HIDE_COMPLETE, pauseAfter)
+            }
+          }
+        }, i * this.$root.TRANSITION_DURATION * this.SHUTTER_STAGGER_ADJ)
       }
     },
     setSlatSize: function(i) {
@@ -118,10 +142,17 @@ export default {
         }
       gsap.to(this.shutter, {height: '0%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
     },
-    ON_HIDE_COMPLETE: function(i) {
-      if (i === this.lastContentIdx) {
+    ON_HIDE_COMPLETE: function() {
+      console.log('firing on hide');
         this.$emit('HIDE_COMPLETE')
-      }
+    },
+    ON_SHOW_COMPLETE: function() {
+
+    }
+  },
+  watch: {
+    open: function() {
+      this.toggleSlats(this.open, this.$root.SHUTTER_PAUSE);
     }
   },
   components: {

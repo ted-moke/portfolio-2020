@@ -45,10 +45,8 @@ export default {
     var eventHub = this.$root.eventHub;
     console.log(this);
     this.$router.beforeEach((to, from, next) => {
-      this.isRouting = true;
       
       eventHub.$on("transitionComplete", () => {
-        console.log(this);
         this.isRouting = false;
         next();
         return;
@@ -76,16 +74,17 @@ export default {
     },
     handleScroll() {
       if (this.isRouting) {
+        console.log('handling sroll');
         console.log("already routing");
         return;
       }
 
+
       if (window.scrollY > this.windowHeight / 2 && this.$route.path === "/") {
+        this.isRouting = true;
         this.$router.push("/work/" + PROJECT_DATA.order[0]);
-      } else if (
-        window.scrollY < this.windowHeight / 2 &&
-        this.$route.path === "/work"
-      ) {
+      } else if (window.scrollY < this.windowHeight / 2 && this.$route.path != "/") {
+        this.isRouting = true;
         this.$router.push("/");
       }
     },

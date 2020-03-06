@@ -26,22 +26,18 @@ export default {
       default: false
     },
     link: String,
-    open: Boolean,
     size: String,
     title: String
+  },
+  data: function() {
+    return {
+      open: false
+    }
   },
   computed: {
     el: function() {
       return this.$refs.slat
     },
-  },
-  mounted: function() {
-    console.log(this.open);
-    if (this.open) {
-      this.show()
-    } else {
-      this.hide();
-    }
   },
   methods: {
     show: function() {
@@ -49,9 +45,9 @@ export default {
         this.$emit('SHOW_COMPLETE')
       }
       if (this.horizontal) {
-        gsap.to(this.el, {x: '0%', duration: .5, onComplete: ()=>{if (callback){console.log(this.el); callback()}}})
+        gsap.to(this.el, {x: '0%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
       } else {
-        gsap.to(this.el, {y: '0%', duration: .5, onComplete: ()=>{if (callback){console.log(this.el); callback()}}})
+        gsap.to(this.el, {y: '0%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
       }
     },
     
@@ -64,16 +60,17 @@ export default {
       } else {
         gsap.to(this.el, {y: '100%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
       }
-    }
-  },
-  watch: {
-    open: function(newVal) {
-      if (newVal) {
+    },
+    toggle: function() {
+      this.open = !this.open;
+
+      if (this.open) {
         this.show();
       } else {
         this.hide();
       }
     }
+
   },
   components: {
     Button

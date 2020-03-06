@@ -12,11 +12,9 @@
         ></Shutter>
       </div>
 
-      <FeatureWrapper
-        v-bind:content="showcaseContent"
-        ></FeatureWrapper>
+      <FeatureWrapper v-bind:open="shutterOpen" v-bind:content="showcaseContent"></FeatureWrapper>
     </div>
-    <ShowcaseNav v-bind:content="showcaseContent" @routeShowcase="routeShowcase(theRoute, e)"></ShowcaseNav>
+    <ShowcaseNav v-bind:content="showcaseContent"></ShowcaseNav>
   </div>
 </template>
 
@@ -32,7 +30,7 @@ export default {
       currentShowcaseId: PROJECT_DATA.order[0],
       nextShowcaseId: null,
       shutterOpen: true
-    };
+    }
   },
   computed: {
     showcaseContent: function() {
@@ -52,9 +50,6 @@ export default {
     });
   },
   methods: {
-    routeShowcase: function(theRoute, e) {
-      console.log(theRoute, e);
-    },
     ON_SHUTTER_CLOSE: function() {
       console.log("shutter close");
       if (this.nextShowcaseId) {
@@ -69,10 +64,10 @@ export default {
     ShowcaseNav,
     Shutter
   },
-  watch: {
-    shutterOpen: function() {
+  // watch: {
+  //   shutterOpen: function() {
 
-    }
-  }
+  //   }
+  // }
 };
 </script>

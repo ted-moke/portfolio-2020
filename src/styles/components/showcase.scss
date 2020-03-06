@@ -1,6 +1,8 @@
 .showcase-wrapper {
-  padding-left: var(--spacing-xl);
-  padding-top: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: calc(var(--spacing-xl) * -1);
+  margin-top: calc(var(--spacing-md) * -1);
+  // margin: calc(var(--spacing-md) * -1) calc(var(--spacing-md) * -1) calc(var(--spacing-) * -1)
   overflow: hidden;
 }
 
@@ -9,7 +11,7 @@
   background: var(--gray-3);
   display: flex;
   width: 100%;
-  height: calc(85vh - 50px);
+  height: calc(80vh - 50px);
 
   .slat {
     .content-container {
@@ -20,4 +22,5 @@
 
 .feature-wrapper {
   background: var(--base);
+  overflow: hidden;
 }

@@ -21,11 +21,6 @@ export default {
       return PROJECT_DATA;
     }
   },
-  // methods: {
-  //   EMIT_ROUTE: function(route) {
-  //     this.$emit(route);
-  //   }
-  // },
   components: {
     Chapter
   }

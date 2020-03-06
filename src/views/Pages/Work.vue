@@ -1,11 +1,12 @@
 <template>
-  <!-- <div class="page-container page-work"> -->
-    <section>
+  <transition name="turn">
+    <section v-show="shown" ref="el">
       <div class="section-header-container">
         <h2 class="section-header">My Work</h2>
       </div>
       <ShowcaseWrapper></ShowcaseWrapper>
     </section>
+  </transition>
 </template>
 
 
@@ -13,8 +14,21 @@
 import ShowcaseWrapper from "@/views/Components/ShowcaseWrapper";
 
 export default {
-  components: {
-    ShowcaseWrapper,
+  data: function() {
+    return {
+      shown: false
+    };
   },
+  computed: {
+    el: function() {
+      return this.$refs.el;
+    }
+  },
+  mounted: function() {
+    this.shown = true;
+  },
+  components: {
+    ShowcaseWrapper
+  }
 };
 </script>
