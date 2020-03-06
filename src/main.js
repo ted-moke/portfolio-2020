@@ -30,6 +30,7 @@ new Vue({
     TRANSITION_DURATION: .35, // s
     SHUTTER_PAUSE: 250, // ms
     SHUTTER_STAGGER: 250, // ms
+    ANGLE_TOLERANCE: 40,
     TRANSITION_EASE: "power2.inOut",
     COLORS: ['#F48907', '#D95D39', '#575366', '#0E1428'],
     COLORS_GRAY: ['#888', '#666', '#444', '#222'],

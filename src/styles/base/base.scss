@@ -90,12 +90,12 @@ canvas {
 
 @media screen and (min-width: $breakpoint-sm) {
   section {
-      padding: var(--spacing-xl) calc(var(--feature-preview-width) + var(--spacing-lg)) var(--spacing-xl) calc(var(--spacing-xl) * 2);
+      padding: var(--spacing-xl) calc(var(--feature-preview-width_with-pad) + var(--spacing-lg)) var(--spacing-xl) calc(var(--spacing-xl) * 2);
   }
 }
 
 @media screen and (min-width: $breakpoint-lg) {
   section {
-    padding: var(--spacing-xxl) calc(var(--feature-preview-width) + var(--spacing-lg)) var(--spacing-xxl) calc(var(--spacing-xxl) * 2);
+    padding: var(--spacing-xxl) calc(var(--feature-preview-width_with-pad) + var(--spacing-lg)) var(--spacing-xxl) calc(var(--spacing-xxl) * 2);
   }
 }

@@ -36,8 +36,6 @@ $breakpoint-lg: 1200px;
   --spacing-xl: 32px;
   --spacing-xxl: 48px;
 
-  --feature-preview-width: 100px;
-
   --transitionDur: 0.25s;
 
   --dropOffsetX: 5px;
@@ -46,11 +44,11 @@ $breakpoint-lg: 1200px;
   --border-radius: var(--spacing-xxl);
 
   @media screen and (min-width: $breakpoint-lg) {
-    --feature-preview-width: 124px;
+    --feature-preview-width_with-pad: 124px;
   }
 
   @media screen and (max-width: $breakpoint-md) {
-    --feature-preview-width: 0px;
+    --feature-preview-width_with-pad: 0px;
   }
 
   --bezier: cubic-bezier(0.42, 0, 0.58, 1);

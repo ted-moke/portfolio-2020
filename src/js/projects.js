@@ -22,7 +22,7 @@ let data = {
             }
           ],
           video: "https://www.stevensegallery.com/720/480",
-          thumbnail: "https://www.stevensegallery.com/80/80"
+          thumbnail: "https://www.stevensegallery.com/84/84"
       },
       stepCounter: {
           id: 'stepCounter',
@@ -45,7 +45,7 @@ let data = {
             }
           ],
           video: "https://www.stevensegallery.com/1020/800",
-          thumbnail: "https://www.stevensegallery.com/80/80"
+          thumbnail: "https://www.stevensegallery.com/84/84"
       },
       quizWebApp: {
           id: 'quizWebApp',
@@ -68,7 +68,7 @@ let data = {
             }
           ],
           video: "https://www.stevensegallery.com/1020/800",
-          thumbnail: "https://www.stevensegallery.com/80/80"
+          thumbnail: "https://www.stevensegallery.com/84/84"
       },
     }
 };

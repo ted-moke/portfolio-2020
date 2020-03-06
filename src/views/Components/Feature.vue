@@ -1,10 +1,14 @@
 <template>
   <div class="feature-preview" @click="routeProject">
-    <img v-bind:src="featurePreviewContent.thumbnail" />
+    <Cube chip>
+      <img v-bind:src="featurePreviewContent.thumbnail" />
+    </Cube>
   </div>
 </template>
 
 <script>
+
+import Cube from '@/views/Components/Cube.vue';
 
 export default {
   props: {
@@ -14,6 +18,9 @@ export default {
     routeProject: function() {
       this.$root.eventHub.$emit('route-showcase', this.featurePreviewContent.id)
     }
+  },
+  components: {
+    Cube
   }
 }
 
