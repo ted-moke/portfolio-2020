@@ -35,7 +35,8 @@ new Vue({
     COLORS_GRAY: ['#888', '#666', '#444', '#222'],
     eventHub: eventHub,
     store: {
-      currentShowcaseId: PROJECT_DATA.order[0]
+      currentShowcaseId: PROJECT_DATA.order[0],
+      routingToShowcase: null
     }
   },
   router,

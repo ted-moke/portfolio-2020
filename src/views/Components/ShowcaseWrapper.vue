@@ -48,6 +48,8 @@ export default {
 
       this.shutterOpen = false;
       this.nextShowcaseId = showcaseRoute;
+      this.$root.store.routingToShowcase = showcaseRoute;
+
       return;
     });
 
@@ -70,10 +72,5 @@ export default {
     ShowcaseNav,
     Shutter
   },
-  // watch: {
-  //   shutterOpen: function() {
-
-  //   }
-  // }
 };
 </script>

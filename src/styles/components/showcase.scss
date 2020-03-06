@@ -20,6 +20,29 @@
   }
 }
 
+.showcase-nav {
+  --project-padding: var(--spacing-md);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(var(--feature-preview-width) - var(--project-padding));
+  padding-right: var(--project-padding);
+}
+
+.feature-preview {
+  filter: grayscale(100%);
+  transition: filter .25s var(--bezier), transform  .25s var(--bezier);
+
+  &.active {
+    filter: grayscale(0%);
+  }
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
 .feature-wrapper {
   background: var(--base);
   overflow: hidden;

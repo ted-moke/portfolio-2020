@@ -42,16 +42,6 @@ section {
   margin-bottom: 0;
 }
 
-.project-nav {
-  --project-padding: var(--spacing-md);
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: calc(var(--chapter-width) - var(--project-padding));
-  padding-right: var(--project-padding);
-}
-
 .page-work {
   padding-top: 10vh;
 }
@@ -100,12 +90,12 @@ canvas {
 
 @media screen and (min-width: $breakpoint-sm) {
   section {
-      padding: var(--spacing-xl) calc(var(--chapter-width) + var(--spacing-lg)) var(--spacing-xl) calc(var(--spacing-xl) * 2);
+      padding: var(--spacing-xl) calc(var(--feature-preview-width) + var(--spacing-lg)) var(--spacing-xl) calc(var(--spacing-xl) * 2);
   }
 }
 
 @media screen and (min-width: $breakpoint-lg) {
   section {
-    padding: var(--spacing-xxl) calc(var(--chapter-width) + var(--spacing-lg)) var(--spacing-xxl) calc(var(--spacing-xxl) * 2);
+    padding: var(--spacing-xxl) calc(var(--feature-preview-width) + var(--spacing-lg)) var(--spacing-xxl) calc(var(--spacing-xxl) * 2);
   }
 }

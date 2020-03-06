@@ -36,7 +36,7 @@ $breakpoint-lg: 1200px;
   --spacing-xl: 32px;
   --spacing-xxl: 48px;
 
-  --chapter-width: 100px;
+  --feature-preview-width: 100px;
 
   --transitionDur: 0.25s;
 
@@ -46,11 +46,11 @@ $breakpoint-lg: 1200px;
   --border-radius: var(--spacing-xxl);
 
   @media screen and (min-width: $breakpoint-lg) {
-    --chapter-width: 124px;
+    --feature-preview-width: 124px;
   }
 
   @media screen and (max-width: $breakpoint-md) {
-    --chapter-width: 0px;
+    --feature-preview-width: 0px;
   }
 
   --bezier: cubic-bezier(0.42, 0, 0.58, 1);
