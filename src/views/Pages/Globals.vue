@@ -77,7 +77,6 @@ export default {
   },
   computed: {
     currentRoute: function() {
-      console.log(this.$route.path);
       return this.$route.path;
     }
   },

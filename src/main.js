@@ -4,6 +4,7 @@ import router from './router'
 
 // Fonts need to be called in js for webpack to see and copy over
 import styles from './styles/main.scss'; // eslint-disable-line no-unused-vars
+import PROJECT_DATA from '@/js/projects.js';
 // import Utils from "@/js/Utils.js";
 import { throttle } from 'lodash';
 
@@ -33,6 +34,9 @@ new Vue({
     COLORS: ['#F48907', '#D95D39', '#575366', '#0E1428'],
     COLORS_GRAY: ['#888', '#666', '#444', '#222'],
     eventHub: eventHub,
+    store: {
+      currentShowcaseId: PROJECT_DATA.order[0]
+    }
   },
   router,
   render: h => h(App)

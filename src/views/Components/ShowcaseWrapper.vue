@@ -1,5 +1,5 @@
 <template>
-  <div class="showcase-wrapper">
+  <div class="showcase-wrapper" v-if="showcaseContent">
     <div class="showcase-container">
       <div class="shutter-wrapper">
         <Shutter
@@ -27,12 +27,14 @@ import Shutter from "@/views/Components/Shutter.vue";
 export default {
   data: function() {
     return {
-      currentShowcaseId: PROJECT_DATA.order[0],
       nextShowcaseId: null,
       shutterOpen: true
     }
   },
   computed: {
+    currentShowcaseId: function() {
+      return this.$root.store.currentShowcaseId;
+    },
     showcaseContent: function() {
       return PROJECT_DATA.list[this.currentShowcaseId];
     }
@@ -48,12 +50,16 @@ export default {
       this.nextShowcaseId = showcaseRoute;
       return;
     });
+
+    this.$root.eventHub.$on("currentShowcaseId-update", ()=>{
+      this.currentShowcaseId = this.$root.store.currentShowcaseId;
+    }) 
   },
   methods: {
     ON_SHUTTER_CLOSE: function() {
-      console.log("shutter close");
       if (this.nextShowcaseId) {
-        this.currentShowcaseId = this.nextShowcaseId;
+        this.$root.store.currentShowcaseId = this.nextShowcaseId;
+        
         this.shutterOpen = true;
         this.$router.push("/work/" + this.currentShowcaseId);
       }

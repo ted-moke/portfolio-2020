@@ -45,7 +45,30 @@ let data = {
             }
           ],
           video: "https://www.stevensegallery.com/1020/800",
-          thumbnail: "https://www.stevensegallery.com/g/80/80"
+          thumbnail: "https://www.stevensegallery.com/80/80"
+      },
+      quizWebApp: {
+          id: 'quizWebApp',
+          slats: [
+            {
+              title: 'client',
+              text: 'Lifescience Co'
+            },
+            {
+              title: 'project',
+              text: "Quiz Platform",
+            },
+            {
+              title: 'roles',
+              text: 'Sole Developer',
+            },
+            {
+              title: 'description',
+              text: 'A quiz webapp built in a custom JavaScript framework and PHP/MySQL backend for worldwide lifescience conferences and events. The scalable game allows for easy quiz management and weighting of questions. A leaderboard updates live to encourage competition.',
+            }
+          ],
+          video: "https://www.stevensegallery.com/1020/800",
+          thumbnail: "https://www.stevensegallery.com/80/80"
       },
     }
 };

@@ -1,5 +1,9 @@
 <template>
-  <div ref="shutter" class="shutter" v-bind:class="[{ 'horizontal': horizontal}, { 'bottom-expands': bottomExpands}, open ? '' : 'closed'] ">
+  <div
+    ref="shutter"
+    class="shutter"
+    v-bind:class="[{ 'horizontal': horizontal}, { 'bottom-expands': bottomExpands}, open ? '' : 'closed'] "
+  >
     <Slat
       ref="slat"
       v-for="(piece, i) in content"
@@ -13,14 +17,13 @@
       v-bind:horizontal="horizontal"
       v-bind:label="label"
       v-bind:button="buttons"
-    >
-    </Slat>
+    ></Slat>
   </div>
 </template>
 
 <script>
 import Slat from "../Components/Slat";
-import gsap from 'gsap';
+import gsap from "gsap";
 
 export default {
   props: {
@@ -34,7 +37,7 @@ export default {
       type: Boolean,
       default: false
     },
-    open:{
+    open: {
       type: Boolean,
       default: false
     },
@@ -47,7 +50,7 @@ export default {
   data: function() {
     return {
       fixed: Boolean,
-      Slats: Array,
+      Slats: Array
     };
   },
   computed: {
@@ -56,9 +59,9 @@ export default {
     },
     SHUTTER_STAGGER_ADJ() {
       if (this.bottomExpands) {
-        return this.$root.SHUTTER_STAGGER
+        return this.$root.SHUTTER_STAGGER;
       } else {
-        return this.$root.SHUTTER_STAGGER * 2
+        return this.$root.SHUTTER_STAGGER * 2;
       }
     },
     slatHeight() {
@@ -69,22 +72,22 @@ export default {
       } else {
         return 100;
       }
-    },  
+    },
     theColors() {
       if (this.gray) {
-        return this.$root.COLORS_GRAY
+        return this.$root.COLORS_GRAY;
       }
-      return this.colors || this.$root.COLORS
+      return this.colors || this.$root.COLORS;
     },
     unit() {
       if (this.fixed) {
         if (this.horizontal) {
-          return 'vw'
+          return "vw";
         } else {
-          return 'vh'
+          return "vh";
         }
       } else {
-        return '%'
+        return "%";
       }
     }
   },
@@ -92,63 +95,78 @@ export default {
     this.Slats = this.$refs.slat;
     this.shutter = this.$refs.shutter;
 
-    this.toggleSlats(this.open, this.$root.SHUTTER_PAUSE)
+    this.toggleSlats(this.open, this.$root.SHUTTER_PAUSE);
   },
   methods: {
     getSlatContentSize(i) {
       if (!this.bottomExpands) {
-        return ((100 - this.padding * 2) / this.content.length)+ this.unit
+        return (100 - this.padding * 2) / this.content.length + this.unit;
       } else {
         if (i === this.content.length - 1) {
-          return '100%';
+          return "100%";
         } else {
-          return this.slatHeight + 'px';
+          return this.slatHeight + "px";
         }
       }
     },
     toggleSlats(toShow, pauseAfter) {
       for (let i in this.Slats) {
-        window.setTimeout(()=> {
+        window.setTimeout(() => {
           this.Slats[i].toggle();
 
           if (i == this.Slats.length - 1) {
             if (toShow) {
-              console.log('firing OSH');
-              window.setTimeout(this.ON_SHOW_COMPLETE, pauseAfter)
-              } else {
-                console.log('firing OHC');
-              window.setTimeout(this.ON_HIDE_COMPLETE, pauseAfter)
+              window.setTimeout(this.ON_SHOW_COMPLETE, pauseAfter);
+            } else {
+              window.setTimeout(this.ON_HIDE_COMPLETE, pauseAfter);
             }
           }
-        }, i * this.$root.TRANSITION_DURATION * this.SHUTTER_STAGGER_ADJ)
+        }, i * this.$root.TRANSITION_DURATION * this.SHUTTER_STAGGER_ADJ);
       }
     },
     setSlatSize: function(i) {
       if (!this.bottomExpands) {
-        return ((100 - this.padding * 2) / this.content.length) * (this.content.length - i) + this.unit;
+        return (
+          ((100 - this.padding * 2) / this.content.length) *
+            (this.content.length - i) +
+          this.unit
+        );
       } else {
-        return "calc(100% - " + this.slatHeight * (i) + "px)";
+        return "calc(100% - " + this.slatHeight * i + "px)";
       }
     },
     show: function() {
-      var callback = ()=>{
-        this.$emit('SHOW_COMPLETE');
+      var callback = () => {
+        this.$emit("SHOW_COMPLETE");
+      };
+      gsap.to(this.shutter, {
+        height: "100%",
+        duration: 0.5,
+        onComplete: () => {
+          if (callback) {
+            callback();
+          }
         }
-      gsap.to(this.shutter, {height: '100%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
+      });
     },
     hide: function() {
-      var callback = ()=>{
-        this.$emit('HIDE_COMPLETE');
+      var callback = () => {
+        this.$emit("HIDE_COMPLETE");
+      };
+      gsap.to(this.shutter, {
+        height: "0%",
+        duration: 0.5,
+        onComplete: () => {
+          if (callback) {
+            callback();
+          }
         }
-      gsap.to(this.shutter, {height: '0%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
+      });
     },
     ON_HIDE_COMPLETE: function() {
-      console.log('firing on hide');
-        this.$emit('HIDE_COMPLETE')
+      this.$emit("HIDE_COMPLETE");
     },
-    ON_SHOW_COMPLETE: function() {
-
-    }
+    ON_SHOW_COMPLETE: function() {}
   },
   watch: {
     open: function() {
