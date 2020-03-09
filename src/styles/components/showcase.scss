@@ -29,7 +29,7 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: calc(var(--feature-preview-width_with-pad) - var(--project-padding));
+  // width: calc(var(--feature-preview-width_with-pad) - var(--project-padding));
   display: flex;
   flex-direction: column;
 }
@@ -48,7 +48,7 @@
     transition: filter .25s var(--bezier), transform  .25s var(--bezier);
   }
 
-  .cube {
+  .chip {
     height: var(--feature-preview-width);
     width: var(--feature-preview-width);
   }

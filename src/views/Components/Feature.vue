@@ -1,14 +1,14 @@
 <template>
   <div class="feature-preview" @click="routeProject">
-    <Cube chip>
+    <Chip chip>
       <img v-bind:src="featurePreviewContent.thumbnail" />
-    </Cube>
+    </Chip>
   </div>
 </template>
 
 <script>
 
-import Cube from '@/views/Components/Cube.vue';
+import Chip from '@/views/Components/Chip.vue';
 
 export default {
   props: {
@@ -20,7 +20,7 @@ export default {
     }
   },
   components: {
-    Cube
+    Chip
   }
 }
 
