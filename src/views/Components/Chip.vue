@@ -16,7 +16,12 @@
 </template>
 
 <script>
+import gsap from 'gsap';
+
 export default {
+  props: {
+      id: String
+  },
   data: function() {
     return {
       ACCEL: 0.005,
@@ -33,18 +38,23 @@ export default {
     };
   },
   mounted: function() {
-
-    
     this.chip = this.$refs.chip;
     this.chipContainer = this.$refs.chipContainer;
     this.chipWrapper = this.$refs.chipWrapper;
+
+    this.$root.eventHub.$on('route-showcase', ()=>{
+      if (this.$root.store.routingToShowcase === this.id) {
+        gsap.set(this.chipContainer, {scale: 1.25 });
+        gsap.to(this.chipContainer, { scale: 1, ease: "back.in(4)", duration: 0.5 })
+      }
+    })
   },
   methods: {
-    ON_MOUSE_OVER: function(e) {
+    ON_MOUSE_OVER: function() {
       this.box = this.chipWrapper.getBoundingClientRect();
-      console.log("on over!", e.target.id);
+
       if (!this.hovered) {
-        this.chipContainer.style.transform = "scale(1.3)";
+        this.chipContainer.style.transform = "scale(1.25)";
         this.hovered = true;
       }
     },

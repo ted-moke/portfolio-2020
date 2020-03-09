@@ -1,13 +1,12 @@
 <template>
   <div class="feature-preview" @click="routeProject">
-    <Chip chip>
+    <Chip chip v-bind:id="featurePreviewContent.id">
       <img v-bind:src="featurePreviewContent.thumbnail" />
     </Chip>
   </div>
 </template>
 
 <script>
-
 import Chip from '@/views/Components/Chip.vue';
 
 export default {
@@ -16,7 +15,7 @@ export default {
   },
   methods: {
     routeProject: function() {
-      this.$root.eventHub.$emit('route-showcase', this.featurePreviewContent.id)
+      this.$root.eventHub.$emit('route-showcase', this.featurePreviewContent.id);
     }
   },
   components: {

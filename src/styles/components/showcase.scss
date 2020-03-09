@@ -24,28 +24,34 @@
   --project-padding: var(--spacing-md);
   --feature-preview-width_with-pad: 100px;
   --feature-preview-width: calc(var(--feature-preview-width_with-pad) - var(--project-padding));
-  
+
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  // width: calc(var(--feature-preview-width_with-pad) - var(--project-padding));
   display: flex;
   flex-direction: column;
+  margin-right: var(--spacing-lg);
+  background-color: var(--neutral);
+  padding: var(--spacing-sm);
+}
+
+.showcase-nav-label {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'NunitoSans-Black', serif;
 }
 
 .feature-preview {
-  flex: calc(var(--feature-preview-width) + var(--spacing-lg));
-  
   &.active {
     img {
       filter: grayscale(0%);
     }
   }
-  
+
   img {
     filter: grayscale(100%);
-    transition: filter .25s var(--bezier), transform  .25s var(--bezier);
+    transition: filter .25s var(--bezier), transform .25s var(--bezier);
   }
 
   .chip {

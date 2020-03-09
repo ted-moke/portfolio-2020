@@ -1,5 +1,6 @@
 <template>
   <div class="showcase-nav">
+    <p class="showcase-nav-label">Projects</p>
     <Feature 
       v-for="(piece, i) in projectData.list"
       v-bind:key="piece.id"

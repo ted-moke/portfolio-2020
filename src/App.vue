@@ -41,6 +41,14 @@ export default {
     console.log("Application Build: ", new Date().toLocaleString());
     var eventHub = this.$root.eventHub;
 
+    if (this.$route.params.project) {
+      this.$root.store.currentShowcaseId = this.$route.params.project;
+      this.$root.store.routingToShowcase = this.$route.params.project;
+      } else {
+      this.$root.store.currentShowcaseId = PROJECT_DATA.order[0];
+      this.$root.store.routingToShowcase = PROJECT_DATA.order[0];
+    }
+
     this.$router.beforeEach((to, from, next) => {
       eventHub.$on("transitionComplete", () => {
         this.isRouting = false;
@@ -66,7 +74,7 @@ export default {
 
       if (window.scrollY > this.windowHeight / 2 && this.$route.path === "/") {
         this.isRouting = true;
-        this.$router.push("/work/" + PROJECT_DATA.order[0]);
+        this.$router.push("/work/" + this.$root.store.routingToShowcase);
       } else if (
         window.scrollY < this.windowHeight / 2 &&
         this.$route.path != "/"
