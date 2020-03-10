@@ -4,7 +4,8 @@
       <Chip
       v-for="(item) of navContent"
       v-bind:key="item.title"
-      v-bind:color="[$route.path.indexOf(item.title.toLowerCase()) > 0 ? $root.COLORS[0] : $root.COLORS_GRAY[2]]">
+      v-bind:color="[$route.path.indexOf(item.title.toLowerCase()) > 0 ? $root.COLORS[0] : $root.COLORS_GRAY[2]]"
+      @clicked="ON_CLICK(item.title)">
         <p>{{item.text}}</p>
       </Chip>
     </div>
@@ -24,21 +25,16 @@ export default {
       padding: 20,
       navContent: [
         {
-          title: "Contact",
+          title: "contact",
           text: "Contact"
         },
         {
-          title: "Work",
+          title: "work",
           text: "Work",
           link: "/work"
         },
-        // {
-        //   title: "Demos",
-        //   text: "Demos",
-        //   link: "/demos"
-        // },
         {
-          title: "Home",
+          title: "home",
           text: "Home",
           link: "/"
         },
@@ -71,6 +67,18 @@ export default {
     },
     getBgColor(color) {
       return Color(color).alpha(0.5)
+    },
+    ON_CLICK(id) {
+      if (id === 'home') {
+        this.$router.push("/");
+      } else if (id === 'contact') {
+        // this.$router.push("/" + id);
+      } else if (id === 'work') {
+        this.$router.push("/" + id + '/' + this.$root.store.currenShowcaseId);
+      } else {
+        this.$router.push("/" + id);
+      }
+      
     }
   },
   components: {
