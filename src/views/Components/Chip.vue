@@ -1,12 +1,12 @@
 <template>
   <div ref="chipWrapper" class="chip-wrapper" @mousemove="ON_MOUSE_MOVE" @mouseleave="ON_MOUSE_LEAVE" @mouseover="ON_MOUSE_OVER">
     <div ref="chipContainer" class="chip-container">
-      <div ref="chip" class="chip">
-        <div class="side back"></div>
-        <div class="side left"></div>
-        <div class="side right"></div>
-        <div class="side top"></div>
-        <div class="side bottom"></div>
+      <div ref="chip" class="chip" v-bind:style="{'background': color}">
+        <div v-bind:style="{'background-color': sideColor}" class="side back"></div>
+        <div v-bind:style="{'background-color': sideColor}" class="side left"></div>
+        <div v-bind:style="{'background-color': sideColor}" class="side right"></div>
+        <div v-bind:style="{'background-color': sideColor}" class="side top"></div>
+        <div v-bind:style="{'background-color': sideColor}" class="side bottom"></div>
         <div class="side front">
           <slot></slot>
         </div>
@@ -17,10 +17,15 @@
 
 <script>
 import gsap from 'gsap';
+import Color from 'color';
 
 export default {
   props: {
-      id: String
+    color: {
+      type: Array,
+      default: function(){return [this.$root.COLORS[1]]}
+    },
+    id: String
   },
   data: function() {
     return {
@@ -37,7 +42,14 @@ export default {
       animReq: null
     };
   },
+  computed: {
+    sideColor: function() {
+      return Color(this.color[0]).darken(0.2);
+    }
+  },
   mounted: function() {
+
+    console.log(this.color);
     this.chip = this.$refs.chip;
     this.chipContainer = this.$refs.chipContainer;
     this.chipWrapper = this.$refs.chipWrapper;

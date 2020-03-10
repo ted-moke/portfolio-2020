@@ -1,6 +1,6 @@
 <template>
   <div class="feature-preview" @click="routeProject">
-    <Chip chip v-bind:id="featurePreviewContent.id">
+    <Chip v-bind:id="featurePreviewContent.id">
       <img v-bind:src="featurePreviewContent.thumbnail" />
     </Chip>
   </div>

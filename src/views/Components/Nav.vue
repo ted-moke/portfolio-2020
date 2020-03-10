@@ -1,23 +1,20 @@
 <template>
   <nav ref="nav" class="nav" v-bind:class="[padding ? 'no-fill' : '']" >
-    <div class="nav-section" v-bind:style="{'padding': `0  ${padding}vw`}">
-      <Shutter
-        buttons
-        horizontal
-        v-bind:open="open"
-        v-bind:padding="padding"
-        v-bind:content="navContent"
-        v-bind:colors="['#444']"
-        @triggerModal="triggerModal(modalName)"
-      ></Shutter>
+    <div class="nav-section" v-bind:style="{'padding-left': `${padding}vw`, 'padding-right': `${padding}vw`}">
+      <Chip
+      v-for="(item) of navContent"
+      v-bind:key="item.title"
+      v-bind:color="[$route.path.indexOf(item.title.toLowerCase()) > 0 ? $root.COLORS[0] : $root.COLORS_GRAY[2]]">
+        <p>{{item.text}}</p>
+      </Chip>
     </div>
   </nav>
 </template>
 
 <script>
+import Chip from '@/views/Components/Chip.vue';
 import Color from 'color';
 import gsap from 'gsap';
-import Shutter from "@/views/Components/Shutter";
 
 export default {
   name: "Nav",
@@ -35,11 +32,11 @@ export default {
           text: "Work",
           link: "/work"
         },
-        {
-          title: "Demos",
-          text: "Demos",
-          link: "/demos"
-        },
+        // {
+        //   title: "Demos",
+        //   text: "Demos",
+        //   link: "/demos"
+        // },
         {
           title: "Home",
           text: "Home",
@@ -55,6 +52,8 @@ export default {
   },
   mounted: function(callback) {
     let ROOT = this.$root;
+
+    console.log(this.$route.path);
 
     gsap.to(this.el, {minWidth: '100vw', duration: .5, ease: ROOT.TRANSITION_EASE, onComplete: ()=>{if (callback){callback()}}})
 
@@ -75,7 +74,7 @@ export default {
     }
   },
   components: {
-    Shutter
+    Chip,
   }
 };
 </script>

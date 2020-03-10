@@ -5,7 +5,7 @@ nav {
     display: flex;
     overflow-x: hidden;
     height: 52px;
-    background: var(--gray-3);
+    background: var(--gray-4);
 
     .social-link {
         height: 50px;
@@ -47,7 +47,11 @@ nav {
 
 .nav-section {
     width: 100vw;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     transition: background-color 0.35 ease-in-out;
+    padding-top: var(--spacing-sm);
 }
 
 .nav-left {

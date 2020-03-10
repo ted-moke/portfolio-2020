@@ -8,7 +8,8 @@
           label
           v-bind:open="shutterOpen"
           v-bind:content="showcaseContent.slats"
-          @HIDE_COMPLETE="ON_SHUTTER_CLOSE()"
+          @SHOW_COMPLETE="ON_SHUTTER_SHOW()"
+          @HIDE_COMPLETE="ON_SHUTTER_HIDE()"
         ></Shutter>
       </div>
 
@@ -58,13 +59,16 @@ export default {
     }) 
   },
   methods: {
-    ON_SHUTTER_CLOSE: function() {
+    ON_SHUTTER_HIDE: function() {
       if (this.nextShowcaseId) {
         this.$root.store.currentShowcaseId = this.nextShowcaseId;
         
         this.shutterOpen = true;
         this.$router.push("/work/" + this.currentShowcaseId);
       }
+    },
+    ON_SHUTTER_SHOW: function() {
+      this.$root.eventHub.$emit('showcase-in')
     }
   },
   components: {
