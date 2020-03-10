@@ -50,7 +50,11 @@
       </svg>
     </div>
     <div class="jumbotron-content content-right">
-      <Shutter v-bind:open="shutterOpen" v-bind:content="shutterContent"></Shutter>
+      <Shutter
+        v-bind:open="shutterOpen"
+        v-bind:content="shutterContent"
+        @SHOW_COMPLETE="ON_SHUTTER_OPEN"
+      ></Shutter>
     </div>
   </div>
 </template>
@@ -67,7 +71,7 @@ export default {
         { job: "interactive" }
       ],
       currentDesc: 0,
-      shutterOpen: true
+      shutterOpen: false
     };
   },
   computed: {
@@ -93,6 +97,14 @@ export default {
           text: ""
         }
       ];
+    }
+  },
+  mounted: function() {
+    this.shutterOpen = true;
+  },
+  methods: {
+    ON_SHUTTER_OPEN: function() {
+      this.$root.eventHub.$emit("bounce-arrows");
     }
   },
   components: {

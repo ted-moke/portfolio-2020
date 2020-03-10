@@ -43,6 +43,10 @@ $breakpoint-lg: 1200px;
 
   --border-radius: var(--spacing-xxl);
 
+  .border {
+    border-radius: var(--spacing-xxl);
+  }
+
   @media screen and (min-width: $breakpoint-lg) {
     --feature-preview-width_with-pad: 124px;
   }

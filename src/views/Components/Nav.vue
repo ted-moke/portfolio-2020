@@ -1,6 +1,6 @@
 <template>
   <nav ref="nav" class="nav" v-bind:class="[padding ? 'no-fill' : '']" >
-    <div class="nav-section" v-bind:style="{'padding': '0 ' + padding + 'vw'}">
+    <div class="nav-section" v-bind:style="{'padding': `0  ${padding}vw`}">
       <Shutter
         buttons
         horizontal

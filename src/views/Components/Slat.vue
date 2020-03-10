@@ -3,9 +3,9 @@
     <div class="content-container" v-bind:style="{ [horizontal ? 'width': 'height']: contentSize, [horizontal ? 'right': 'top']: 0}">
       <p v-if="!button">{{ content }}</p>
       <Button v-if="button" v-bind:active="this.$route.name === content" small v-bind:white="content != 'Contact'" v-bind:primary="content === 'Contact'" clickEvent="triggerModal" @triggerModal="triggerModal('contact')">{{content}}</Button>
-    </div>
-    <div v-if="label" class="slat-label">
-      <label>{{title}}</label>
+      <div v-if="label" class="slat-label">
+        <label>{{title}}</label>
+      </div>
     </div>
   </div>
 </template>

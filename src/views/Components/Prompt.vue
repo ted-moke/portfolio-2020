@@ -1,18 +1,45 @@
 <template>
+<transition name="slide-down">
   <div class="prompt-wrapper">
-    <div class="prompt arrow-container">
-      <svg class="icon arrow arrow-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357 280.5">
-        <title>icon-arrow-full</title>
-        <polygon points="357 0 0 0 178.5 280.5 357 0" />
-      </svg>
-      <svg class="icon arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306 188.7">
-        <title>expand-button</title>
-        <polygon points="270.3 0 153 117.3 35.7 0 0 35.7 153 188.7 306 35.7 270.3 0" />
-      </svg>
-      <svg class="icon arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306 188.7">
-        <title>expand-button</title>
-        <polygon points="270.3 0 153 117.3 35.7 0 0 35.7 153 188.7 306 35.7 270.3 0" />
-      </svg>
+    <div ref="promptContainer" class="prompt arrow-container">
+      <Arrow ref="promptArrow"></Arrow>
+      <Arrow ref="promptArrow"></Arrow>
+      <Arrow ref="promptArrow"></Arrow>
     </div>
   </div>
+</transition>
 </template>
+
+<script>
+import Arrow from './Arrow';
+import gsap from 'gsap';
+
+export default {
+  mounted: function() {
+    let container = this.$refs.promptContainer;
+    let arrows = container.children;
+
+    this.entryTl = gsap.timeline({defaults: {duration: 0.25}});
+    this.entryTl.fromTo(arrows, { y: 100 }, { y: -20, ease: "power4.out", stagger: .1 });
+    this.entryTl.to(arrows, { y: 0, ease: "bounce.out", stagger: .1 }, "-=.25");
+
+
+    this.bounceTl = gsap.timeline({defaults: {duration: 0.25}});
+    this.bounceTl.pause();
+    this.bounceTl.to(arrows, { y: -20, ease: "power4.out", stagger: .1 });
+    this.bounceTl.to(arrows, { y: 0, ease: "bounce.out", stagger: .1 }, "-=.25");
+
+    this.$root.eventHub.$on('bounce-arrows', this.bounce);
+    
+  },
+  methods: {
+    bounce: function() {
+        this.bounceTl.play();
+    }
+  },
+  components: {
+    Arrow
+  }
+}
+
+</script>

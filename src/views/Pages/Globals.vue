@@ -1,7 +1,7 @@
 <template>
   <div class="globals">
     <Nav v-if="currentRoute != '/'" v-on:triggerModal="setModal"></Nav>
-    <Prompt  v-if="this.$route.path === '/'"></Prompt>
+    <Prompt  v-show="this.$route.path === '/'"></Prompt>
     <Modal v-if="modalActive === 'contact'" ref="contact" name="contact" @close="setModal(null)">
       <template v-slot:modal-body>
         <p>

@@ -95,7 +95,9 @@ export default {
     this.Slats = this.$refs.slat;
     this.shutter = this.$refs.shutter;
 
-    this.toggleSlats(this.open, this.$root.SHUTTER_PAUSE);
+    if (this.open) {
+      this.toggleSlats(this.open, this.$root.SHUTTER_PAUSE);
+    }
   },
   methods: {
     getSlatContentSize(i) {
@@ -166,7 +168,9 @@ export default {
     ON_HIDE_COMPLETE: function() {
       this.$emit("HIDE_COMPLETE");
     },
-    ON_SHOW_COMPLETE: function() {}
+    ON_SHOW_COMPLETE: function() {
+      this.$emit("SHOW_COMPLETE");
+    }
   },
   watch: {
     open: function() {

@@ -45,7 +45,7 @@ export default {
     this.$root.eventHub.$on('route-showcase', ()=>{
       if (this.$root.store.routingToShowcase === this.id) {
         gsap.set(this.chipContainer, {scale: 1.25 });
-        gsap.to(this.chipContainer, { scale: 1, ease: "back.in(4)", duration: 0.5 })
+        gsap.to(this.chipContainer, { scale: 1, ease: "back.in(10)", duration: 0.5 })
       }
     })
   },
