@@ -20,6 +20,18 @@ Vue.directive('scroll', {
   },
 });
 
+Vue.directive('resize', {
+  inserted: function (el, binding) {
+    let f = function (evt) {
+      if (binding.value(evt, el)) {
+        window.removeEventListener('resize', f);
+      }
+    };
+
+    window.addEventListener('resize', throttle(f, 16, { trailing: false, leading: true }));
+  },
+});
+
 var eventHub = new Vue();
 
 
@@ -35,7 +47,10 @@ new Vue({
     eventHub: eventHub,
     store: {
       currentShowcaseId: null,
-      routingToShowcase: null
+      routingToShowcase: null,
+      clientInfo: {
+        isDesktop: null,
+      }
     }
   },
   router,

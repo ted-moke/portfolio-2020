@@ -25,26 +25,26 @@ h1,h2,h3,h4,h5 {
 }
 
 h1 {
-    font-size: var(--spacing-xxl);
-}
-
-h2 {
     font-size: var(--spacing-xl);
 }
 
-h3 {
+h2 {
     font-size: var(--spacing-lg);
 }
 
-label, h4,p {
+h3 {
     font-size: var(--spacing-md);
+}
+
+label, h4,p {
+    font-size: var(--spacing-sm);
 }
 
 // h4, p {
 //     font-size: 12px;
 // }
 
-@media screen and (min-width: var(--breakpoint-sm)) {
+@media screen and (min-width: $breakpoint-md) {
     h1 {
         font-size: var(--spacing-xxl);
     }

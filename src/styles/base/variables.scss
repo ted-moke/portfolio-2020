@@ -1,9 +1,12 @@
 /* ======================================================================================
 // Sass Variables
 // -------------------------------------------------------------------------------------- */
-$breakpoint-sm: 768px;
-$breakpoint-md: 1024px;
-$breakpoint-lg: 1200px;
+$breakpoint-sm: 769px;
+$breakpoint-sm-max: 768px;
+$breakpoint-md: 1025px;
+$breakpoint-md-max: 1024px;
+$breakpoint-lg: 1201px;
+$breakpoint-lg-max: 1200px;
 
 :root {
 
@@ -24,9 +27,12 @@ $breakpoint-lg: 1200px;
   --gray-3: #666;
   --gray-4: #888;
 
-  --breakpoint-lg: 1200px;
-  --breakpoint-md: 1024px;
-  --breakpoint-sm: 768px;
+  --breakpoint-lg: 1201px;
+  --breakpoint-lg-max: 1200px;
+  --breakpoint-md: 993px;
+  --breakpoint-md-max: 992px;
+  --breakpoint-sm: 769px;
+  --breakpoint-sm-max: 768px;
   
 
   --spacing-xs: 4px;
@@ -35,6 +41,7 @@ $breakpoint-lg: 1200px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
   --spacing-xxl: 48px;
+  --spacing-xxxl: 64px;
 
   --transitionDur: 0.25s;
 
@@ -51,7 +58,7 @@ $breakpoint-lg: 1200px;
     --feature-preview-width_with-pad: 124px;
   }
 
-  @media screen and (max-width: $breakpoint-md) {
+  @media screen and (max-width: $breakpoint-md-max) {
     --feature-preview-width_with-pad: 0px;
   }
 

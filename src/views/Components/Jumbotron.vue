@@ -53,6 +53,7 @@
       <Shutter
         v-bind:open="shutterOpen"
         v-bind:content="shutterContent"
+        v-bind:percentMobile="mobileShutterHeight"
         @SHOW_COMPLETE="ON_SHUTTER_OPEN"
       ></Shutter>
     </div>
@@ -71,7 +72,8 @@ export default {
         { job: "interactive" }
       ],
       currentDesc: 0,
-      shutterOpen: false
+      shutterOpen: false,
+      mobileShutterHeight: 50
     };
   },
   computed: {

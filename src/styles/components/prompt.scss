@@ -8,7 +8,7 @@
 }
 
 .prompt {
-    --arrow-width: 80px;
+    --arrow-width: 60px;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -30,8 +30,8 @@
 
 .icon {
     &.arrow {
-        height: 40px;
-        width: 80px;
+        height: calc(var(--arrow-width) / 2);
+        width: var(--arrow-width);
 
         path {
             fill: var(--secondary);
@@ -43,4 +43,10 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+    .prompt {
+        --arrow-width: 80px;
+    }
 }

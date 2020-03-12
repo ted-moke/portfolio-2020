@@ -87,7 +87,36 @@
         }
     }
 
+    
+}
+@media screen and (max-width: $breakpoint-md-max) {
+    .jumbotron {
+        padding: 0;
+        flex-direction: column;
 
+        .slat {
+            width: 100vw;
+            padding-left: 0;
+            font-size: calc((13vw + 10vh) / 2.5);
+
+            .content-container {
+                justify-content: center;
+            }
+
+            &:last-child {
+                width: 100vw;
+            }
+        }
+
+        .content-left {
+            padding-left: 15vw;
+        }
+
+    }
+
+    .jumbotron-content {
+        flex-basis: 50%;
+    }
 }
 
 #text-ted {

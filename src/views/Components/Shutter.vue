@@ -45,6 +45,14 @@ export default {
       type: Number,
       default: 0
     },
+    percentMobile: {
+      type: Number,
+      default: 100
+    },
+    percentDesktop: {
+      type: Number,
+      default: 100
+    },
     horizontal: Boolean
   },
   data: function() {
@@ -54,6 +62,14 @@ export default {
     };
   },
   computed: {
+    shutterHeightBasePercentage() {
+      console.log('store imobil', this.$root.store.clientInfo.isDesktop);
+      if (this.$root.store.clientInfo.isDesktop) {
+        return this.percentDesktop;
+      } else {
+        return this.percentMobile
+      }
+    },
     lastContentIdx() {
       return this.content.length - 1;
     },
@@ -102,7 +118,7 @@ export default {
   methods: {
     getSlatContentSize(i) {
       if (!this.bottomExpands) {
-        return (100 - this.padding * 2) / this.content.length + this.unit;
+        return (this.shutterHeightBasePercentage - this.padding * 2) / this.content.length + this.unit;
       } else {
         if (i === this.content.length - 1) {
           return "100%";
@@ -129,7 +145,7 @@ export default {
     setSlatSize: function(i) {
       if (!this.bottomExpands) {
         return (
-          ((100 - this.padding * 2) / this.content.length) *
+          ((this.shutterHeightBasePercentage - this.padding * 2) / this.content.length) *
             (this.content.length - i) +
           this.unit
         );

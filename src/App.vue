@@ -1,5 +1,5 @@
 <template>
-  <div ref="app" id="app" v-scroll="ON_SCROLL">
+  <div ref="app" id="app" v-scroll="ON_SCROLL" v-resize="ON_RESIZE">
     <Globals></Globals>
     <Jumbotron></Jumbotron>
     <PageWrapper>
@@ -15,6 +15,8 @@
 </style>
 
 <script>
+// import VueScrollTo from 'vue-scrollto';
+
 import Globals from "@/views/Pages/Globals.vue";
 import Jumbotron from "@/views/Components/Jumbotron.vue";
 import PageWrapper from "@/views/Pages/PageWrapper.vue";
@@ -44,10 +46,12 @@ export default {
     if (this.$route.params.project) {
       this.$root.store.currentShowcaseId = this.$route.params.project;
       this.$root.store.routingToShowcase = this.$route.params.project;
-      } else {
+    } else {
       this.$root.store.currentShowcaseId = PROJECT_DATA.order[0];
       this.$root.store.routingToShowcase = PROJECT_DATA.order[0];
     }
+
+    this.checkClientInfo();
 
     this.$router.beforeEach((to, from, next) => {
       eventHub.$on("transitionComplete", () => {
@@ -58,6 +62,7 @@ export default {
 
       if (to.path === "/") {
         eventHub.$emit("routing", true);
+        // VueScrollTo.scrollTo('body', 250);
         return;
       } else {
         this.isRouting = false;
@@ -81,6 +86,22 @@ export default {
       ) {
         this.isRouting = true;
         this.$router.push("/");
+      }
+    },
+    ON_RESIZE() {
+      this.checkClientInfo();
+    },
+    checkClientInfo() {
+      let box = this.$refs.app.getBoundingClientRect();
+      
+      if (box.width > 992 && this.$root.store.clientInfo.isDesktop != true) {
+        this.$root.store.clientInfo.isDesktop = true;
+        console.log('mob');
+        this.$root.eventHub.$emit("client-change");
+      } else if (box.width <= 992 && this.$root.store.clientInfo.isDesktop != false) {
+        this.$root.store.clientInfo.isDesktop = false;
+        console.log('desk');
+        this.$root.eventHub.$emit("client-change");
       }
     },
     utils(func, ...val) {

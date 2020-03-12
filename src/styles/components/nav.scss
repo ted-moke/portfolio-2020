@@ -101,3 +101,9 @@ nav {
         stroke: white;
     }
 }
+
+@media screen and (max-width: $breakpoint-md-max) {
+    nav {
+        display: none;
+    }
+}
