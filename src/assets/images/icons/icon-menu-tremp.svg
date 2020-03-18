@@ -1,0 +1,23 @@
+<svg class="icon icon-menu" xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1091.99 658.01">
+  <defs>
+    <style>.cls-2{clip-path:url(#icon-menu-clip-path);}</style>
+    <clipPath id="icon-menu-clip-path" transform="translate(0 0.54)">
+      <circle id="circle" class="cls-1" cx="835.99" cy="256" r="256"/>
+    </clipPath>
+  </defs>
+  <title>icon-menu-colors</title>
+  <g id="Capa_1" data-name="Capa 1">
+    <path id="line" d="M234.67,657.47H21.33a21.34,21.34,0,0,1,0-42.67H234.67a21.34,21.34,0,0,1,0,42.67Z" transform="translate(0 0.54)"/>
+    <path id="line-2" data-name="line" d="M234.67,572.13H21.33a21.33,21.33,0,1,1,0-42.66H234.67a21.33,21.33,0,1,1,0,42.66Z" transform="translate(0 0.54)"/>
+    <path id="line-3" data-name="line" d="M234.67,486.8H21.33a21.34,21.34,0,0,1,0-42.67H234.67a21.34,21.34,0,0,1,0,42.67Z" transform="translate(0 0.54)"/>
+  </g>
+  <g id="Layer_2" data-name="Layer 2">
+    <g class="cls-2">
+      <rect class="cls-3" x="579.99" width="512" height="143.52"/>
+      <rect class="cls-4" x="579.99" y="128" width="512" height="156.92"/>
+      <rect class="cls-5" x="579.99" y="256" width="512" height="143.93"/>
+      <rect class="cls-6" x="579.99" y="384" width="512" height="128"/>
+    </g>
+  </g>
+</svg>

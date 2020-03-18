@@ -1,6 +1,6 @@
 <template>
-  <button v-on:click="emitEvent" v-bind:class="[white ? 'white' : '', primary ? 'primary' : '', small ? 'small': '', active ? 'active': '' ]">
-    <h4><slot></slot></h4>
+  <button v-on:click="emitEvent" v-bind:class="[white ? 'white' : '', primary ? 'primary' : '', fourth ? 'fourth': '', small ? 'small': '', active ? 'active': '', circle ? 'circle': '' ]">
+   <slot></slot>
   </button>
 </template>
 
@@ -12,17 +12,16 @@ export default {
     active: Boolean,
     clickEvent: String,
     primary: Boolean,
+    fourth: Boolean,
     small: Boolean,
     white: Boolean,
+    circle: Boolean
   },
   methods: {
-    emitEvent(e) {
+    emitEvent() {
       if (!this.clickEvent) return;
-      let eTarget = e.target;
-      if (!eTarget.id) {
-        eTarget = eTarget.closest('button')
-      }
-      this.$emit(this.clickEvent, eTarget);
+      
+      this.$root.eventHub.$emit(this.clickEvent);
     }
   }
 };

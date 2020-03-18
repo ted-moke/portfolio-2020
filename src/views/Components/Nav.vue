@@ -62,9 +62,6 @@ export default {
     })
   },
   methods: {
-    triggerModal(modalName) {
-      this.$emit("triggerModal", modalName);
-    },
     getBgColor(color) {
       return Color(color).alpha(0.5)
     },

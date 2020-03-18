@@ -14,7 +14,7 @@
         <textarea rows="4" id="message"></textarea>
       </div>
         <Button primary>
-          Send
+          <h4>Send</h4>
         </Button>
     </form>
   </div>

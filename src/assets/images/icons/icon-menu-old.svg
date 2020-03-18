@@ -1,0 +1,6 @@
+<svg class="icon icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 213.33">
+  <title>icon-menu</title>
+  <path id="line" d="M234.67,213.33H21.33a21.33,21.33,0,0,1,0-42.66H234.67a21.33,21.33,0,0,1,0,42.66Z"/>
+  <path id="line-2" data-name="line" d="M234.67,128H21.33a21.34,21.34,0,0,1,0-42.67H234.67a21.34,21.34,0,0,1,0,42.67Z"/>
+  <path id="line-3" data-name="line" d="M234.67,42.67H21.33A21.34,21.34,0,0,1,21.33,0H234.67a21.34,21.34,0,0,1,0,42.67Z"/>
+</svg>

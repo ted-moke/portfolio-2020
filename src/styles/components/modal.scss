@@ -8,27 +8,18 @@
     @include boxShadow;
     background: var(--tertiary);
     padding: var(--spacing-xl);
-    position: absolute;
+    position: fixed;
     // top: calc(100% + 18px);
     color: var(--base);
     min-width: var(--min-width);
-    left: var(--left-offset);
-    transform: translate(var(--left-offset-neg), 0);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // left: var(--left-offset);
+    // transform: translate(var(--left-offset-neg), 0);
     text-align: left;
-    z-index: 20;
+    z-index: 50;
     opacity: 0;
-
-    &::before {
-        @include psuedo;
-        width: 0;
-        height: 0;
-        left: var(--left-offset);
-        transform: translate(var(--left-offset-carrot), 0);
-        top: -9px;
-        border-left: var(--carrot-width) solid transparent;
-        border-right: var(--carrot-width) solid transparent;
-        border-bottom: var(--carrot-width) solid var(--tertiary)
-    }
 
     p {
         font-size: var(--spacing-lg);
@@ -41,12 +32,28 @@
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
-    z-index: 6;
+    z-index: 40;
     background-color: rgba(0,0,0,0.35);
-    opacity: 0;
+    opacity: 1;
+}
+
+@media screen and (max-width: $breakpoint-sm-max) {
+    .modal {
+        --min-width: 80%;
+        // height: 90%;
+        width: calc(100% - (var(--spacing-md) * 2));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        max-height: none;
+        width: 100%;
+    }
 }

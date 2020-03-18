@@ -30,7 +30,7 @@
 
 .icon {
     &.arrow {
-        height: calc(var(--arrow-width) / 2);
+        min-height: calc(var(--arrow-width) / 2);
         width: var(--arrow-width);
 
         path {

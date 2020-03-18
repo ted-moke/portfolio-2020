@@ -30,6 +30,11 @@ button {
         font-size: 20px;
     }
 
+    &.circle {
+        max-width: var(--button-height);
+        padding: 0;
+    }
+
     &.contact {
         position: relative;
     }
@@ -49,6 +54,12 @@ button {
         --button-color: var(--base);
         --button-drop: var(--neutral-dk);
         --button-text: var(--fourth);
+    }
+
+    &.fourth {
+        --button-color: var(--fourth);
+        --button-drop: var(--gray-3);
+        --button-text: var(--base);
     }
 
     &.small {

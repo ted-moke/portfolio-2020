@@ -1,6 +1,7 @@
 <template>
   <div class="globals">
-    <Nav v-if="currentRoute != '/'" v-on:triggerModal="setModal"></Nav>
+    <Nav v-if="currentRoute != '/'"></Nav>
+    <ControlsOverlay v-show="currentRoute != '/'"></ControlsOverlay>
     <Prompt  v-show="this.$route.path === '/'"></Prompt>
     <Modal v-if="modalActive === 'contact'" ref="contact" name="contact" @close="setModal(null)">
       <template v-slot:modal-body>
@@ -53,7 +54,7 @@
         </div>
       </template>
     </Modal>
-    <div v-if="modalActive" ref="overlay" class="overlay" v-on:click="closeModal"></div>
+    <div v-show="modalActive" ref="overlay" class="overlay" v-on:click="closeModal"></div>
   </div>
 </template>
 
@@ -61,6 +62,7 @@
 import gsap from 'gsap';
 
 // @ is an alias to /src
+import ControlsOverlay from "@/views/Components/ControlsOverlay.vue";
 import Nav from "@/views/Components/Nav.vue";
 import Form from "@/views/Components/Form.vue";
 import Prompt from "@/views/Components/Prompt.vue";
@@ -80,9 +82,13 @@ export default {
       return this.$route.path;
     }
   },
+  mounted: function() {
+    this.$root.eventHub.$on('toggle-contact', () => {
+      this.setModal('contact');
+    })
+  },
   methods: {
     setModal(name) {
-      
       this.modalActive = name || null;
 
         if (!this.overlayActive && name) {
@@ -111,6 +117,7 @@ export default {
     },
   },
   components: {
+    ControlsOverlay,
     Form,
     Modal,
     Nav,

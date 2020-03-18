@@ -102,6 +102,75 @@ nav {
     }
 }
 
+.overlay-controls {
+    position: fixed;
+    right: 0;
+    z-index: 30;
+    --arrow-width: 50px;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--spacing-sm) var(--spacing-sm);
+    height: 100vh;
+
+    button {
+        pointer-events: all;
+        margin: var(--spacing-xs);
+    }
+
+    .arrow-container, .icon-container {
+        max-height: var(--arrow-width);
+        max-width: var(--arrow-width);
+        padding: var(--spacing-sm);
+        display: flex;
+        align-items: center;
+    }
+
+    .menu .icon-container {
+        padding: 10px;
+    }
+
+    .icon.arrow {
+        padding: 4px 2px 0 2px;
+
+        path {
+            fill: var(--base);
+        }
+    }
+}
+
+.control-feature-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon-menu {
+    .cls-1{fill:none;}
+    .cls-2{clip-path:url(#icon-menu-clip-path);}
+    .cls-3{fill:var(--primary);}
+    .cls-4{fill:var(--secondary);}
+    .cls-5{fill:var(--tertiary);}
+    .cls-6{fill:var(--fourth);}
+}
+
+.control-message {
+    position: absolute;
+    bottom: var(--spacing-sm);
+}
+
+.icon-message {
+    path {
+        fill: var(--base);
+    }
+}
+
+.icon-arrow-circle {
+    path {
+        fill: var(--base);
+    }
+}
+
 @media screen and (max-width: $breakpoint-md-max) {
     nav {
         display: none;
