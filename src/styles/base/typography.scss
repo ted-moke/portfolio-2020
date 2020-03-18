@@ -40,10 +40,6 @@ label, h4,p {
     font-size: var(--spacing-md);
 }
 
-// h4, p {
-//     font-size: 12px;
-// }
-
 @media screen and (min-width: $breakpoint-md) {
     h1 {
         font-size: var(--spacing-xxl);

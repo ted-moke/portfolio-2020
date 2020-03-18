@@ -36,4 +36,9 @@ form {
 .social-section {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+
+    a {
+        margin-bottom: 0;
+    }
 }

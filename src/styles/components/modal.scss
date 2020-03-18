@@ -1,34 +1,46 @@
 .modal {
     --min-width: 550px;
-    // --left-offset: -129px;
     --carrot-width: 10px;
-    --left-offset: 50%;
-    --left-offset-neg: calc(var(--left-offset) * -1);
-    --left-offset-carrot: -50%;
     @include boxShadow;
     background: var(--tertiary);
-    padding: var(--spacing-xl);
     position: fixed;
-    // top: calc(100% + 18px);
-    color: var(--base);
     min-width: var(--min-width);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    // left: var(--left-offset);
-    // transform: translate(var(--left-offset-neg), 0);
     text-align: left;
     z-index: 50;
     opacity: 0;
+    color: var(--base);
 
     p {
         font-size: var(--spacing-lg);
-        margin-bottom: 0;
+    }
+
+
+    .boxed-content {
+        background: var(--gray-1);
+        padding: var(--spacing-md) var(--spacing-xl);
+        margin: var(--spacing-lg) calc(var(--spacing-xl) * -1) 0;
+        display: flex;
+        justify-content: space-around;
+
+        & > * {
+            flex-basis: 50%;
+        }
+
+        &:last-child {
+            margin-bottom: calc(-1 * var(--spacing-xl));
+        }
     }
 }
 
-.modal-content {
+.modal-content-wrapper {
     overflow: hidden;
+}
+
+.modal-content {
+    padding: var(--spacing-xl);
 }
 
 .overlay {
@@ -42,10 +54,22 @@
     opacity: 1;
 }
 
+.social-link {
+    @include flex-col;
+    @include flex-center-j;
+    @include flex-center-a;
+    color: var(--base);
+    
+    h3 {
+        margin-bottom: 4px;
+    }
+
+    margin-bottom: 0;
+}
+
 @media screen and (max-width: $breakpoint-sm-max) {
     .modal {
         --min-width: 80%;
-        // height: 90%;
         width: calc(100% - (var(--spacing-md) * 2));
         display: flex;
         justify-content: center;
@@ -55,5 +79,6 @@
     .modal-content {
         max-height: none;
         width: 100%;
+        padding: var(--spacing-lg);
     }
 }

@@ -13,9 +13,23 @@
         <label for="message">Message:</label>
         <textarea rows="4" id="message"></textarea>
       </div>
-        <Button primary>
+      <div>
+
+        <Button white>
           <h4>Send</h4>
         </Button>
+      </div>
     </form>
   </div>
 </template>
+
+<script>
+import Button from './Button';
+
+export default {
+  components: {
+    Button
+  }  
+}
+
+</script>

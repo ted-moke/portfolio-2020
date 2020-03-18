@@ -5,6 +5,7 @@ button {
     --button-height: 52px;
     --button-padding: 0 var(--spacing-xxl);
 
+    position: relative;
     display: inline-block;
     height: var(--button-height);
     padding: var(--button-padding);
@@ -12,10 +13,8 @@ button {
     border-radius: var(--border-radius);
     background: var(--button-color);
     color: var(--button-text);
-    // margin-top: 12px;
     margin:  0 calc(#{var(--dropOffsetX)} / 2) calc(#{var(--dropOffsetY)} / 2) 0;
     vertical-align: top;
-    position: relative;
 
     * {
         user-select: none;

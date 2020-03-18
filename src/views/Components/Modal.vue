@@ -1,7 +1,10 @@
 <template>
   <div ref="modal" class="modal" v-bind:class="name">
-    <div ref="content" class="modal-content max-height-auto">
-      <slot name="modal-body">Modal Body</slot>
+    <div class="modal-content-wrapper">
+
+      <div ref="content" class="modal-content max-height-auto">
+        <slot name="modal-body">Modal Body</slot>
+      </div>
     </div>
   </div>
 </template>
