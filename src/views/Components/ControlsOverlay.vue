@@ -1,4 +1,5 @@
 <template>
+<transition name="slide-right">
   <div class="overlay-controls">
     <Button class="control-menu" circle fourth clickEvent="menu-toggle">
         <svg class="icon icon-menu" xmlns="http://www.w3.org/2000/svg" 
@@ -35,6 +36,7 @@
       </div>
     </Button>
   </div>
+</transition>
 </template>
 
 <script>

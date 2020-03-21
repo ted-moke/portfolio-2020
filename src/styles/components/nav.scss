@@ -157,6 +157,10 @@ nav {
 .control-message {
     position: absolute;
     bottom: var(--spacing-sm);
+
+    .icon-container {
+        padding: 12px;
+    }
 }
 
 .icon-message {
@@ -169,6 +173,20 @@ nav {
     path {
         fill: var(--base);
     }
+}
+
+.icon-close {
+    position: absolute;
+    height: var(--spacing-xl);
+    width: var(--spacing-xl);
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    .cls-1{fill:none;}
+    .cls-2{clip-path:url(#icon-close-clip-path);}
+    .cls-3{fill:var(--base);}
+    .cls-4{fill:var(--base);}
+    .cls-5{fill:var(--base);}
+    .cls-6{fill:var(--base);}
 }
 
 @media screen and (max-width: $breakpoint-md-max) {

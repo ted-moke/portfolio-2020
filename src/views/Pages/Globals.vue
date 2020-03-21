@@ -5,7 +5,7 @@
     <Prompt  v-show="this.$route.path === '/'"></Prompt>
     <Modal v-if="modalActive === 'contact'" ref="contact" name="contact" @close="setModal(null)">
       <template v-slot:modal-body>
-        <h2>Contact</h2>
+        <h1>Contact</h1>
         
           <p class="email-address-label">
             <span class="bold">Email:</span> iam@tedmoke.com
@@ -80,14 +80,14 @@ export default {
       const overlay = this.$refs.overlay;
       const ROOT = this.$root;
       
-      gsap.to(overlay, {opacity: 1, duration: ROOT.TRANSITION_DURATION, ease: ROOT.TRANSITION_EASE})
+      gsap.to(overlay, {opacity: 1, y: '0%', duration: ROOT.TRANSITION_DURATION, ease: ROOT.TRANSITION_EASE})
     },
     hideOverlay() {
       this.overlayActive = false;
       const overlay = this.$refs.overlay;
       const ROOT = this.$root;
 
-      gsap.to(overlay, {opacity: 0, duration: ROOT.TRANSITION_DURATION, ease: ROOT.TRANSITION_EASE})
+      gsap.to(overlay, {opacity: 0, y: '100%', duration: ROOT.TRANSITION_DURATION, ease: ROOT.TRANSITION_EASE})
     },
   },
   components: {

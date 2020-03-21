@@ -2,7 +2,7 @@
     --min-width: 550px;
     --carrot-width: 10px;
     @include boxShadow;
-    background: var(--tertiary);
+    background: var(--gray-2);
     position: fixed;
     min-width: var(--min-width);
     top: 50%;
@@ -40,18 +40,20 @@
 }
 
 .modal-content {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-md) var(--spacing-xl) var(--spacing-xl);
 }
 
 .overlay {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     z-index: 40;
-    background-color: rgba(0,0,0,0.35);
+    background-color: rgba(0,0,0,0.65);
+    backdrop-filter: blur(4px);
     opacity: 1;
+    transform: translateY(0%);
 }
 
 .social-link {
@@ -62,6 +64,17 @@
     
     h3 {
         margin-bottom: 4px;
+    }
+    
+    &:nth-child(2) {
+        text-decoration-color: var(--primary);
+    }
+    
+    &:nth-child(3) {
+        text-decoration-color: var(--secondary);
+    }
+    &:nth-child(4) {
+        text-decoration-color: var(--tertiary);
     }
 
     margin-bottom: 0;
