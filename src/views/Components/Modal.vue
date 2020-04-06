@@ -33,14 +33,15 @@ export default {
   },
   computed: {
     tl: function() {
+      let that = this;
       let ROOT = this.$root;
       return gsap.timeline({
         defaults: {
           ease: ROOT.TRANSITION_EASE,
           duration: ROOT.TRANSITION_DURATION,
-          onReverseComplete: () => {
-            this.$emit("close");
-          }
+        },
+        onReverseComplete: function() {
+          that.$emit("close");
         }
       });
     }

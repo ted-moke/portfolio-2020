@@ -1,7 +1,6 @@
 TO DO
 Important
 * mobile nav
-* mobile layout
 * nav redesign
 * record/enter content
 * contact form functionality

@@ -15,6 +15,10 @@
     align-items: center;
 }
 
+.flex {
+    @include flex;
+}
+
 .flex-col-center {
     @include flex-col;
     @include flex-center-j;

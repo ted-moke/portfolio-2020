@@ -36,6 +36,7 @@
 }
 
 .modal-content-wrapper {
+    width: 100%;
     overflow: hidden;
 }
 
@@ -87,10 +88,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        .boxed-content {
+            padding: var(--spacing-md) var(--spacing-md);
+        }
     }
 
     .modal-content {
-        max-height: none;
+        max-height: 100% !important;
         width: 100%;
         padding: var(--spacing-lg);
     }

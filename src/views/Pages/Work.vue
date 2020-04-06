@@ -1,6 +1,6 @@
 <template>
   <transition name="turn">
-    <section v-show="shown" ref="el">
+    <section v-show="shown" ref="el" class="work">
       <div class="section-header-container">
         <h2 class="section-header">My Work</h2>
       </div>

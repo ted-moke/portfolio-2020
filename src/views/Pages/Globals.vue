@@ -3,7 +3,7 @@
     <Nav v-show="currentRoute != '/'"></Nav>
     <ControlsOverlay v-show="currentRoute != '/'"></ControlsOverlay>
     <Prompt  v-show="this.$route.path === '/'"></Prompt>
-    <Modal v-if="modalActive === 'contact'" ref="contact" name="contact" @close="setModal(null)">
+    <Modal v-if="modalActive === 'contact'" ref="contact" name="contact" @close="setModal">
       <template v-slot:modal-body>
         <h1>Contact</h1>
         
@@ -65,6 +65,10 @@ export default {
     setModal(name) {
       this.modalActive = name || null;
 
+      console.log(name, this.modalActive);
+
+      this.$forceUpdate();
+
         if (!this.overlayActive && name) {
           this.$nextTick(function() {
             this.showOverlay();
@@ -72,6 +76,7 @@ export default {
         }
     },
     closeModal() {
+      // this.modalActive = null;
       this.$refs[this.modalActive].close();
       this.hideOverlay();
     },

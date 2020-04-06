@@ -106,7 +106,9 @@ nav {
 
 .overlay-controls {
     position: fixed;
-    right: 0;
+    right: var(--spacing-sm);
+    // right: var(--spacing-md);
+    width: 221px;
     z-index: 30;
     pointer-events: none;
     display: flex;
@@ -117,8 +119,6 @@ nav {
     .menu .icon-container {
         padding: 10px;
     }
-
-    
 }
 
 .icon-container {
@@ -168,10 +168,12 @@ nav {
 
 .control-message {
     position: absolute;
-    bottom: var(--spacing-sm);
+    bottom: var(--spacing-md);
+    right: 14px;
+    padding: 0 var(--spacing-xl);
 
     .icon-container {
-        padding: 12px;
+        padding: 12px 0 12px 12px;
     }
 }
 
@@ -201,6 +203,11 @@ nav {
     .cls-6{fill:var(--base);}
 }
 
+.control-menu {
+    position: absolute;
+    right: 0;
+}
+
 @media screen and (max-width: $breakpoint-md-max) {
     nav {
         display: none;
@@ -210,5 +217,14 @@ nav {
         flex-direction: column;
         right: 0;
         bottom: 50%;
+    }
+
+    .control-message {
+        right: 0;
+        bottom: var(--spacing-sm);
+
+        .icon-container {
+            padding: 10px;
+        }
     }
 }
