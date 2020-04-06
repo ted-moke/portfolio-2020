@@ -41,7 +41,30 @@ export default {
     }
   },
   mounted: function() {
+    this.$root.eventHub.$on("next-feature", () => {
+      var currIdx = PROJECT_DATA.order.indexOf(this.$root.store.currentShowcaseId);
+      console.log(currIdx, PROJECT_DATA.order)
+      var nextIdx = currIdx + 1;
+      if (nextIdx >= PROJECT_DATA.order.length) {
+        nextIdx = 0;        
+      }
+
+      console.log(PROJECT_DATA.order[nextIdx])
+
+      this.$root.eventHub.$emit('route-showcase', PROJECT_DATA.order[nextIdx]);
+    })
+
+    this.$root.eventHub.$on("previous-feature", () => {
+      var currIdx = PROJECT_DATA.order.indexOf(this.$root.store.currentShowcaseId);
+      var prevIdx = currIdx - 1;
+      if (prevIdx < 0) {
+        prevIdx = PROJECT_DATA.order.length - 1;        
+      }
+
+      this.$root.eventHub.$emit('route-showcase', PROJECT_DATA.order[prevIdx]);
+    })
     this.$root.eventHub.$on("route-showcase", showcaseRoute => {
+      console.log(showcaseRoute)
 
       if (showcaseRoute === this.$route.params.project) {
         return

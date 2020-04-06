@@ -48,8 +48,6 @@ export default {
     }
   },
   mounted: function() {
-
-    console.log(this.color);
     this.chip = this.$refs.chip;
     this.chipContainer = this.$refs.chipContainer;
     this.chipWrapper = this.$refs.chipWrapper;

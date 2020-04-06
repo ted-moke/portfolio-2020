@@ -1,4 +1,5 @@
 <template>
+<transition name="grow">
   <nav ref="nav" class="nav" v-bind:class="[padding ? 'no-fill' : '']" >
     <div class="nav-section" v-bind:style="{'padding-left': `${padding}vw`, 'padding-right': `${padding}vw`}">
       <Chip
@@ -10,12 +11,13 @@
       </Chip>
     </div>
   </nav>
+</transition>
 </template>
 
 <script>
 import Chip from '@/views/Components/Chip.vue';
 import Color from 'color';
-import gsap from 'gsap';
+// import gsap from 'gsap';
 
 export default {
   name: "Nav",
@@ -45,21 +47,6 @@ export default {
     el: function() {
       return this.$refs.nav
     },
-  },
-  mounted: function(callback) {
-    let ROOT = this.$root;
-
-    console.log(this.$route.path);
-
-    gsap.to(this.el, {minWidth: '100vw', duration: .5, ease: ROOT.TRANSITION_EASE, onComplete: ()=>{if (callback){callback()}}})
-
-    ROOT.eventHub.$on('routing', ()=> {
-      let cb = ()=> {
-        ROOT.eventHub.$emit('transitionComplete', false)
-      }
-      // this.open = false;
-      gsap.to(this.el, {minWidth: '0vw', duration: .5, ease: ROOT.TRANSITION_EASE, onComplete: ()=>{if (cb){cb()}}})
-    })
   },
   methods: {
     getBgColor(color) {

@@ -39,3 +39,13 @@
 .slide-right-leave-to {
   transform: translateX(100%);
 }
+
+.grow-enter-active,
+.grow-leave-active {
+  transition: max-width .5s var(--bezier);
+}
+
+.grow-enter,
+.grow-leave-to {
+  max-width: 0;
+}

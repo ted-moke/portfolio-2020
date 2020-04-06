@@ -7,10 +7,11 @@
 </template>
 
 <script>
+
 export default {
   props: {
     content: Object,
     open: Boolean
   },
-}
+};
 </script>

@@ -41,7 +41,6 @@ export default {
   },
   mounted: function() {
     console.log("Application Build: ", new Date().toLocaleString());
-    var eventHub = this.$root.eventHub;
 
     if (this.$route.params.project) {
       this.$root.store.currentShowcaseId = this.$route.params.project;
@@ -53,30 +52,14 @@ export default {
 
     this.checkClientInfo();
 
-    this.$router.beforeEach((to, from, next) => {
-      eventHub.$on("transitionComplete", () => {
-        this.isRouting = false;
-        next();
-        return;
-      });
-
-      if (to.path === "/") {
-        eventHub.$emit("routing", true);
-        // VueScrollTo.scrollTo('body', 250);
-        return;
-      } else {
-        this.isRouting = false;
-        next();
-        return;
-      }
-    });
+    this.$router.afterEach(() => {
+      this.isRouting = false;
+    })
   },
   methods: {
     ON_SCROLL() {
-      if (this.isRouting) {
-        return;
-      }
-
+      if (this.isRouting) return;
+      
       if (window.scrollY > this.windowHeight / 2 && this.$route.path === "/") {
         this.isRouting = true;
         this.$router.push("/work/" + this.$root.store.routingToShowcase);

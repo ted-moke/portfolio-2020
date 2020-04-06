@@ -1,5 +1,5 @@
 let data = {
-  order: ['nike', 'stepCounter'],
+  order: ['nike', 'stepCounter', 'quiz'],
   list: {
       nike: {
           id: 'nike',
@@ -47,8 +47,8 @@ let data = {
           video: "https://www.stevensegallery.com/1020/800",
           thumbnail: "https://www.stevensegallery.com/84/84"
       },
-      quizWebApp: {
-          id: 'quizWebApp',
+      quiz: {
+          id: 'quiz',
           slats: [
             {
               title: 'client',

@@ -34,15 +34,19 @@
   display: flex;
   flex-direction: column;
   margin-right: var(--spacing-lg);
-  background-color: var(--gray-3);
-  padding: var(--spacing-sm);
+  border: 5px solid var(--gray-3);
+  padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-xxxl);
+
+  .control-feature-container {
+    margin-left: -4px;
+  }
 }
 
 .showcase-nav-label {
   text-align: center;
   text-transform: uppercase;
-  // font-family: 'NunitoSans-Black', serif;
-  color: white;
+  font-family: 'NunitoSans-Black', serif;
+  // color: white;
 }
 
 .feature-preview {
@@ -68,6 +72,7 @@
   @include flex-center-j;
   @include flex-center-a;
 
+  position: relative;
   flex: 1;
   border: 5px solid #222;
   border-top-color: #888;
@@ -110,6 +115,6 @@
     border-left: none;
     border-top: none;
     padding: 0 0 var(--spacing-md) 0;
-    flex: none;
+    // flex: none;
   }
 }
