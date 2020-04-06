@@ -1,16 +1,16 @@
 TO DO
 Important
-* mobile nav
-* nav redesign
 * record/enter content
 * contact form functionality
 
 Lesser
+* nav redesign
 * add resume/phone num? to contact
 * modal hide on click outside
 
 Nice to have
 * scroll detection
+* mobile nav
 * paint bucket color switcher
 * logo animation in
 * create dribble

@@ -1,23 +1,23 @@
 <template>
 <transition name="slide-right">
   <div class="overlay-controls">
-    <Button v-show="!$root.store.clientInfo.isDesktop" class="control-menu" circle fourth clickEvent="menu-toggle">
-        <svg class="icon icon-menu" xmlns="http://www.w3.org/2000/svg" 
-  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
-          <defs>
-            <clipPath id="icon-menu-clip-path" transform="translate(0 0.54)">
-              <circle id="circle" class="cls-1" cx="256" cy="256" r="256"/>
-            </clipPath>
-          </defs>
-          <title>Asset 3</title>
-          <g class="cls-2">
-            <rect class="cls-3" width="512" height="143.52"/>
-            <rect class="cls-4" y="128" width="512" height="156.92"/>
-            <rect class="cls-5" y="256" width="512" height="143.93"/>
-            <rect class="cls-6" y="384" width="512" height="128"/>
-          </g>
+    <!-- <Button v-show="!$root.store.clientInfo.isDesktop" class="control-menu" circle fourth clickEvent="menu-toggle">
+      <svg class="icon icon-menu" xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+        <defs>
+          <clipPath id="icon-menu-clip-path" transform="translate(0 0.54)">
+            <circle id="circle" class="cls-1" cx="256" cy="256" r="256"/>
+          </clipPath>
+        </defs>
+        <title>Asset 3</title>
+        <g class="cls-2">
+          <rect class="cls-3" width="512" height="143.52"/>
+          <rect class="cls-4" y="128" width="512" height="156.92"/>
+          <rect class="cls-5" y="256" width="512" height="143.93"/>
+          <rect class="cls-6" y="384" width="512" height="128"/>
+        </g>
       </svg>
-    </Button>
+    </Button> -->
     <FeatureControl v-show="!$root.store.clientInfo.isDesktop"></FeatureControl>
     <Button class="control-message" primary clickEvent="toggle-contact" :circle="!$root.store.clientInfo.isDesktop">
       <div class="button-content-container">

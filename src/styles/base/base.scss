@@ -88,12 +88,22 @@ canvas {
   min-height: 100vh;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  display: none;
+}
+
 @media screen and (min-width: $breakpoint-md) {
   section {
-    padding: var(--spacing-xxl) calc(var(--feature-preview-width_with-pad) + var(--spacing-lg)) var(--spacing-xxl) calc(var(--spacing-xxl) * 2);
+    padding: var(--spacing-xl) calc(var(--feature-preview-width_with-pad) + var(--spacing-lg)) var(--spacing-xxl) calc(var(--spacing-xxl) * 2);
     
     &.work {
       padding-left: var(--spacing-xl)
     }
+  }
+
+  footer {
+    display: block;
   }
 }

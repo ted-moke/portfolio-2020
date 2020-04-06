@@ -5,6 +5,9 @@
         <h2 class="section-header">My Work</h2>
       </div>
       <ShowcaseWrapper></ShowcaseWrapper>
+    <footer>
+      <p>Ted Moke - Javascript Developer - iam@tedmoke.com</p>
+    </footer>
     </section>
   </transition>
 </template>
