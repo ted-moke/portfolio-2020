@@ -55,6 +55,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: auto;
     }
 
     .shutter.horizontal & {
@@ -74,7 +75,8 @@
 
     &.client {
         p {
-            font-size: var(--spacing-xxl);
+            // font-size: var(--spacing-xxl);
+            font-size: calc(var(--spacing-xl ) + var(--spacing-sm));
         }
 
         .slat-label {
@@ -105,6 +107,18 @@
         .slat-label {
             background: var(--primary);
         }
+
+        &::after {
+            @include psuedo;
+            bottom: 0;
+            top: auto;  
+            left: auto;
+            right: 0;
+            height: 20px;
+            width: calc(100% - 31px);
+            background: var(--gray-1);
+            background: linear-gradient(0deg, var(--gray-1) 0%, rgba(0,0,0,0) 100%);
+        }
     }
 
     &.small {
@@ -127,7 +141,7 @@
 }
 
 .slat-label {
-    position: absolute;
+    position: fixed;
     left: 0px;
     top: 0px;
     padding: var(--spacing-sm);
@@ -143,6 +157,16 @@
         font-size: var(--spacing-md);
         text-transform: uppercase;
         line-height: 1;
+    }
+}
+
+@media screen and (max-height: $breakpoint-md-max) {
+    .slat {
+        &.description {
+            &::after {
+                width: calc(100% - var(--spacing-lg));
+            }
+        }
     }
 }
 
@@ -168,6 +192,16 @@
     .slat-label {
         label {
             font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-xl) {
+    .slat {
+        &.client {
+            p {
+                // font-size: calc(var(--spacing-xl ) + var(--spacing-sm));
+            }
         }
     }
 }

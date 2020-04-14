@@ -6,7 +6,7 @@
       </div>
       <ShowcaseWrapper></ShowcaseWrapper>
     <footer>
-      <p>Ted Moke - Javascript Developer - iam@tedmoke.com</p>
+      <p><span class="highlight">Ted Moke</span> | JavaScript Developer</p>
     </footer>
     </section>
   </transition>

@@ -82,9 +82,19 @@
   padding: var(--spacing-md);
   background: var(--base);
   overflow: hidden;
-
+  
   img,video {
     @include boxShadow();
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media screen and (max-width: $breakpoint-lg-max) {
+  .showcase-wrapper {
+    .shutter-wrapper {
+      width: 50%;
+    }
   }
 }
 
@@ -104,6 +114,19 @@
   .showcase-container {
     flex-direction: column-reverse;
     height: 100%;
+
+    .slat {
+      .content-container {
+        padding-left: var(--spacing-lg);
+        padding-right: 70px;
+      }
+
+      &.description {
+        .content-container {
+          padding-top: var(--spacing-sm);
+        }
+      }
+    }
   }
 
   .showcase-nav {
@@ -117,5 +140,8 @@
     border-top: none;
     padding: 0 0 var(--spacing-md) 0;
     // flex: none;
+    img {
+      margin-top: auto;
+    }
   }
 }

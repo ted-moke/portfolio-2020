@@ -1,10 +1,10 @@
 <template>
   <div ref="slat" class="slat" v-bind:class="[title, horizontal]" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color }">
     <div class="content-container" v-bind:style="{ [horizontal ? 'width': 'height']: contentSize, [horizontal ? 'right': 'top']: 0}">
-      <p v-if="!button">{{ content }}</p>
+      <p v-if="!button" v-html="content"></p>
       <Button v-if="button" v-bind:active="this.$route.name === content" small v-bind:white="content != 'Contact'" v-bind:primary="content === 'Contact'" clickEvent="toggle-contact">{{content}}</Button>
       <div v-if="label" class="slat-label">
-        <label>{{title}}</label>
+        <label v-html="title"></label>
       </div>
     </div>
   </div>

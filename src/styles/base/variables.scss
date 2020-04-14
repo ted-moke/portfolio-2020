@@ -7,6 +7,8 @@ $breakpoint-md: 1025px;
 $breakpoint-md-max: 1024px;
 $breakpoint-lg: 1201px;
 $breakpoint-lg-max: 1200px;
+$breakpoint-xl: 1401px;
+$breakpoint-xl-max: 1400px;
 
 :root {
 
@@ -27,6 +29,8 @@ $breakpoint-lg-max: 1200px;
   --gray-3: #666;
   --gray-4: #888;
 
+  --breakpoint-xl: 1401px;
+  --breakpoint-xl-max: 1400px;
   --breakpoint-lg: 1201px;
   --breakpoint-lg-max: 1200px;
   --breakpoint-md: 993px;
@@ -56,7 +60,7 @@ $breakpoint-lg-max: 1200px;
     border-radius: var(--spacing-xxl);
   }
 
-  @media screen and (min-width: $breakpoint-lg) {
+  @media screen and (min-width: $breakpoint-md) {
     --feature-preview-width_with-pad: 124px;
   }
 

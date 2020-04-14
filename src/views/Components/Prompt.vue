@@ -3,7 +3,7 @@
   <div class="prompt-wrapper">
     <div ref="promptContainer" class="prompt arrow-container">
       <Arrow ref="promptArrow"></Arrow>
-      <Arrow ref="promptArrow"></Arrow>
+      <div class="arrow-container prompt-text-container"><p class="prompt-text">SCROLL</p></div>
       <Arrow ref="promptArrow"></Arrow>
     </div>
   </div>

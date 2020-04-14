@@ -193,8 +193,8 @@ nav {
     position: absolute;
     height: var(--spacing-xl);
     width: var(--spacing-xl);
-    top: var(--spacing-md);
-    right: var(--spacing-md);
+    top: calc(-1 * var(--spacing-xxl));
+    right: calc(-1 * var(--spacing-xxl));
     .cls-1{fill:none;}
     .cls-2{clip-path:url(#icon-close-clip-path);}
     .cls-3{fill:var(--base);}
@@ -233,5 +233,11 @@ nav {
         .icon-container {
             padding: 10px;
         }
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm-max) {
+    .icon-close {
+        right: 0;
     }
 }

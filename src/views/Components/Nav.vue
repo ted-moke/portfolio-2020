@@ -7,7 +7,7 @@
       v-bind:key="item.title"
       v-bind:color="[$route.path.indexOf(item.title.toLowerCase()) > 0 ? $root.COLORS[0] : $root.COLORS_GRAY[2]]"
       @clicked="ON_CLICK(item.title)">
-        <p>{{item.text}}</p>
+        <p v-html="item.text"></p>
       </Chip>
     </div>
   </nav>

@@ -1,5 +1,5 @@
 <template>
-  <div ref="jumbotron" class="jumbotron">
+  <div ref="jumbotron" class="jumbotron page-wrapper">
     <div class="jumbotron-content content-left">
       <svg class="logo logo-tedmoke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 717 527.47">
         <title>logo-block-old</title>

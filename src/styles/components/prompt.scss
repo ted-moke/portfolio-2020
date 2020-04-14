@@ -28,6 +28,18 @@
     }
 }
 
+.prompt-text-container {
+    align-items: center;
+}
+
+.prompt-text {
+    position: relative;
+    color: var(--base);
+    font-size: var(--spacing-lg);
+    margin: 0;
+    padding: var(--spacing-md);
+}
+
 .icon {
     &.arrow {
         min-height: calc(var(--arrow-width) / 2);
@@ -43,6 +55,17 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
+}
+
+@media screen and (min-width: $breakpoint-md) {
+    .prompt-text {
+        &:before {
+            @include psuedo;
+            background: var(--tertiary);
+            z-index: -1;
+            border-radius: 7px;
+        }
+    }
 }
 
 @media screen and (min-width: $breakpoint-sm) {

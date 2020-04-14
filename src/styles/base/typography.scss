@@ -36,8 +36,9 @@ h3 {
     font-size: var(--spacing-md);
 }
 
-label, h4,p {
+label, h4,p, a {
     font-size: var(--spacing-md);
+    color: inherit;
 }
 
 @media screen and (min-width: $breakpoint-md) {
