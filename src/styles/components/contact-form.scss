@@ -22,10 +22,10 @@ input, textarea {
 input {
     border: none;
     padding: var(--spacing-xs);
-    
-    &[type="textarea"] {
-        height: 150px;
-    }
+}
+
+textarea {
+    border: none;
 }
 
 form {

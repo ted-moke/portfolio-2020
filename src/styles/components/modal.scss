@@ -66,20 +66,39 @@
     @include flex-center-j;
     @include flex-center-a;
     color: var(--base);
+    transition: color 0.25s ease, text-decoration-color 0.25s ease;
+
+    text-decoration-color: var(--primary);
     
     h3 {
         margin-bottom: 4px;
     }
     
     &:nth-child(2) {
-        text-decoration-color: var(--primary);
+        text-decoration-color: var(--secondary);
     }
     
     &:nth-child(3) {
-        text-decoration-color: var(--secondary);
-    }
-    &:nth-child(4) {
         text-decoration-color: var(--tertiary);
+    }
+    
+    &:nth-child(4) {
+        text-decoration-color: var(--neutral-dk);
+    }
+
+    &:hover {
+        color: var(--primary);
+
+        &:nth-child(2) {
+            color: var(--secondary);
+        }
+        
+        &:nth-child(3) {
+            color: var(--tertiary);
+        }
+        &:nth-child(4) {
+            color: var(--neutral-dk);
+        }
     }
 
     margin-bottom: 0;
