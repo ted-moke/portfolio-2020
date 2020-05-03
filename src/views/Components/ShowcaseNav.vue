@@ -20,7 +20,7 @@ import gsap from "gsap";
 import Feature from "@/views/Components/Feature";
 import PROJECT_DATA from "@/js/projects.js";
 
-import FeatureControl from './FeatureControl';
+import FeatureControl from "./FeatureControl";
 
 export default {
   props: {

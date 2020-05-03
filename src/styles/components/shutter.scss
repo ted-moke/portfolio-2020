@@ -74,17 +74,16 @@
     }
 
     &.client {
-        p {
-            // font-size: var(--spacing-xxl);
-            font-size: calc(var(--spacing-xl ) + var(--spacing-sm));
-        }
-
         .slat-label {
             background: var(--fourth);
         }
     }
 
     &.project {
+        p {
+            font-size: calc(var(--spacing-xl ) + var(--spacing-sm));
+        }
+
         .slat-label {
             background: var(--tertiary);
         }
@@ -160,23 +159,13 @@
     }
 }
 
-@media screen and (max-height: $breakpoint-md-max) {
-    .slat {
-        &.description {
-            &::after {
-                width: calc(100% - var(--spacing-lg));
-            }
-        }
-    }
-}
-
 @media screen and (max-height: 768px) {
     .slat {
         p {
             font-size: var(--spacing-lg);
         }
 
-        &.client {
+        &.project {
             p {
                 font-size: var(--spacing-xl)
             }
@@ -196,25 +185,21 @@
     }
 }
 
-@media screen and (max-width: $breakpoint-xl) {
-    .slat {
-        &.client {
-            p {
-                // font-size: calc(var(--spacing-xl ) + var(--spacing-sm));
-            }
-        }
-    }
-}
-
-@media screen and (max-width: $breakpoint-lg) {
+@media screen and (max-width: $breakpoint-lg-max) {
     .slat {
         p {
-            // font-size: var(--spacing-lg);
+            font-size: calc(var(--spacing-xl) - var(--spacing-sm));
         }
 
-        &.client {
+        &.project {
             p {
-                // font-size: var(--spacing-xl)
+                font-size: var(--spacing-xl);
+            }
+        }
+
+        &.description {
+            p {
+                font-size: calc(var(--spacing-lg) - 6px);
             }
         }
     }

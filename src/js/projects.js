@@ -1,76 +1,79 @@
+var thumbStepCounter = require("../assets/images/project-stepCounter-thumb.png");
+var thumbQuiz = require("../assets/images/project-quiz-thumb.png");
+var thumbPanels = require("../assets/images/project-panels-thumb.png");
+
 let data = {
-  order: ['nike', 'stepCounter', 'quiz'],
+  order: ['quiz', 'stepCounter', 'vuePanels'],
   list: {
-      nike: {
-          id: 'nike',
-          slats: [
-            {
-              title: 'client',
-              text: 'Nike'
-            },
-            {
-              title: 'project',
-              text: "Train N' Play AR Game",
-            },
-            {
-              title: 'roles',
-              text: 'Developer',
-            },
-            {
-              title: 'description',
-              text: 'As one of two developers, I was responsible for developing the instructions, menu and shop user interfaces; a reusable virtual ‘trainer’ terminal; and the app’s sound design. Built in JavaScript for a browser frontend with a custom framework.',
-            }
-          ],
-          video: "https://www.stevensegallery.com/720/480",
-          thumbnail: "https://www.stevensegallery.com/84/84"
-      },
-      stepCounter: {
-          id: 'stepCounter',
-          slats: [
-            {
-              title: 'client',
-              text: 'Various'
-            },
-            {
-              title: 'project',
-              text: "Step Counter Game",
-            },
-            {
-              title: 'roles',
-              text: 'Lead Developer<br>Electrical Technician',
-            },
-            {
-              title: 'description',
-              text: 'Interactive gamified and charity experiences built with: custom step sensors, Node.js backend, Chrome frontend, and Adruino physical computing. Utilized on displays up to 13’ video wall at international healthcare conference booths and company events. Built as sole developer and electrical technician. On-site installation and client support given.',
-            }
-          ],
-          video: "https://www.stevensegallery.com/1020/800",
-          thumbnail: "https://www.stevensegallery.com/84/84"
-      },
-      quiz: {
-          id: 'quiz',
-          slats: [
-            {
-              title: 'client',
-              text: 'Lifescience Co'
-            },
-            {
-              title: 'project',
-              text: "Quiz Platform",
-            },
-            {
-              title: 'roles',
-              text: 'Sole Developer',
-            },
-            {
-              title: 'description',
-              text: 'A quiz webapp built in a custom JavaScript framework and PHP/MySQL backend for worldwide lifescience conferences and events. The scalable game allows for easy quiz management and weighting of questions. A leaderboard updates live to encourage competition.',
-            }
-          ],
-          video: "https://www.stevensegallery.com/1020/800",
-          thumbnail: "https://www.stevensegallery.com/84/84"
-      },
+    quiz: {
+      id: 'quiz',
+      slats: [
+        {
+          title: 'project',
+          text: "Quiz Platform",
+        },
+        {
+          title: 'client',
+          text: 'Various Co.'
+        },
+        {
+          title: 'roles',
+          text: 'Sole Developer',
+        },
+        {
+          title: 'description',
+          text: 'This quiz platform was built to suit the several different needs of Oncology and Lifescience companies at events around the world, engaging hundreds of users per event.<br><br>Websockets allow for guided sessions with live leaderboards and round based play. An OOP JavaScript framework and PHP/MySQL backend power the flexible quiz platform.<br><br>The administrative dashboard gives our clients full control over the game experience and see answer analytics. It is built with scalability in mind to allow for easy quiz management and weighting of questions. A leaderboard updates live to encourage competition.',
+        }
+      ],
+      video: "https://player.vimeo.com/video/413863293",
+      thumbnail: thumbQuiz
+    },
+    stepCounter: {
+      id: 'stepCounter',
+      slats: [
+        {
+          title: 'project',
+          text: "Step Sensor Experiences",
+        },
+        {
+          title: 'client',
+          text: 'Biopharma Cos.'
+        },
+        {
+          title: 'roles',
+          text: 'Lead Developer',
+        },
+        {
+          title: 'description',
+          text: 'At international healthcare conferences, booth draw and engagement are some of the biggest concerns for pharmaceutical companies. As the sole developer, I architect, build, and install interactive gamified and charity experiences that draw hundreds of engagements per show.<br><br>Technologies utilized are a Node.js backend, JavaScript frontend, Arduino physical computing, among others. During installation and show, I work face to face with clients to make sure everything the booth experience is to tuned to their liking.',
+        }
+      ],
+      video: "https://player.vimeo.com/video/414288785",
+      thumbnail: thumbStepCounter
+    },
+    vuePanels: {
+      id: 'vuePanels',
+      slats: [{
+          title: 'project',
+          text: 'Vue.js Touch Panels'
+        },
+        {
+          title: 'client',
+          text: 'Neuroscience Co.'
+        },
+        {
+          title: 'roles',
+          text: 'Developer'
+        },
+        {
+          title: 'description',
+          text: 'The heavily regulated pharmaceutical space calls for frequent and rapid updates to content. When tasked with building two sets of touch panels for an international neurology conference, I reached for the lightweight Vue.js framework.<br><br>Through building usable components, we were able to iterate various designs and copy decks on the fly. Despite the tight timeline, we launched successfuly and had great show engagement.'
+        }
+      ],
+      video: "https://player.vimeo.com/video/414574086",
+      thumbnail: thumbPanels
     }
+  }
 };
 
 export default data;

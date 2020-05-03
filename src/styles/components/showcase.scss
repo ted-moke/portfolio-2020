@@ -13,12 +13,21 @@
   display: flex;
   width: 100%;
   height: calc(80vh - 16px);
-  // height: 80vh;
+
+  .shutter-wrapper {
+    overflow: hidden;
+  }
 
   .slat {
     .content-container {
       justify-content: flex-start;
       padding-left: calc(var(--spacing-xl) + var(--spacing-sm));
+    }
+
+    &.description {
+      p {
+        padding-bottom: var(--spacing-md);
+      }
     }
   }
 }
@@ -46,7 +55,7 @@
 .showcase-nav-label {
   text-align: center;
   text-transform: uppercase;
-  font-family: 'NunitoSans-Black', serif;
+  font-family: "NunitoSans-Black", serif;
   // color: white;
 }
 
@@ -59,34 +68,12 @@
 
   img {
     filter: grayscale(100%);
-    transition: filter .25s var(--bezier), transform .25s var(--bezier);
+    transition: filter 0.25s var(--bezier), transform 0.25s var(--bezier);
   }
 
   .chip {
     height: var(--feature-preview-width);
     width: var(--feature-preview-width);
-  }
-}
-
-.feature-wrapper {
-  @include flex;
-  @include flex-center-j;
-  @include flex-center-a;
-
-  position: relative;
-  flex: 1;
-  border: 5px solid #222;
-  border-top-color: #888;
-  border-right-color: #555;
-  border-left: none;
-  padding: var(--spacing-md);
-  background: var(--base);
-  overflow: hidden;
-  
-  img,video {
-    @include boxShadow();
-    max-width: 100%;
-    max-height: 100%;
   }
 }
 
@@ -117,7 +104,7 @@
 
     .slat {
       .content-container {
-        padding-left: var(--spacing-lg);
+        padding-left: var(--spacing-xl);
         padding-right: 70px;
       }
 
@@ -132,16 +119,14 @@
   .showcase-nav {
     display: none;
   }
+}
 
-  .feature-wrapper {
-    border-right: none;
-    border-bottom: none;
-    border-left: none;
-    border-top: none;
-    padding: 0 0 var(--spacing-md) 0;
-    // flex: none;
-    img {
-      margin-top: auto;
+@media screen and (max-width: $breakpoint-sm) {
+  .showcase-container {
+    .slat {
+      .content-container {
+        padding-left: var(--spacing-lg);
+      }
     }
   }
 }
