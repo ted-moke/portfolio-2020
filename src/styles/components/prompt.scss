@@ -37,7 +37,6 @@
     color: var(--base);
     font-size: var(--spacing-lg);
     margin: 0;
-    padding: var(--spacing-md);
 }
 
 .icon {
@@ -58,7 +57,12 @@
 }
 
 @media screen and (min-width: $breakpoint-md) {
+    .prompt-wrapper {
+        bottom: var(--spacing-md);
+    }
+
     .prompt-text {
+        padding: var(--spacing-md);
         &:before {
             @include psuedo;
             background: var(--tertiary);

@@ -1,5 +1,6 @@
 <template>
   <div ref="chipWrapper" class="chip-wrapper" @mousemove="ON_MOUSE_MOVE" @mouseleave="ON_MOUSE_LEAVE" @mouseover="ON_MOUSE_OVER" @click="ON_CLICK">
+    <h4 v-if="label" class="chip-wrapper-label">{{ label }}</h4>
     <div ref="chipContainer" class="chip-container">
       <div ref="chip" class="chip" v-bind:style="{'background': color}">
         <div v-bind:style="{'background-color': sideColor}" class="side back"></div>
@@ -25,7 +26,8 @@ export default {
       type: Array,
       default: function(){return [this.$root.COLORS[1]]}
     },
-    id: String
+    id: String,
+    label: String
   },
   data: function() {
     return {

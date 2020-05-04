@@ -45,7 +45,7 @@ export default {
 
       console.log('data :>> ', data);
 
-      this.axios.post("http://tedmoke.com/test/portfolio/php/process.php", data)
+      this.axios.post("http://tedmoke.com/php/process.php", data)
         .then(response => {
           console.log(response);
           if (response.data === 'success') {

@@ -1,5 +1,6 @@
 <template>
   <div class="showcase-wrapper" v-if="showcaseContent">
+    <ShowcaseNav v-bind:content="showcaseContent"></ShowcaseNav>
     <div class="showcase-container">
       <div class="shutter-wrapper">
         <Shutter
@@ -15,7 +16,6 @@
 
       <FeatureWrapper v-bind:open="shutterOpen" v-bind:content="showcaseContent"></FeatureWrapper>
     </div>
-    <ShowcaseNav v-bind:content="showcaseContent"></ShowcaseNav>
   </div>
 </template>
 

@@ -53,6 +53,7 @@ new Vue({
       routingToShowcase: null,
       clientInfo: {
         isDesktop: null,
+        short: null
       }
     }
   },

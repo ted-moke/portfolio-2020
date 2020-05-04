@@ -99,7 +99,6 @@ canvas {
 }
 
 .page-placeholder {
-  // min-width: 100vw;
   min-height: 100vh;
 }
 
@@ -108,40 +107,19 @@ footer {
   display: none;
   top: 0;
   right: 0;
-  // width: 100%;
-  
-  // p,a {
-  //   font-size: 14px;
-  //   color: var(--gray-3);
-  //   text-align: center;
-  // }
-  
-  // a {
-  //   text-decoration: none;
-  // }
-
-  .highlight {
-    // color: var(--gray-1);
-    // font-size: 16px;
-  }
-
-}
-
-.highlight {
-  // @include text-black;
 }
 
 @media screen and (min-width: $breakpoint-md) {
   section {
-    padding: var(--spacing-xl) calc(var(--feature-preview-width_with-pad) + var(--spacing-lg)) var(--spacing-xxl) calc(var(--spacing-xxl) * 2);
+    padding: var(--spacing-xl) var(--spacing-xxl);
     
     &.work {
-      padding-left: var(--spacing-xl)
+      padding-left: calc(var(--spacing-xxl) + var(--spacing-xl));
     }
   }
 
   .section-header-container {
-    max-width: 225px;
+    max-width: 310px;
   }
 
   footer {

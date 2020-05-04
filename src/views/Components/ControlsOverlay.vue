@@ -19,9 +19,9 @@
       </svg>
     </Button> -->
     <FeatureControl v-show="!$root.store.clientInfo.isDesktop"></FeatureControl>
-    <Button class="control-message" primary clickEvent="toggle-contact" :circle="!$root.store.clientInfo.isDesktop">
+    <Button class="control-message" primary clickEvent="toggle-contact" :circle="!$root.store.clientInfo.isDesktop || $root.store.clientInfo.short">
       <div class="button-content-container">
-        <p v-show="$root.store.clientInfo.isDesktop">Contact</p>
+        <p v-show="$root.store.clientInfo.isDesktop && !$root.store.clientInfo.short">Contact</p>
         <div class="icon-container">
           <svg class="icon icon-message" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 384">
             <title>Asset 1</title>

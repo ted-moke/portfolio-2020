@@ -73,23 +73,23 @@
         }
     }
 
-    &.client {
-        .slat-label {
-            background: var(--fourth);
-        }
-    }
-
     &.project {
         p {
             font-size: calc(var(--spacing-xl ) + var(--spacing-sm));
         }
 
         .slat-label {
+            background: var(--fourth);
+        }
+    }
+    
+    &.client {
+        .slat-label {
             background: var(--tertiary);
         }
     }
 
-    &.roles {
+    &.role {
         .slat-label {
             background: var(--secondary);
         }
@@ -159,7 +159,7 @@
     }
 }
 
-@media screen and (max-height: 768px) {
+@media screen and (max-height: 799px) {
     .slat {
         p {
             font-size: var(--spacing-lg);
@@ -167,7 +167,8 @@
 
         &.project {
             p {
-                font-size: var(--spacing-xl)
+                font-size: calc(var(--spacing-xl) - 4px);
+                line-height: 0.85;
             }
         }
 
@@ -179,6 +180,7 @@
     }
 
     .slat-label {
+        padding-top: var(--spacing-xs);
         label {
             font-size: 12px;
         }

@@ -86,6 +86,12 @@ export default {
         console.log('desk');
         this.$root.eventHub.$emit("client-change");
       }
+
+      if (window.innerHeight < 799 && this.$root.store.clientInfo.short != true) {
+        this.$root.store.clientInfo.short = true;
+      } else if (window.innerHeight > 799 && this.$root.store.clientInfo.short != false) {
+        this.$root.store.clientInfo.short = false;
+      }
     },
     utils(func, ...val) {
       return Utils[func](...val);

@@ -2,27 +2,52 @@
   --chip-width: 84px;
   --chip-height: var(--chip-width);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  background: var(--base);
+  color: var(--fourth);
+  border: 4px solid var(--base);
   
-  min-width: calc(var(--chip-width) * 1.3);
+  min-width: calc((var(--chip-width) * 1.3) + var(--spacing-sm) * 2);
   min-height: calc(var(--chip-height) * 1.3);
   pointer-events: all;
   cursor: pointer;
-
+  transition: border 0.75s ease;
 
   nav & {
     --chip-height: 44px;
     min-height: var(--chip-height);
   }
+
+
+  &:hover {
+    border-color: var(--secondary);
+    .chip-wrapper-label {
+      text-decoration-color: var(--base);
+    }
+
+    .front img {
+      filter: none;
+    }
+  }
+}
+
+.chip-wrapper-label {
+  @include text-extraLight;
+  margin-bottom: 12px;
+  color: inherit;
+  text-decoration:underline;
+  transition: text-decoration-color 0.35s ease;
 }
 
 .chip-container {
-  height: var(--chip-height);
+  // height: var(--chip-height);
   width: var(--chip-width);
   pointer-events: none;
   transition: transform .25s ease;
-
 }
 
 .chip {

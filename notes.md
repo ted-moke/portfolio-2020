@@ -1,20 +1,25 @@
 TO DO
-Important
+Post v1 launch
+* 100vh recalc/workaround for nav disappearing on mobile
 
 Lesser
-* preload vimeo links
+* preloader
+* preload vimeo iframes
+* logo animation in
+* tap to toggle control overlay
+* cycle jumbo titles
+* recaptcha
 * nav redesign
-* add resume/phone num? to contact
+* add demos section
 
 Nice to have
+* add resume/phone num? to contact
 * vimeo autohide controls
 * hover link animation
 * project sidebar labels
 * paint bucket color switcher
-* logo animation in
 * create dribble
 * button hover animation
-* add demos section
 * funky jumbo effect
 
 Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

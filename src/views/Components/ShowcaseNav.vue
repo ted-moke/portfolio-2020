@@ -1,16 +1,18 @@
 <template>
-  <div class="showcase-nav">
-    <p class="showcase-nav-label">Projects</p>
-    <div ref="featureWrapper">
-      <Feature
-        v-for="(piece, i) in projectData.list"
-        v-bind:ref="`chip-${i}`"
-        v-bind:key="piece.id"
-        v-bind:featurePreviewContent="piece"
-        v-bind:class="[$root.store.routingToShowcase === piece.id ? 'active' : '']"
-      >{{i}}</Feature>
+  <div class="showcase-nav-container">
+    <div class="showcase-nav">
+      <h3 class="showcase-nav-label">Projects</h3>
+      <div ref="featureWrapper">
+        <Feature
+          v-for="(piece, i) in projectData.list"
+          v-bind:ref="`chip-${i}`"
+          v-bind:key="piece.id"
+          v-bind:featurePreviewContent="piece"
+          v-bind:class="[$root.store.routingToShowcase === piece.id ? 'active' : '']"
+        >{{i}}</Feature>
+      </div>
+      <FeatureControl v-show="$root.store.clientInfo.isDesktop"></FeatureControl>
     </div>
-    <FeatureControl v-show="$root.store.clientInfo.isDesktop"></FeatureControl>
   </div>
 </template>
 

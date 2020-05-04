@@ -1,12 +1,13 @@
 var thumbStepCounter = require("../assets/images/project-stepCounter-thumb.png");
 var thumbQuiz = require("../assets/images/project-quiz-thumb.png");
-var thumbPanels = require("../assets/images/project-panels-thumb.png");
+var thumbPanels = require("../assets/images/project-panels-thumb.jpg");
 
 let data = {
   order: ['quiz', 'stepCounter', 'vuePanels'],
   list: {
     quiz: {
       id: 'quiz',
+      label: 'Quiz Platform',
       slats: [
         {
           title: 'project',
@@ -17,7 +18,7 @@ let data = {
           text: 'Various Companies'
         },
         {
-          title: 'roles',
+          title: 'role',
           text: 'Sole Developer',
         },
         {
@@ -30,6 +31,7 @@ let data = {
     },
     stepCounter: {
       id: 'stepCounter',
+      label: 'Step Counter',
       slats: [
         {
           title: 'project',
@@ -40,7 +42,7 @@ let data = {
           text: 'Biopharma Companies'
         },
         {
-          title: 'roles',
+          title: 'role',
           text: 'Lead Developer',
         },
         {
@@ -53,6 +55,7 @@ let data = {
     },
     vuePanels: {
       id: 'vuePanels',
+      label: 'Vue Panels',
       slats: [{
           title: 'project',
           text: 'Vue.js Touch Panels'
@@ -62,7 +65,7 @@ let data = {
           text: 'Neuroscience Company'
         },
         {
-          title: 'roles',
+          title: 'role',
           text: 'Developer'
         },
         {

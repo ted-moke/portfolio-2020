@@ -81,8 +81,8 @@ export default {
       }
     },
     slatHeight() {
-      if (window.innerHeight < 768) {
-        return window.innerHeight / 12;
+      if (window.innerHeight < 799) {
+        return window.innerHeight / 9;
       } else if (window.innerWidth < 1200) {
         return 80;
       } else {
