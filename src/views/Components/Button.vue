@@ -11,6 +11,7 @@ export default {
   props: {
     active: Boolean,
     clickEvent: String,
+    localClickEvent: String,
     primary: Boolean,
     fourth: Boolean,
     small: Boolean,
@@ -18,10 +19,17 @@ export default {
     circle: Boolean
   },
   methods: {
-    emitEvent() {
-      if (!this.clickEvent) return;
+    emitEvent(e) {
+      e.preventDefault();
+      if (!this.clickEvent && !this.localClickEvent) return;
       
-      this.$root.eventHub.$emit(this.clickEvent);
+      if (this.clickEvent) {
+        this.$root.eventHub.$emit(this.clickEvent);
+      }
+
+      if (this.localClickEvent) {
+        this.$emit(this.localClickEvent)
+      }
     }
   }
 };

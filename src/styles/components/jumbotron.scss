@@ -92,6 +92,12 @@
             justify-content: flex-start;
             left: 0;
         }
+
+        &.description {
+            &::after {
+                display: none;
+            }
+        }
     }
 }
 @media screen and (max-width: $breakpoint-md-max) {

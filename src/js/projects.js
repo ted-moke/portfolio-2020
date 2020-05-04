@@ -14,7 +14,7 @@ let data = {
         },
         {
           title: 'client',
-          text: 'Various Co.'
+          text: 'Various Companies'
         },
         {
           title: 'roles',
@@ -37,7 +37,7 @@ let data = {
         },
         {
           title: 'client',
-          text: 'Biopharma Cos.'
+          text: 'Biopharma Companies'
         },
         {
           title: 'roles',
@@ -59,7 +59,7 @@ let data = {
         },
         {
           title: 'client',
-          text: 'Neuroscience Co.'
+          text: 'Neuroscience Company'
         },
         {
           title: 'roles',

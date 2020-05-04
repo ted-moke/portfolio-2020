@@ -220,4 +220,12 @@
             display: none;
         }
     }
+
+    .slat {
+        &.project {
+            p {
+                font-size: var(--spacing-lg);
+            }
+        }
+    }
 }

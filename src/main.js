@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import axios from 'axios';
+import VueAxios from 'vue-axios'
 import App from './App.vue'
 import router from './router'
 
@@ -7,6 +9,8 @@ import styles from './styles/main.scss'; // eslint-disable-line no-unused-vars
 import { throttle } from 'lodash';
 
 Vue.config.productionTip = false
+
+Vue.use(VueAxios, axios)
 
 Vue.directive('scroll', {
   inserted: function (el, binding) {
@@ -33,7 +37,6 @@ Vue.directive('resize', {
 });
 
 var eventHub = new Vue();
-
 
 new Vue({
   data: {
