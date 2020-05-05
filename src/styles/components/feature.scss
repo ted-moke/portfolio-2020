@@ -3,14 +3,12 @@
   @include flex-center-j;
   @include flex-center-a;
 
-  position: relative;
+  position: absolute;
   flex: 1;
-  border: 5px solid #222;
-  border-top-color: #888;
-  border-right-color: #555;
-  border-left: none;
   background: var(--gray-2);
   overflow: hidden;
+  height: 100%;
+  width: 100%;
 
   img,
   video {

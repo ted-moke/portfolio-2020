@@ -14,7 +14,9 @@
         ></Shutter>
       </div>
 
-      <FeatureWrapper v-bind:open="shutterOpen" v-bind:content="showcaseContent"></FeatureWrapper>
+      <transition-group name="feature-wrapper">
+        <FeatureWrapper v-for="project in showcaseList" :key="project.id" v-show="nextShowcaseId === project.id || (!nextShowcaseId && currentShowcaseId === project.id)" v-bind:open="shutterOpen" v-bind:content="project"></FeatureWrapper>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -38,6 +40,9 @@ export default {
     },
     showcaseContent: function() {
       return PROJECT_DATA.list[this.currentShowcaseId];
+    },
+    showcaseList: function() {
+      return PROJECT_DATA.list
     }
   },
   mounted: function() {

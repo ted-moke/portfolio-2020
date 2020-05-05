@@ -2,6 +2,7 @@
   <div class="showcase-nav-container">
     <div class="showcase-nav">
       <h3 class="showcase-nav-label">Projects</h3>
+      <FeatureControl v-show="$root.store.clientInfo.isDesktop"></FeatureControl>
       <div ref="featureWrapper">
         <Feature
           v-for="(piece, i) in projectData.list"
@@ -11,7 +12,6 @@
           v-bind:class="[$root.store.routingToShowcase === piece.id ? 'active' : '']"
         >{{i}}</Feature>
       </div>
-      <FeatureControl v-show="$root.store.clientInfo.isDesktop"></FeatureControl>
     </div>
   </div>
 </template>

@@ -4,7 +4,7 @@
       <div v-show="content.video" class="feature-container">
         <iframe
           class="feature-iframe"
-          :src="content.video + '?autoplay=1&loop=1&muted=1&controls=0&autopause=0'"
+          :src="content.video + '?loop=1&muted=1&controls=0&autopause=0'"
           frameborder="0"
           allow="autoplay; fullscreen"
           allowfullscreen

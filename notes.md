@@ -1,18 +1,16 @@
 TO DO
 Post v1 launch
 * 100vh recalc/workaround for nav disappearing on mobile
-* force https
-* sitemap
-* robots.txt / find alt for storage
 
 Lesser
-* cycle jumbo titles
 * preload vimeo iframes
-* logo animation in
 * preloader
+* cycle jumbo titles
+* logo animation in
 * recaptcha
 * add demos section
 * nav redesign
+* rework favicon
 
 Nice to have
 * contact form error animation
