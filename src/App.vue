@@ -60,12 +60,11 @@ export default {
     ON_CLICK(e) {
       if (this.$root.store.clientInfo.isDesktop) return;
 
+      let INTERACTIVE_TAG_NAMES = ['BUTTON', 'A', 'INPUT', 'TEXTAREA'];
+
       // If the clicked element is not interactive, toggle the mobile control overlay
-      if (e.target.tagName != 'BUTTON' && e.target.tagName != 'A' && !e.target.classList.contains('chip-wrapper')) {
-        console.log(e);
-        console.log(this.$root.store.overlayControlsHidden);
+      if (INTERACTIVE_TAG_NAMES.indexOf(e.target.tagName) === -1 && !e.target.classList.contains('chip-wrapper')) {
         this.$root.store.overlayControlsHidden = !this.$root.store.overlayControlsHidden;
-        console.log(this.$root.store.overlayControlsHidden);
       } 
     },
     ON_SCROLL() {
