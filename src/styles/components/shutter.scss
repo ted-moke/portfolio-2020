@@ -203,6 +203,10 @@
             p {
                 font-size: calc(var(--spacing-lg) - 6px);
             }
+
+            &::after {
+                width: calc(100% - 16px);
+            }
         }
     }
 

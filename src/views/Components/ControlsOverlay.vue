@@ -18,7 +18,7 @@
         </g>
       </svg>
     </Button> -->
-    <FeatureControl v-show="!$root.store.clientInfo.isDesktop"></FeatureControl>
+    <FeatureControlMobile v-show="!$root.store.clientInfo.isDesktop"></FeatureControlMobile>
     <Button class="control-message" primary clickEvent="toggle-contact" :circle="!$root.store.clientInfo.isDesktop || $root.store.clientInfo.short">
       <div class="button-content-container">
         <p v-show="$root.store.clientInfo.isDesktop && !$root.store.clientInfo.short">Contact</p>
@@ -38,12 +38,12 @@
 
 <script>
 import Button from './Button';
-import FeatureControl from './FeatureControl';
+import FeatureControlMobile from './FeatureControlMobile';
 
 export default {
   components: {
     Button,
-    FeatureControl
+    FeatureControlMobile
   }
 }
 </script>

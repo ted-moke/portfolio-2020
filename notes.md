@@ -13,6 +13,7 @@ Lesser
 * add demos section
 
 Nice to have
+* resize slats on browser resize
 * add resume/phone num? to contact
 * vimeo autohide controls
 * hover link animation
