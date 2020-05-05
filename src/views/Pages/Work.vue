@@ -1,10 +1,10 @@
 <template>
   <transition name="turn">
-    <section v-show="shown" ref="el" class="work">
+    <section v-show="loaded" ref="el" class="work">
       <div class="section-header-container">
         <h2 class="section-header">Ted Moke - Work</h2>
       </div>
-      <ShowcaseWrapper :open="shown"></ShowcaseWrapper>
+      <ShowcaseWrapper :open="loaded"></ShowcaseWrapper>
       <footer>
         <p><span class="highlight">Ted Moke</span> | JavaScript Developer</p>
       </footer>
@@ -18,7 +18,10 @@ import ShowcaseWrapper from "@/views/Components/ShowcaseWrapper";
 
 export default {
   props: {
-    shown: Boolean
+    loaded: {
+      type: Boolean,
+      default: false
+    }
   },
   computed: {
     el: function() {

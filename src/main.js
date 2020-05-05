@@ -3,6 +3,7 @@ import axios from 'axios';
 import VueAxios from 'vue-axios'
 import App from './App.vue'
 import router from './router'
+import VueScrollTo from 'vue-scrollto';
 
 // Fonts need to be called in js for webpack to see and copy over
 import styles from './styles/main.scss'; // eslint-disable-line no-unused-vars
@@ -11,6 +12,7 @@ import { throttle } from 'lodash';
 Vue.config.productionTip = false
 
 Vue.use(VueAxios, axios)
+Vue.use(VueScrollTo)
 
 Vue.directive('scroll', {
   inserted: function (el, binding) {
@@ -40,6 +42,7 @@ var eventHub = new Vue();
 
 new Vue({
   data: {
+    introComplete: false,
     TRANSITION_DURATION: .35, // s
     SHUTTER_PAUSE: 250, // ms
     SHUTTER_STAGGER: 250, // ms

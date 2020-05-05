@@ -1,11 +1,15 @@
 <template>
   <div ref="app" id="app" v-scroll="ON_SCROLL" v-resize="ON_RESIZE" @click="ON_CLICK">
-    <Globals></Globals>
-    <Jumbotron></Jumbotron>
-    <PageWrapper>
+    <Globals v-show="$root.store.introComplete"></Globals>
+    <Jumbotron v-show="$root.store.introComplete" :loaded="loaded"></Jumbotron>
+    <PageWrapper v-show="$root.store.introComplete">
       <!-- <router-view></router-view> -->
-      <Work :shown="$route.path.includes('work')"></Work>
+      <Work :shown="$route.path.includes('work')" :loaded="loaded"></Work>
     </PageWrapper>
+    <div class="placeholder" v-if="!loaded">
+      Loading...
+    </div>
+    <div class="placeholder" id="placeholder-2" v-if="!loaded"></div>
   </div>
 </template>
 
@@ -16,8 +20,6 @@
 </style>
 
 <script>
-// import VueScrollTo from 'vue-scrollto';
-
 import Globals from "@/views/Pages/Globals.vue";
 import Jumbotron from "@/views/Components/Jumbotron.vue";
 import PageWrapper from "@/views/Pages/PageWrapper.vue";
@@ -30,7 +32,8 @@ export default {
   name: "app",
   data: function() {
     return {
-      isRouting: false
+      isRouting: false,
+      loaded: false
     };
   },
   computed: {
@@ -43,6 +46,15 @@ export default {
   },
   mounted: function() {
     console.log("Application Build: ", new Date().toLocaleString());
+
+    if (this.$route.path.length > 1) {
+      this.$scrollTo('#placeholder-2');
+    }
+
+    window.setTimeout(()=>{
+     this.loaded = true;
+     this.$root.store.introComplete = true;
+    },2000)
 
     if (this.$route.params.project) {
       this.$root.store.currentShowcaseId = this.$route.params.project;
@@ -91,11 +103,9 @@ export default {
       
       if (box.width > 992 && this.$root.store.clientInfo.isDesktop != true) {
         this.$root.store.clientInfo.isDesktop = true;
-        console.log('mob');
         this.$root.eventHub.$emit("client-change");
       } else if (box.width <= 992 && this.$root.store.clientInfo.isDesktop != false) {
         this.$root.store.clientInfo.isDesktop = false;
-        console.log('desk');
         this.$root.eventHub.$emit("client-change");
       }
 

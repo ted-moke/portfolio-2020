@@ -35,6 +35,9 @@
 import Shutter from "../Components/Shutter";
 
 export default {
+  props: {
+    loaded: Boolean
+  },
   data: function() {
     return {
       JOB_DESC: [
@@ -72,9 +75,9 @@ export default {
       ];
     }
   },
-  mounted: function() {
-    this.shutterOpen = true;
-  },
+  // mounted: function() {
+  //   this.shutterOpen = true;
+  // },
   methods: {
     ON_SHUTTER_OPEN: function() {
       this.$root.eventHub.$emit("bounce-arrows");
@@ -82,6 +85,14 @@ export default {
   },
   components: {
     Shutter
+  },
+  watch: {
+    loaded: function(newVal) {
+      if (newVal) {
+        console.log('opening shutter');
+        this.shutterOpen = true;
+      }
+    }
   }
 };
 </script>
