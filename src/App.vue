@@ -1,5 +1,5 @@
 <template>
-  <div ref="app" id="app" v-scroll="ON_SCROLL" v-resize="ON_RESIZE">
+  <div ref="app" id="app" v-scroll="ON_SCROLL" v-resize="ON_RESIZE" @click="ON_CLICK">
     <Globals></Globals>
     <Jumbotron></Jumbotron>
     <PageWrapper>
@@ -57,6 +57,17 @@ export default {
     })
   },
   methods: {
+    ON_CLICK(e) {
+      if (this.$root.store.clientInfo.isDesktop) return;
+
+      // If the clicked element is not interactive, toggle the mobile control overlay
+      if (e.target.tagName != 'BUTTON' && e.target.tagName != 'A' && !e.target.classList.contains('chip-wrapper')) {
+        console.log(e);
+        console.log(this.$root.store.overlayControlsHidden);
+        this.$root.store.overlayControlsHidden = !this.$root.store.overlayControlsHidden;
+        console.log(this.$root.store.overlayControlsHidden);
+      } 
+    },
     ON_SCROLL() {
       if (this.isRouting) return;
       

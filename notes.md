@@ -6,7 +6,6 @@ Lesser
 * preloader
 * preload vimeo iframes
 * logo animation in
-* tap to toggle control overlay
 * cycle jumbo titles
 * recaptcha
 * nav redesign

@@ -19,7 +19,7 @@ button {
 
     * {
         user-select: none;
-
+        pointer-events: none;
     }
 
     h4 {

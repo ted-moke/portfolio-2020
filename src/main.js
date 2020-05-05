@@ -54,7 +54,8 @@ new Vue({
       clientInfo: {
         isDesktop: null,
         short: null
-      }
+      },
+      overlayControlsHidden: false
     }
   },
   router,

@@ -17,11 +17,14 @@
   cursor: pointer;
   transition: border 0.75s ease;
 
+  * {
+    pointer-events: none;
+  }
+
   nav & {
     --chip-height: 44px;
     min-height: var(--chip-height);
   }
-
 
   &:hover {
     border-color: var(--secondary);
