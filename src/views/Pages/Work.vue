@@ -4,10 +4,10 @@
       <div class="section-header-container">
         <h2 class="section-header">Ted Moke - Work</h2>
       </div>
-      <ShowcaseWrapper></ShowcaseWrapper>
-    <footer>
-      <p><span class="highlight">Ted Moke</span> | JavaScript Developer</p>
-    </footer>
+      <ShowcaseWrapper :open="shown"></ShowcaseWrapper>
+      <footer>
+        <p><span class="highlight">Ted Moke</span> | JavaScript Developer</p>
+      </footer>
     </section>
   </transition>
 </template>
@@ -17,18 +17,13 @@
 import ShowcaseWrapper from "@/views/Components/ShowcaseWrapper";
 
 export default {
-  data: function() {
-    return {
-      shown: false
-    };
+  props: {
+    shown: Boolean
   },
   computed: {
     el: function() {
       return this.$refs.el;
     }
-  },
-  mounted: function() {
-    this.shown = true;
   },
   components: {
     ShowcaseWrapper

@@ -16,6 +16,7 @@
   pointer-events: all;
   cursor: pointer;
   transition: border 0.75s ease;
+  overflow: hidden;
 
   * {
     pointer-events: none;

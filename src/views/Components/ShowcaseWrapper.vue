@@ -28,10 +28,13 @@ import ShowcaseNav from "@/views/Components/ShowcaseNav.vue";
 import Shutter from "@/views/Components/Shutter.vue";
 
 export default {
+  props: {
+    open: Boolean
+  },
   data: function() {
     return {
       nextShowcaseId: null,
-      shutterOpen: true
+      shutterOpen: false
     }
   },
   computed: {
@@ -46,15 +49,14 @@ export default {
     }
   },
   mounted: function() {
+    this.shutterOpen = this.open;
+    
     this.$root.eventHub.$on("next-feature", () => {
       var currIdx = PROJECT_DATA.order.indexOf(this.$root.store.currentShowcaseId);
-      console.log(currIdx, PROJECT_DATA.order)
       var nextIdx = currIdx + 1;
       if (nextIdx >= PROJECT_DATA.order.length) {
         nextIdx = 0;        
       }
-
-      console.log(PROJECT_DATA.order[nextIdx])
 
       this.$root.eventHub.$emit('route-showcase', PROJECT_DATA.order[nextIdx]);
     })
@@ -104,5 +106,10 @@ export default {
     ShowcaseNav,
     Shutter
   },
+  watch: {
+    open: function(newVal) {
+      this.shutterOpen = newVal;
+    }
+  }
 };
 </script>
