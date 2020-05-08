@@ -45,9 +45,9 @@ export default {
         this.$emit('SHOW_COMPLETE')
       }
       if (this.horizontal) {
-        gsap.to(this.el, {x: '0%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
+        gsap.to(this.el, {x: '0%', duration: .5,ease: 'back.out(1.35)', onComplete: ()=>{if (callback){callback()}}})
       } else {
-        gsap.to(this.el, {y: '0%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
+        gsap.to(this.el, {y: '0%', duration: .5,ease: 'back.out(1.35)', onComplete: ()=>{if (callback){callback()}}})
       }
     },
     

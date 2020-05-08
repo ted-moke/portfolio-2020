@@ -41,6 +41,7 @@
     border-top-color: #888;
     border-right-color: #555;
     border-left: none;
+    margin: var(--spacing-xs) 0;
   }
 }
 
@@ -125,7 +126,7 @@
 
   .showcase-container {
     flex-direction: column-reverse;
-    height: 100%;
+    height: auto;
 
     .slat {
       .content-container {

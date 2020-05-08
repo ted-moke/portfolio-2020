@@ -1,15 +1,14 @@
 <template>
   <div ref="app" id="app" v-scroll="ON_SCROLL" v-resize="ON_RESIZE" @click="ON_CLICK">
-    <Globals v-show="$root.store.introComplete"></Globals>
-    <Jumbotron v-show="$root.store.introComplete" :loaded="loaded"></Jumbotron>
-    <PageWrapper v-show="$root.store.introComplete">
+    <Globals v-if="loaded || this.$route.path != '/'"></Globals>
+    <Jumbotron></Jumbotron>
+    <PageWrapper>
       <!-- <router-view></router-view> -->
-      <Work :shown="$route.path.includes('work')" :loaded="loaded"></Work>
+      <Work :shown="$route.path.includes('work')"></Work>
     </PageWrapper>
-    <div class="placeholder" v-if="!loaded">
-      Loading...
+    <!-- <div class="placeholder" v-if="!loaded">
     </div>
-    <div class="placeholder" id="placeholder-2" v-if="!loaded"></div>
+    <div class="placeholder" id="placeholder-2" v-if="!loaded"></div> -->
   </div>
 </template>
 
@@ -51,11 +50,6 @@ export default {
       this.$scrollTo('#placeholder-2');
     }
 
-    window.setTimeout(()=>{
-     this.loaded = true;
-     this.$root.store.introComplete = true;
-    },2000)
-
     if (this.$route.params.project) {
       this.$root.store.currentShowcaseId = this.$route.params.project;
       this.$root.store.routingToShowcase = this.$route.params.project;
@@ -68,6 +62,10 @@ export default {
 
     this.$router.afterEach(() => {
       this.isRouting = false;
+    })
+
+    this.$root.eventHub.$on('introComplete', ()=> {
+      this.loaded = true;
     })
   },
   methods: {

@@ -1,0 +1,64 @@
+<svg class="logo logo-tedmoke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2473 1392">
+  <defs>
+    <style>
+      .cls-1, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #0e1428;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1 {
+        stroke-width: 22px;
+      }
+
+      .cls-2 {
+        fill: #0e1428;
+      }
+
+      .cls-3 {
+        stroke-width: 33px;
+      }
+
+      .cls-4 {
+        stroke-width: 44px;
+        isolation: isolate;
+      }
+    </style>
+  </defs>
+  <title>logo-tedmoke-anim-box_counter-adj</title>
+  <g id="box-path">
+    <polygon id="box-full-clockwise" class="cls-1" points="1584 868.06 1584 945.66 889 945.66 889 445.66 1584 445.66 1584 868.06"/>
+    <polygon id="box-full-counterwise" class="cls-1" points="1584 897.4 1584 445.66 889 445.66 889 945.66 1584 945.66 1584 897.4"/>
+  </g>
+  <g id="moke-path">
+    <path id="m-full-moke" class="cls-2" d="M1060.39,752.08h29.27V897.4h-33V821.13l-28,52.15h-24.32l-27.83-50.91-.21,75h-33V752.08h29.89l43.7,82.66Z"/>
+    <path id="o-full-moke" class="cls-2" d="M1146.86,890.08a62.59,62.59,0,0,1-25.25-26q-8.86-16.8-8.86-39.47t8.86-39.48a62,62,0,0,1,25.25-25.87q16.4-9.06,38.65-9.07t38.65,9.07a61.3,61.3,0,0,1,25.15,25.87q8.76,16.8,8.76,39.48t-8.86,39.47a62.59,62.59,0,0,1-25.25,26q-16.39,9.18-38.45,9.18Q1163.25,899.26,1146.86,890.08Zm64.42-31.53q9.27-11.65,9.28-33.91t-9.38-33.81q-9.39-11.55-25.67-11.54-16.48,0-25.76,11.44t-9.28,33.91q0,22.47,9.28,34t25.76,11.54Q1202,870.19,1211.28,858.55Z"/>
+    <g id="k-full-moke">
+      <path id="k-topR-moke" class="cls-2" d="M1316,816.66l59.36-64.58h44.32l-103.16,108.1Zm2.47,15"/>
+      <path id="k-bottomR-moke" class="cls-2" d="M1349.55,815.11,1422,897.4H1377l-58.54-65.76Zm-31.08-.57"/>
+      <path id="k-topL-moke" class="cls-2" d="M1280.54,859.66V752.08h37.93v79.56Z"/>
+      <path id="k-bottomL-moke" class="cls-2" d="M1318.47,831.64V897.4h-37.93V853.66l37.93-35v13Z"/>
+    </g>
+    <g id="e-full-moke">
+      <path id="e-base-moke" class="cls-2" d="M1461.86,897.41h-37V751.66h37"/>
+      <path id="e-top-moke" class="cls-2" d="M1427.82,751.66h100.61v29.39H1427.82Z"/>
+      <path id="e-mid-moke" class="cls-2" d="M1427.82,808.72h96.58v29.15h-96.58Z"/>
+      <path id="e-bottom-moke" class="cls-2" d="M1427.82,868.06h100.61v29.35H1427.82Z"/>
+    </g>
+    <path id="moke-snake" class="cls-3" d="M1576.12,882.74H1441.43V768.41L1382,768l-106.4,114.7h-90.07c-73,0-72.11-118.38-.1-118.39,71.19,0,75.13,118.39.1,118.39l-112.38-1-.06-113.19h-3.16l-50.39,89.82h-5.67l-50.63-89.91h-3.53L959,1391.16"/>
+  </g>
+  <g id="ted-path">
+    <g id="t-full-ted">
+      <path id="t-base-ted" class="cls-2" d="M999.33,705.89V532.66h56.27V705.89"/>
+      <path id="t-top-ted" class="cls-2" d="M999.33,537.7H935.51V492.63h183.91V537.7H999.33Z"/>
+    </g>
+    <g id="e-full-ted">
+      <path id="e-base-ted" class="cls-2" d="M1196.56,705.89h-54.15V492.63h54.15"/>
+      <path id="e-top-ted" class="cls-2" d="M1143,492.63h151v43H1143Z"/>
+      <path id="e-mid-ted" class="cls-2" d="M1143,576.12h144.91v42.65H1143Z"/>
+      <path id="e-bottom-ted" class="cls-2" d="M1143,662.94h151v42.95H1143Z"/>
+    </g>
+    <path id="d-full-ted" class="cls-2" d="M1323,492.63h86.81q35.4,0,61,12.71A89.78,89.78,0,0,1,1510,542.09q13.6,24,13.61,57,0,33.28-13.46,57.32t-39,36.75q-25.58,12.72-61.26,12.71H1323Zm82.88,168.49q31.45,0,46.89-15.43t15.4-46.58q0-31.15-15.42-46.43t-46.87-15.28h-27.23V661.12Z"/>
+    <path id="ted-snake" class="cls-4" d="M0,515.24H1165.17v169h250c109,0,108-168,2-169H1345v191"/>
+  </g>
+</svg>

@@ -2,9 +2,22 @@
     position: relative;
     display: flex;
     height: 100vh;
-    padding: 0 15vw;
+    // padding: 0 15vw;
     margin: 0;
     user-select: none;
+
+    padding: 0;
+
+    .content-left {
+        flex-basis: 100%;
+        padding-right: 0;
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    .content-right {
+        flex-basis: 0;
+    }
 
     h1,
     h2,
@@ -16,15 +29,11 @@
 
     .jumbotron-content {
         position: relative;
-        flex-basis: 50%;
+        // flex-basis: 50%;
         
         @include flex-col;
         @include flex-center-j;
         @include flex-center-a;
-    }
-
-    .content-left {
-        padding-right: 15vw;
     }
 
     .content-right {
@@ -91,6 +100,8 @@
         .content-container {
             justify-content: flex-start;
             left: 0;
+            padding-left: var(--spacing-lg);
+            padding-right: var(--spacing-lg);
         }
 
         &.description {
@@ -98,6 +109,34 @@
                 display: none;
             }
         }
+    }
+}
+
+.logo-tedmoke {
+    width: 110%;
+    .cls-1,
+    .cls-3,
+    .cls-4 {
+      fill: none;
+      stroke: #0e1428;
+      stroke-miterlimit: 10;
+    }
+  
+    .cls-1 {
+      stroke-width: 22px;
+    }
+  
+    .cls-2 {
+      fill: #0e1428;
+    }
+  
+    .cls-3 {
+      stroke-width: 33px;
+    }
+  
+    .cls-4 {
+      stroke-width: 44px;
+      isolation: isolate;
     }
 }
 @media screen and (max-width: $breakpoint-md-max) {
@@ -112,6 +151,8 @@
 
             .content-container {
                 justify-content: center;
+                padding-left: var(--spacing-sm);
+                padding-right: var(--spacing-sm);
             }
 
             &:last-child {
@@ -120,13 +161,17 @@
         }
 
         .content-left {
-            padding-left: 15vw;
+            // padding-left: 15vw;
         }
 
     }
 
     .jumbotron-content {
         flex-basis: 50%;
+    }
+
+    .logo-tedmoke {
+        width: 200%;
     }
 }
 

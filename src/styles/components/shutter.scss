@@ -24,7 +24,6 @@
 }
 
 .slat {
-    
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -52,7 +51,7 @@
     .content-container {
         position: absolute;
         width: 100%;
-        padding: var(--spacing-md);
+        padding: var(--spacing-xs) var(--spacing-md);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -76,14 +75,14 @@
 
     &.project {
         p {
-            font-size: calc(var(--spacing-xl ) + var(--spacing-sm));
+            font-size: calc(var(--spacing-xl) + var(--spacing-sm));
         }
 
         .slat-label {
             background: var(--fourth);
         }
     }
-    
+
     &.client {
         .slat-label {
             background: var(--tertiary);
@@ -97,6 +96,9 @@
     }
 
     &.description {
+        .content-container {
+            padding-top: var(--spacing-sm);
+        }
 
         p {
             @include text-extraLight();
@@ -111,13 +113,13 @@
         &::after {
             @include psuedo;
             bottom: 0;
-            top: auto;  
+            top: auto;
             left: auto;
             right: 0;
             height: 20px;
             width: calc(100% - 31px);
             background: var(--gray-1);
-            background: linear-gradient(0deg, var(--gray-1) 0%, rgba(0,0,0,0) 100%);
+            background: linear-gradient(0deg, var(--gray-1) 0%, rgba(0, 0, 0, 0) 100%);
         }
     }
 
@@ -204,10 +206,6 @@
             p {
                 font-size: calc(var(--spacing-lg) - 6px);
             }
-
-            &::after {
-                width: calc(100% - 16px);
-            }
         }
     }
 
@@ -232,6 +230,12 @@
         &.project {
             p {
                 font-size: var(--spacing-lg);
+            }
+        }
+
+        &.description {
+            &::after {
+                width: calc(100% - 16px);
             }
         }
     }

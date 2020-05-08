@@ -3,20 +3,18 @@ Post v1 launch
 * 100vh recalc/workaround for nav disappearing on mobile
 
 Lesser
-* preload vimeo iframes
 * preloader
 * cycle jumbo titles
-* logo animation in
 * recaptcha
-* add demos section
-* nav redesign
 * rework favicon
 
 Nice to have
+* add demos section
+* nav redesign
+* turn logo to 3d chip
 * contact form error animation
-* resize slats on browser resize
-* add resume/phone num? to contact
 * vimeo autohide controls
+* resize slats on browser resize
 * hover link animation
 * project sidebar labels
 * paint bucket color switcher
