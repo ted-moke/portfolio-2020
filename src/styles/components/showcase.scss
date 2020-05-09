@@ -10,6 +10,7 @@
 
 .showcase-container {
   @include boxShadow;
+  position: relative;
   background: var(--gray-2);
   display: flex;
   width: 100%;
@@ -29,6 +30,18 @@
       p {
         padding-bottom: var(--spacing-md);
       }
+    }
+  }
+
+  .control-feature-container {
+    position: absolute;
+    width: auto;
+    right: 0;
+    bottom: 0;
+    padding: 0 calc(var(--spacing-md) + 4px) 0 var(--spacing-md);
+    
+    a {
+      padding: var(--spacing-xs) var(--spacing-sm);
     }
   }
 

@@ -17,6 +17,7 @@
       <transition-group name="feature-wrapper">
         <FeatureWrapper v-for="project in showcaseList" :key="project.id" v-show="nextShowcaseId === project.id || (!nextShowcaseId && currentShowcaseId === project.id)" :shown="$route.path.includes('work') && (nextShowcaseId === project.id || (!nextShowcaseId && currentShowcaseId === project.id))" v-bind:open="shutterOpen" v-bind:content="project"></FeatureWrapper>
       </transition-group>
+      <FeatureControl v-if="$root.store.clientInfo.isDesktop"></FeatureControl>
     </div>
   </div>
 </template>
@@ -24,6 +25,7 @@
 <script>
 import PROJECT_DATA from "@/js/projects.js";
 import FeatureWrapper from "@/views/Components/FeatureWrapper.vue";
+import FeatureControl from "@/views/Components/FeatureControl.vue";
 import ShowcaseNav from "@/views/Components/ShowcaseNav.vue";
 import Shutter from "@/views/Components/Shutter.vue";
 
@@ -105,6 +107,7 @@ export default {
     }
   },
   components: {
+    FeatureControl,
     FeatureWrapper,
     ShowcaseNav,
     Shutter
