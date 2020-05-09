@@ -190,7 +190,7 @@ export default {
 
       masterTl.add(tlTed).add(tlMoke);
 
-      gsap.set(tedSnake, {drawSVG:"-20% 0%"});
+      gsap.set(tedSnake, {drawSVG:"-20% 0%", opacity: 0});
       gsap.set(tTopTed, {scaleY: 0});
       gsap.set(tBaseTed, {scaleY: 0});
       gsap.set(eBaseTed, {scaleX: 0});
@@ -215,6 +215,7 @@ export default {
       gsap.set(boxFullCounterwise, {drawSVG: "0% 0%"});
 
       tlTed.to(tedSnake, {delay: 0.35, drawSVG:"-20% 42%", ease:'power1.in'});
+      tlTed.to(tedSnake, {opacity: 1, duration: .35}, 0.35);
       tlTed.to(tedSnake, {drawSVG:"30% 53%", duration: 0.275});
       tlTed.to(tTopTed, {scale: 1, ease:'power2.out', duration: 0.1});
       tlTed.to(tBaseTed, {scale: 1, ease:'power2.out', duration: 0.25});

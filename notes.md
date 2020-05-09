@@ -1,10 +1,10 @@
 TO DO
 Post v1 launch
 * 100vh recalc/workaround for nav disappearing on mobile
-* chrome scroll before anim end bug
+
 Lesser
-* preloader
 * cycle jumbo titles
+* preloader
 * recaptcha
 * mobile contact form links layout/text-size
 

@@ -1,6 +1,6 @@
 <template>
   <div ref="app" id="app" v-scroll="ON_SCROLL" v-resize="ON_RESIZE" @click="ON_CLICK">
-    <Globals v-if="introComplete || this.$route.path != '/'"></Globals>
+    <Globals v-show="introComplete || this.$route.path != '/'"></Globals>
     <Jumbotron></Jumbotron>
     <PageWrapper>
       <!-- <router-view></router-view> -->
@@ -83,10 +83,7 @@ export default {
         console.log('scroll: ', window.scrollY, this.windowHeight / 2, this.$route.path);
         this.isRouting = true;
         this.$router.push("/work/" + this.$root.store.routingToShowcase);
-      } else if (
-        window.scrollY < this.windowHeight / 2 &&
-        this.$route.path != "/"
-      ) {
+      } else if (window.scrollY < this.windowHeight / 2 && this.$route.path != "/") {
         this.isRouting = true;
         this.$router.push("/");
       }
