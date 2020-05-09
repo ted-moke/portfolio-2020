@@ -1,10 +1,9 @@
 TO DO
 Post v1 launch
 * 100vh recalc/workaround for nav disappearing on mobile
-* work intro animations/video play on scroll shown 
-* add prev/next tow showcase wrapper
-* showcase wrapper top border bug
+* add prev/next to showcase wrapper
 * logo animation left side tedSnake doesn't hit edge
+* preload vimeo videos on project selection or next/prev hover to fix shutter stutter
 
 Lesser
 * preloader

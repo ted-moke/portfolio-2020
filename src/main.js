@@ -22,7 +22,7 @@ Vue.directive('scroll', {
       }
     };
 
-    window.addEventListener('scroll', throttle(f, 16, { trailing: true, leading: true }));
+    window.addEventListener('scroll', throttle(f, 16, { trailing: true, leading: false }));
   },
 });
 

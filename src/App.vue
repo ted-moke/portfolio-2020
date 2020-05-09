@@ -1,14 +1,11 @@
 <template>
   <div ref="app" id="app" v-scroll="ON_SCROLL" v-resize="ON_RESIZE" @click="ON_CLICK">
-    <Globals v-if="loaded || this.$route.path != '/'"></Globals>
+    <Globals v-if="introComplete || this.$route.path != '/'"></Globals>
     <Jumbotron></Jumbotron>
     <PageWrapper>
       <!-- <router-view></router-view> -->
       <Work :shown="$route.path.includes('work')"></Work>
     </PageWrapper>
-    <!-- <div class="placeholder" v-if="!loaded">
-    </div>
-    <div class="placeholder" id="placeholder-2" v-if="!loaded"></div> -->
   </div>
 </template>
 
@@ -32,7 +29,7 @@ export default {
   data: function() {
     return {
       isRouting: false,
-      loaded: false
+      introComplete: false
     };
   },
   computed: {
@@ -47,7 +44,7 @@ export default {
     console.log("Application Build: ", new Date().toLocaleString());
 
     if (this.$route.path.length > 1) {
-      this.$scrollTo('#placeholder-2');
+      this.$scrollTo('.page-placeholder');
     }
 
     if (this.$route.params.project) {
@@ -64,8 +61,8 @@ export default {
       this.isRouting = false;
     })
 
-    this.$root.eventHub.$on('introComplete', ()=> {
-      this.loaded = true;
+    this.$root.eventHub.$on('intro-complete', ()=> {
+      this.introComplete = true;
     })
   },
   methods: {
@@ -83,6 +80,7 @@ export default {
       if (this.isRouting) return;
       
       if (window.scrollY > this.windowHeight / 2 && this.$route.path === "/") {
+        console.log('scroll: ', window.scrollY, this.windowHeight / 2, this.$route.path);
         this.isRouting = true;
         this.$router.push("/work/" + this.$root.store.routingToShowcase);
       } else if (

@@ -1,22 +1,19 @@
 <template>
   <div class="feature-wrapper">
-    <transition name="fade">
-      <div v-show="content.video" class="feature-container">
-        <iframe
-          ref="iframe"
-          class="feature-iframe"
-          :src="content.video + '?loop=1&muted=1&controls=0&autopause=0'"
-          frameborder="0"
-          allow="autoplay; fullscreen"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </transition>
-    <transition name="fade">
-      <div v-show="!content.video && content.screenshot" class="feature-container">
-        <img :src="content.screenshot" />
-      </div>
-    </transition>
+    <div v-show="content.video" class="feature-container">
+      <iframe
+        v-if="initiated"
+        ref="iframe"
+        class="feature-iframe"
+        :src="content.video + '?loop=1&muted=1&controls=0&autopause=0'"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div v-show="!content.video && content.screenshot" class="feature-container">
+      <img :src="content.screenshot" />
+    </div>
   </div>
 </template>
 
@@ -29,22 +26,54 @@ export default {
     open: Boolean,
     shown: Boolean
   },
-  mounted: function() {
-    this.player = new Vimeo(this.$refs.iframe);
-
-    if (this.shown === true) {
-      this.player.play();
-    } else {
-      this.player.pause();
+  data: function() {
+    return {
+      initiated: false
     }
   },
-  watch: {
-    shown: function(newVal) {
+  mounted: function() {
+    if (!this.player && this.shown) {
+      this.buildPlayer(()=>{
+        this.player.play();
+      });
+    }
+
+    this.$root.eventHub.$on('intro-complete', ()=>{
+      if (this.shown || this.$root.store.routingToShowcase === this.content.id) {
+        this.buildPlayer();
+      }
+    })
+  },
+  methods: {
+    buildPlayer(cb) {
+      this.initiated = true;
+      this.$nextTick(()=>{
+
+        this.player = new Vimeo(this.$refs.iframe);
+
+        if (cb) {
+          cb();
+        }
+      })
+    },
+    togglePlayerState(newVal) {
       if (newVal === true) {
         this.player.play();
       } else {
         this.player.pause();
       }
+    }
+  },
+  watch: {
+    shown: function(newVal) {
+      if (!this.player) {
+        this.buildPlayer(()=>{
+          this.togglePlayerState(newVal);
+        });
+        return
+      }
+
+      this.togglePlayerState(newVal);
     }
   }
 };
