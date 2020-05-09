@@ -94,7 +94,10 @@ export default {
         this.$root.store.currentShowcaseId = this.nextShowcaseId;
         
         this.shutterOpen = true;
-        this.$router.push("/work/" + this.currentShowcaseId);
+        
+        if (this.$route.path.includes('work')) {
+          this.$router.push("/work/" + this.currentShowcaseId);
+        }
       }
     },
     ON_SHUTTER_SHOW: function() {

@@ -19,9 +19,8 @@ export default {
     let container = this.$refs.promptContainer;
     let arrows = container.children;
 
-    this.entryTl = gsap.timeline({defaults: {duration: 0.25}});
-    this.entryTl.fromTo(arrows, { y: 100 }, { y: -20, ease: "power4.out", stagger: .1 });
-    this.entryTl.to(arrows, { y: 0, ease: "bounce.out", stagger: .1 }, "-=.25");
+    this.entryTl = gsap.timeline({defaults: {duration: 0.35}});
+    this.entryTl.fromTo(arrows, { x: -100 }, { x: 0, ease: "power4.out" });
 
     this.bounceTl = gsap.timeline({defaults: {duration: 0.25}});
     this.bounceTl.pause();

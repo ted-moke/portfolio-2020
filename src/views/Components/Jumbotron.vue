@@ -153,7 +153,6 @@ export default {
 
     let { logo, jumboLeft, jumboRight } = this.$refs;
 
-console.log('about to set jumboR');
     this.masterTl.eventCallback('onComplete', ()=> {
       window.setTimeout(()=>{
 
@@ -175,16 +174,13 @@ console.log('about to set jumboR');
         if (this.$root.store.clientInfo.isDesktop) {
           gsap.to(logo, { width: '140%', duration: 0.35 });
         }
-      }, 350);
+      }, 50);
     })
   },
   methods: {
     ON_SHUTTER_OPEN: function() {
       this.$root.store.introComplete = true;
       this.$root.eventHub.$emit('intro-complete');
-
-      // TODO move this to the prompt component on introComplete
-      this.$root.eventHub.$emit("bounce-arrows");
     },
     setupLogoAnim: function() {
       let masterTl = gsap.timeline();

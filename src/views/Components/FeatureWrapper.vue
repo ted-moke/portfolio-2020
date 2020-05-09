@@ -39,8 +39,12 @@ export default {
     }
 
     this.$root.eventHub.$on('intro-complete', ()=>{
-      if (this.shown || this.$root.store.routingToShowcase === this.content.id) {
+      if (this.$root.store.clientInfo.isDesktop) {
         this.buildPlayer();
+      } else {
+        if (this.shown || this.$root.store.routingToShowcase === this.content.id) {
+          this.buildPlayer();
+        }
       }
     })
   },

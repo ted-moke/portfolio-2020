@@ -27,11 +27,6 @@ export default {
       default: false
     }
   },
-  computed: {
-    el: function() {
-      return this.$refs.el;
-    }
-  },
   components: {
     ShowcaseWrapper
   }

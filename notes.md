@@ -3,7 +3,7 @@ Post v1 launch
 * 100vh recalc/workaround for nav disappearing on mobile
 * add prev/next to showcase wrapper
 * logo animation left side tedSnake doesn't hit edge
-* preload vimeo videos on project selection or next/prev hover to fix shutter stutter
+* defer showing work until vimeo link load is started
 
 Lesser
 * preloader
