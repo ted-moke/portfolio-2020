@@ -1,12 +1,16 @@
 TO DO
 Post v1 launch
 * 100vh recalc/workaround for nav disappearing on mobile
+* work intro animations/video play on scroll shown 
+* add prev/next tow showcase wrapper
+* showcase wrapper top border bug
+* logo animation left side tedSnake doesn't hit edge
 
 Lesser
 * preloader
 * cycle jumbo titles
 * recaptcha
-* rework favicon
+* mobile contact form links layout/text-size
 
 Nice to have
 * add demos section
@@ -16,7 +20,6 @@ Nice to have
 * vimeo autohide controls
 * resize slats on browser resize
 * hover link animation
-* project sidebar labels
 * paint bucket color switcher
 * create dribble
 * button hover animation
