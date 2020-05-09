@@ -1,10 +1,7 @@
 TO DO
 Post v1 launch
 * 100vh recalc/workaround for nav disappearing on mobile
-* add prev/next to showcase wrapper
-* logo animation left side tedSnake doesn't hit edge
-* defer showing work until vimeo link load is started
-
+* chrome scroll before anim end bug
 Lesser
 * preloader
 * cycle jumbo titles

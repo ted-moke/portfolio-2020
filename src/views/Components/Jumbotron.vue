@@ -146,10 +146,7 @@ export default {
     }
   },
   mounted: function() {
-    console.time('anim')
     this.masterTl = this.setupLogoAnim();
-    // this.masterTl.pause();
-
 
     let { logo, jumboLeft, jumboRight } = this.$refs;
 
@@ -163,7 +160,6 @@ export default {
           onComplete: () => {
             this.shutterVisible = true;
             this.shutterOpen = true;
-            console.timeEnd('anim')
           }
         };
 

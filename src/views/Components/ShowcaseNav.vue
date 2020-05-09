@@ -17,8 +17,6 @@
 </template>
 
 <script>
-import gsap from "gsap";
-
 import Feature from "@/views/Components/Feature";
 import PROJECT_DATA from "@/js/projects.js";
 
@@ -33,31 +31,9 @@ export default {
       Features: []
     };
   },
-  mounted: function() {
-    this.$nextTick(() => {
-      let fWrapper = this.$refs.featureWrapper;
-      let features = fWrapper.children;
-
-      this.tl = gsap.timeline({ defaults: { duration: 0.25, stagger: 0.1 } });
-      this.tl.pause();
-
-      this.tl.to(features, { scale: 1.3, ease: "power2.inOut" });
-      this.tl.to(
-        features,
-        { scale: 1, ease: "bounce.out", duration: 0.5 },
-        "-=.25"
-      );
-    });
-    this.$root.eventHub.$on("showcase-in", this.highlight);
-  },
   computed: {
     projectData: function() {
       return PROJECT_DATA;
-    }
-  },
-  methods: {
-    highlight: function() {
-      this.tl.play();
     }
   },
   components: {

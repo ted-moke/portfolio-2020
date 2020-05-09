@@ -7,7 +7,7 @@
         class="feature-iframe"
         :src="content.video + '?loop=1&muted=1&controls=0&autopause=0'"
         frameborder="0"
-        allow="autoplay; fullscreen"
+        allow="fullscreen"
         allowfullscreen
       ></iframe>
     </div>
