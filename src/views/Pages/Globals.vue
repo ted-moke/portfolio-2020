@@ -2,7 +2,7 @@
   <div class="globals">
     <Nav v-show="currentRoute != '/' && $root.store.clientInfo.isDesktop && false"></Nav>
     <ControlsOverlay v-show="currentRoute != '/' && !$root.store.overlayControlsHidden"></ControlsOverlay>
-    <Prompt  v-show="this.$route.path === '/'"></Prompt>
+    <Prompt  v-show="$route.path === '/' && introComplete"></Prompt>
     <Modal v-if="modalActive === 'contact'" ref="contact" name="contact" @close="setModal">
       <template v-slot:modal-body>
         <h1>Contact</h1>
@@ -48,7 +48,8 @@ export default {
     return {
       navActive: false,
       modalActive: null,
-      overlayActive: false
+      overlayActive: false,
+      introComplete: false
     };
   },
   computed: {
@@ -59,6 +60,10 @@ export default {
   mounted: function() {
     this.$root.eventHub.$on('toggle-contact', () => {
       this.setModal('contact');
+    })
+
+    this.$root.eventHub.$on('intro-complete', () => {
+      this.introComplete = true;
     })
   },
   methods: {

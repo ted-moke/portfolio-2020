@@ -110,11 +110,14 @@ export default {
   data: function() {
     return {
       JOB_DESC: [
+        { job: "full-stack" },
         { job: "javascript" },
         { job: "front-end" },
+        { job: "ui" },
         { job: "interactive" }
       ],
       currentDesc: 0,
+      fullCycles: 0,
       shutterOpen: false,
       shutterVisible: false,
       mobileShutterHeight: 50
@@ -132,7 +135,7 @@ export default {
         },
         {
           title: "project",
-          text: this.JOB_DESC[0].job
+          text: this.JOB_DESC[this.currentDesc].job
         },
         {
           title: "role",
@@ -151,8 +154,8 @@ export default {
     let { logo, jumboLeft, jumboRight } = this.$refs;
 
     this.masterTl.eventCallback('onComplete', ()=> {
+      
       window.setTimeout(()=>{
-
         let jumboChanges = {
           duration: 0.35,
           flexBasis: '50%',
@@ -160,12 +163,14 @@ export default {
           onComplete: () => {
             this.shutterVisible = true;
             this.shutterOpen = true;
+
+            window.setTimeout(this.setupRoleCycle, 2500)
           }
         };
 
         jumboChanges.maxHeight = this.$root.store.clientInfo.isDesktop ? '100%' : '50%';
 
-        gsap.to([jumboLeft, jumboRight], jumboChanges );
+        gsap.to([jumboLeft, jumboRight], jumboChanges);
 
         if (this.$root.store.clientInfo.isDesktop) {
           gsap.to(logo, { width: '140%', duration: 0.35 });
@@ -177,6 +182,22 @@ export default {
     ON_SHUTTER_OPEN: function() {
       this.$root.store.introComplete = true;
       this.$root.eventHub.$emit('intro-complete');
+    },
+    setupRoleCycle: function() {
+      if (this.currentDesc >= this.JOB_DESC.length - 1) {
+        this.currentDesc = 0;
+        this.fullCycles++;
+
+        if (this.fullCycles >= 2) {
+          return;
+        }
+      } else {
+        this.currentDesc++;
+      }
+
+      window.setTimeout(()=> {
+        this.setupRoleCycle();
+      }, 4500)
     },
     setupLogoAnim: function() {
       let masterTl = gsap.timeline();

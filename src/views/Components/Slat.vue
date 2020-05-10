@@ -1,8 +1,7 @@
 <template>
   <div ref="slat" class="slat" v-bind:class="[title, horizontal]" v-bind:style="{ [horizontal ? 'width': 'height']: size, 'background-color': color }">
     <div class="content-container" v-bind:style="{ [horizontal ? 'width': 'height']: contentSize, [horizontal ? 'right': 'top']: 0}">
-      <p v-if="!button" v-html="content"></p>
-      <Button v-if="button" v-bind:active="this.$route.name === content" small v-bind:white="content != 'Contact'" v-bind:primary="content === 'Contact'" clickEvent="toggle-contact">{{content}}</Button>
+      <p v-html="currentContent"></p>
       <div v-if="label" class="slat-label">
         <label v-html="title"></label>
       </div>
@@ -12,11 +11,9 @@
 
 <script>
 import gsap from 'gsap';
-import Button from "../Components/Button";
 
 export default {
   props: {
-    button: Boolean,
     color: String,
     content: String,
     contentSize: String,
@@ -31,7 +28,8 @@ export default {
   },
   data: function() {
     return {
-      open: false
+      open: false,
+      currentContent: null
     }
   },
   computed: {
@@ -39,10 +37,19 @@ export default {
       return this.$refs.slat
     },
   },
+  mounted: function() {
+    if (this.content) {
+      this.currentContent = this.content;
+    }
+  },
   methods: {
-    show: function() {
+    show: function(cb) {
       var callback = ()=>{
         this.$emit('SHOW_COMPLETE')
+
+        if (cb) {
+          cb();
+        }
       }
       if (this.horizontal) {
         gsap.to(this.el, {x: '0%', duration: .5,ease: 'back.out(1.35)', onComplete: ()=>{if (callback){callback()}}})
@@ -51,9 +58,13 @@ export default {
       }
     },
     
-    hide: function() {
+    hide: function(cb) {
       var callback = ()=>{
-        this.$emit('HIDE_COMPLETE')
+        this.$emit('HIDE_COMPLETE');
+
+        if (cb) {
+          cb();
+        }
       }
       if (this.horizontal) {
         gsap.to(this.el, {x: '-100%', duration: .5, onComplete: ()=>{if (callback){callback()}}})
@@ -72,8 +83,14 @@ export default {
     }
 
   },
-  components: {
-    Button
-  }
+  watch: {
+    content: function(newVal) {
+      this.hide(()=> {
+        this.currentContent = newVal;
+
+        this.show();
+      })
+    }
+  },
 };
 </script>

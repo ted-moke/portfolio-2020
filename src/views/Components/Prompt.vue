@@ -20,14 +20,15 @@ export default {
     let arrows = container.children;
 
     this.entryTl = gsap.timeline({defaults: {duration: 0.35}});
-    this.entryTl.fromTo(arrows, { x: -100 }, { x: 0, ease: "power4.out" });
+    this.entryTl.fromTo(arrows, { x: '-100%', opacity: 0 }, { x: 0, opacity: 1, ease: "power4.out" });
 
     this.bounceTl = gsap.timeline({defaults: {duration: 0.25}});
     this.bounceTl.pause();
     this.bounceTl.to(arrows, { y: -20, ease: "power4.out", stagger: .1 });
     this.bounceTl.to(arrows, { y: 0, ease: "bounce.out", stagger: .1 }, "-=.25");
 
-    this.$root.eventHub.$on('bounce-arrows', this.bounce);
+    this.$root.eventHub.$on('intro-complete', () => {
+      window.setTimeout(this.bounce, 700) });
     
     this.$root.eventHub.$on('routing', this.show);
   },
