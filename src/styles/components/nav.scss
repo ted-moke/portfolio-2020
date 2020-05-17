@@ -1,13 +1,12 @@
 nav {
     position: fixed;
     max-width: 100vw;
-    // width: 0vw;
     width: 100vw;
     z-index: 10;
     display: flex;
     overflow-x: hidden;
-    height: 52px;
-    background: var(--gray-4);
+    height: var(--spacing-xxxl);
+    padding-left: calc(var(--spacing-xxl) + var(--spacing-xl) - var(--spacing-md));
 
     .social-link {
         height: 50px;
@@ -53,7 +52,6 @@ nav {
     flex-direction: row-reverse;
     justify-content: flex-end;
     transition: background-color 0.35 ease-in-out;
-    padding-top: var(--spacing-sm);
 }
 
 .nav-left {
@@ -62,13 +60,46 @@ nav {
     padding: 0;
 }
 
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-md);
+    cursor: pointer;
+
+    p {
+        margin-bottom: 0;
+        pointer-events: none;
+    }
+
+    &.nav-item-logo {
+        width: 200px;
+    }
+}
+
+.nav-text {
+    @include text-black;
+    color: var(--fourth);
+    text-decoration: underline;
+    font-size: calc(var(--spacing-lg));
+    text-transform: uppercase;
+    transition: color 0.35s var(--bezier);
+
+    .nav-item:hover & {
+        color: var(--secondary);
+    }
+
+    .nav-item.active & {
+        color: var(--primary);
+    }
+}
+
 .nav-social {
     text-align: center;
 }
 
 .social-sub {
     position: absolute;
-    // overflow-x: hidden;
 
     & path {
         fill: var(--fourth);

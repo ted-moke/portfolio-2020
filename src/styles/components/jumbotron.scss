@@ -139,6 +139,29 @@
       isolation: isolate;
     }
 }
+
+.logo-horizontal {
+    .cls-1 {
+        fill: none;
+        stroke: #0e1428;
+        stroke-miterlimit: 10;
+        stroke-width: 16px;
+      }
+
+      .cls-2 {
+        font-size: 206.14px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #0e1428;
+        font-family: NunitoSans-Black, Nunito Sans;
+        font-weight: 800;
+      }
+
+      .cls-3 {
+        font-size: 206.14px;
+      }
+}
 @media screen and (max-width: $breakpoint-md-max) {
     .jumbotron {
         padding: 0;

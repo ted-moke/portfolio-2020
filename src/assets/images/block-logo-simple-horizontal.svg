@@ -1,0 +1,32 @@
+<svg class="logo logo-horizontal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1141.56 226.22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #0e1428;
+        stroke-miterlimit: 10;
+        stroke-width: 16px;
+      }
+
+      .cls-2 {
+        font-size: 206.14px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #0e1428;
+        font-family: NunitoSans-Black, Nunito Sans;
+        font-weight: 800;
+      }
+
+      .cls-3 {
+        font-size: 206.14px;
+      }
+    </style>
+  </defs>
+  <title>block-logo-simple-horizontal</title>
+  <g id="Layer_5" data-name="Layer 5">
+    <rect class="cls-1" x="8" y="8" width="1125.56" height="210.63"/>
+    <text class="cls-2" transform="translate(40.22 185.38)">TED</text>
+    <text class="cls-3" transform="translate(495.22 185.38)">MOKE</text>
+  </g>
+</svg>

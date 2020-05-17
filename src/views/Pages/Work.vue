@@ -1,9 +1,6 @@
 <template>
   <transition name="turn">
     <section v-show="shown" ref="el" class="work">
-      <div class="section-header-container">
-        <h2 class="section-header">Ted Moke - Work</h2>
-      </div>
       <ShowcaseWrapper :open="shown"></ShowcaseWrapper>
       <footer>
         <p><span class="highlight">Ted Moke</span> | JavaScript Developer</p>

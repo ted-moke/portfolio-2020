@@ -13,8 +13,12 @@
 
 html {
   scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+
+  &.disable-snap {
+    scroll-snap-type: none;
+  }
 }
 
 body {
@@ -120,7 +124,7 @@ footer {
 
 @media screen and (min-width: $breakpoint-md) {
   section {
-    padding: var(--spacing-xl) var(--spacing-xxl);
+    padding: var(--spacing-xxxl) var(--spacing-xxl);
     
     &.work {
       padding-left: calc(var(--spacing-xxl) + var(--spacing-xl));

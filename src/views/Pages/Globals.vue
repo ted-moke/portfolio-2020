@@ -1,6 +1,6 @@
 <template>
   <div class="globals">
-    <Nav v-show="currentRoute != '/' && $root.store.clientInfo.isDesktop && false"></Nav>
+    <Nav v-show="currentRoute != '/' && $root.store.clientInfo.isDesktop"></Nav>
     <ControlsOverlay v-show="currentRoute != '/' && !$root.store.overlayControlsHidden"></ControlsOverlay>
     <Prompt  v-show="$route.path === '/' && introComplete"></Prompt>
     <Modal v-if="modalActive === 'contact'" ref="contact" name="contact" @close="setModal">
