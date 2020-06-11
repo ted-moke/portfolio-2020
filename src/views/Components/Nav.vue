@@ -8,7 +8,7 @@
       class="nav-item"
       :class="[$route.path.includes(item.title) ? 'active' : '']"
       @click="ON_CLICK(item.title)">
-        <p class="nav-text" v-html="item.text"></p>
+        <p v-if="false" class="nav-text" v-html="item.text"></p>
       </div>
       <div class="nav-item nav-item-logo" @click="ON_CLICK('home')">
         <svg class="logo logo-horizontal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1141.56 226.22">

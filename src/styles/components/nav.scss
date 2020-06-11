@@ -230,6 +230,7 @@ nav {
 .control-message {
     position: absolute;
     bottom: var(--spacing-md);
+    
     right: 14px;
     padding: 0 var(--spacing-xl);
 
@@ -291,7 +292,8 @@ nav {
 
     .control-message {
         right: 0;
-        bottom: var(--spacing-sm);
+        bottom: 0;
+        top: 50%;
 
         .icon-container {
             padding: 10px;

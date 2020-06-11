@@ -26,6 +26,30 @@ Vue.directive('scroll', {
   },
 });
 
+Vue.directive('touchstart', {
+  inserted: function (el, binding) {
+    let f = function (evt) {
+      if (binding.value(evt, el)) {
+        window.removeEventListener('touchstart', f);
+      }
+    };
+
+    window.addEventListener('touchstart', throttle(f, 16, { trailing: true, leading: false }));
+  },
+});
+
+Vue.directive('touchend', {
+  inserted: function (el, binding) {
+    let f = function (evt) {
+      if (binding.value(evt, el)) {
+        window.removeEventListener('touchend', f);
+      }
+    };
+
+    window.addEventListener('touchend', throttle(f, 16, { trailing: true, leading: false }));
+  },
+});
+
 Vue.directive('resize', {
   inserted: function (el, binding) {
     let f = function (evt) {
@@ -47,6 +71,7 @@ new Vue({
     SHUTTER_PAUSE: 250, // ms
     SHUTTER_STAGGER: 250, // ms
     ANGLE_TOLERANCE: 40,
+    SWIPE_THRESHOLD: 50,
     TRANSITION_EASE: "power2.inOut",
     COLORS: ['#F48907', '#D95D39', '#575366', '#0E1428'],
     COLORS_GRAY: ['#888', '#666', '#444', '#222'],

@@ -1,10 +1,14 @@
 <template>
-  <div ref="app" id="app" v-scroll="ON_SCROLL" v-resize="ON_RESIZE" @click="ON_CLICK">
+  <div ref="app" id="app" v-scroll="ON_SCROLL" v-resize="ON_RESIZE" v-touchstart="ON_TOUCH_START" v-touchend="ON_TOUCH_END" @click="ON_CLICK">
     <Globals v-show="introComplete || this.$route.path != '/'"></Globals>
     <Jumbotron></Jumbotron>
     <PageWrapper>
       <!-- <router-view></router-view> -->
       <Work :shown="$route.path.includes('work')"></Work>
+      <Play :shown="$route.path.includes('play')"></Play>
+      <footer>
+        <p><span class="highlight">Ted Moke</span> | JavaScript Developer</p>
+      </footer>
     </PageWrapper>
   </div>
 </template>
@@ -20,6 +24,7 @@ import Globals from "@/views/Pages/Globals.vue";
 import Jumbotron from "@/views/Components/Jumbotron.vue";
 import PageWrapper from "@/views/Pages/PageWrapper.vue";
 import Work from '@/views/Pages/Work.vue';
+import Play from '@/views/Pages/Play.vue';
 import Utils from "@/js/Utils.js";
 
 import PROJECT_DATA from "@/js/projects.js";
@@ -29,7 +34,9 @@ export default {
   data: function() {
     return {
       isRouting: false,
-      introComplete: false
+      introComplete: false,
+      touchStartX: 0,
+      touchStartY: 0,
     };
   },
   computed: {
@@ -80,7 +87,6 @@ export default {
       if (this.isRouting) return;
       
       if (window.scrollY > this.windowHeight / 2 && this.$route.path === "/") {
-        console.log('scroll: ', window.scrollY, this.windowHeight / 2, this.$route.path);
         this.isRouting = true;
         this.$router.push("/work/" + this.$root.store.routingToShowcase);
       } else if (window.scrollY < this.windowHeight / 2 && this.$route.path != "/") {
@@ -90,6 +96,34 @@ export default {
     },
     ON_RESIZE() {
       this.checkClientInfo();
+    },
+    ON_TOUCH_START(e) {
+      this.touchStartX = e.changedTouches[0].screenX;
+      this.touchStartY = e.changedTouches[0].screenY;
+    },
+    ON_TOUCH_END(e) {
+      this.touchEndX = e.changedTouches[0].screenX;
+      this.touchEndY = e.changedTouches[0].screenY;
+
+      let result = this.HANDLE_GESTURE(this.touchStartX, this.touchEndX);
+
+      if (result === 'next') {
+        this.$root.eventHub.$emit('next-feature');
+      } else if (result === 'previous') {
+        this.$root.eventHub.$emit('previous-feature');
+      }
+    },
+    HANDLE_GESTURE(start = 0, end = 0) {
+      let dTouch = end - start;
+      if (this.$root.SWIPE_THRESHOLD && Math.abs(dTouch) > this.$root.SWIPE_THRESHOLD) {
+        if (dTouch > 0) {
+          return 'next';
+        } else {
+          return 'previous'
+        }
+      }
+
+      return null
     },
     checkClientInfo() {
       let box = this.$refs.app.getBoundingClientRect();
@@ -107,6 +141,8 @@ export default {
       } else if (window.innerHeight > 799 && this.$root.store.clientInfo.short != false) {
         this.$root.store.clientInfo.short = false;
       }
+
+      console.log(this.$root.store.clientInfo.isDesktop);
     },
     utils(func, ...val) {
       return Utils[func](...val);
@@ -116,7 +152,8 @@ export default {
     Globals,
     Jumbotron,
     PageWrapper,
-    Work
+    Work,
+    Play
   }
 };
 </script>

@@ -1,0 +1,20 @@
+.helper {
+    position: absolute;
+    pointer-events: none;
+}
+
+.helper-swipe {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.icon-swipe {
+    width: 100px;
+    height: 100px;
+    
+    path {
+        fill: var(--base);
+    }
+}

@@ -6,7 +6,7 @@ import Router from 'vue-router'
 /* Specific page imports */
 // import Placeholder from './views/Pages/Placeholder.vue';
 import Work from './views/Pages/Work.vue';
-import Demos from './views/Pages/Demos.vue';
+import Play from './views/Pages/Play.vue';
 
 Vue.use(Router)
 
@@ -24,9 +24,9 @@ const router = new Router({
       component: Work,
     },
     {
-      path: '/demos',
-      name: 'Demos',
-      component: Demos
+      path: '/play',
+      name: 'Play',
+      component: Play
     }
   ]
 })
