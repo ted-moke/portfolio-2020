@@ -78,7 +78,8 @@
   background: var(--fourth);
 
   .control-feature-container {
-    margin-left: -4px;
+    width: 100%;
+    justify-content: space-between;
   }
 }
 

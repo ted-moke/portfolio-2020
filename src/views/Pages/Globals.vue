@@ -12,7 +12,7 @@
           </p>
           <Form></Form>
         
-        <div class="boxed-content">
+        <div class="boxed-content social-links">
           <a href="https://tedmoke.com/ted_moke-resume-developer.pdf" target="_blank" rel="noreferrer" class="social-link">
             <h3>Resume</h3>
           </a>

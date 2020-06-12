@@ -70,7 +70,7 @@
     text-decoration-color: var(--primary);
     
     h3 {
-        margin-bottom: 4px;
+        margin-bottom: 0px;
     }
     
     &:nth-child(2) {
@@ -120,5 +120,13 @@
         max-height: 100% !important;
         width: 100%;
         padding: var(--spacing-lg);
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+
+        h3 {
+            font-size: var(--spacing-lg);
+        }
     }
 }

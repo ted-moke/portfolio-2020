@@ -34,7 +34,7 @@
 
 .prompt-text {
     position: relative;
-    color: var(--base);
+    color: var(--fourth);
     font-size: var(--spacing-lg);
     margin: 0;
 }
@@ -65,7 +65,7 @@
         padding: var(--spacing-md);
         &:before {
             @include pseudo;
-            background: var(--tertiary);
+            background: var(--base);
             z-index: -1;
             border-radius: 7px;
         }
