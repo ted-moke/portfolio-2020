@@ -4,7 +4,6 @@ node_modules
 package-lock.json
 /dist
 build
-*.tgz
 
 # local env files
 .env.local
