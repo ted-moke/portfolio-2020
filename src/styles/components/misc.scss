@@ -8,6 +8,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
+    padding: var(--spacing-sm);
+    z-index: 1;
+    
+    &::after {
+        @include pseudo;
+        background: var(--fourth);
+        z-index: -1;
+        opacity: 0.85;
+    }
 }
 
 .icon-swipe {

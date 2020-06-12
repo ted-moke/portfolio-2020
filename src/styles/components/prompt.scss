@@ -64,7 +64,7 @@
     .prompt-text {
         padding: var(--spacing-md);
         &:before {
-            @include psuedo;
+            @include pseudo;
             background: var(--tertiary);
             z-index: -1;
             border-radius: 7px;

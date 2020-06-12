@@ -2,7 +2,17 @@
   <transition name="turn">
     <section v-show="shown" ref="el" class="work">
       <div class="section-header-container" v-if="!$root.store.clientInfo.isDesktop">
-        <h2 class="section-header email-header">iam@<span class="highlight">TedMoke</span>.com</h2>
+        <h2 class="section-header email-header">
+          <svg class="logo logo-horizontal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1141.56 226.22">
+            <title>block-logo-simple-horizontal</title>
+            <g id="Layer_5" data-name="Layer 5">
+              <rect class="cls-1" x="8" y="8" width="1125.56" height="210.63"/>
+              <text class="cls-2" transform="translate(40.22 185.38)">TED</text>
+              <text class="cls-3" transform="translate(495.22 185.38)">MOKE</text>
+            </g>
+          </svg>
+          <p>- Work</p>
+        </h2>
         </div>
       <ShowcaseWrapper :open="shown"></ShowcaseWrapper>
       <div ref="helperSwipe" class="helper helper-swipe">
@@ -40,16 +50,20 @@ export default {
     let helperTl = gsap.timeline({defaults: {duration: 0.35, ease: 'back.out(.75)'}})
     helperTl.to(helperSwipeEl, { opacity: 1, ease: 'power4.out' });
     helperTl.to(helperSwipeEl, { x: 50 });
+    helperTl.to(helperSwipeEl, { x: 0 });
     helperTl.to(helperSwipeEl, { x: -50 });
     helperTl.to(helperSwipeEl, { x: 0 });
-    helperTl.to(helperSwipeEl, { opacity: 0, delay: 0.35 });
+    helperTl.to(helperSwipeEl, { opacity: 0, delay: 0.25 });
 
     helperTl.pause();
 
     this.$root.eventHub.$once('showcase-in', ()=> {
 
       if (!this.$root.store.clientInfo.isDesktop) {
-        helperTl.restart();
+        window.setTimeout(()=> {
+          helperTl.restart();
+
+        }, 1500)
       }
     })
   }

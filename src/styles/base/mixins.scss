@@ -2,7 +2,7 @@
 // Sass Mixins
 // -------------------------------------------------------------------------------------- */
 
-@mixin psuedo {
+@mixin pseudo {
     position: absolute;
     content: '';
     width: 100%;
@@ -16,7 +16,7 @@
 }
 
 @mixin dropBox($color: var(--neutral)) {
-    @include psuedo;
+    @include pseudo;
     height: calc(100% + 1px);
     left: var(--dropOffsetX);
     top: var(--dropOffsetY);

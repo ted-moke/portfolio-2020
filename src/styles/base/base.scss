@@ -47,17 +47,30 @@ section {
 
 .section-header-container {
   // height: var(--spacing-xxl);
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: var(--gray-3);
+  background: var(--base);
 }
 
 .section-header {
+  @include flex;
+  @include flex-center-a;
+
   margin-bottom: 0;
   text-align: center;
   color: var(--base);
+
+  svg {
+    margin-right: var(--spacing-sm);
+  }
+
+  p {
+    font-size: var(--spacing-lg);
+    margin-bottom: 0;
+    line-height: 1;
+  }
 }
 
 .email-header {

@@ -55,7 +55,7 @@
     }
 
     &::after {
-        @include psuedo;
+        @include pseudo;
 
         height: 3px;
         background-color: var(--fourth);
@@ -141,6 +141,8 @@
 }
 
 .logo-horizontal {
+    width: 200px;
+
     .cls-1 {
         fill: none;
         stroke: #0e1428;
@@ -195,6 +197,18 @@
 
     .logo-tedmoke {
         width: 200%;
+    }
+
+    .logo-horizontal {
+        width: 150px;
+
+        // .cls-1 {
+        //     stroke: var(--base);
+        // }
+        
+        // .cls-2, .cls-3 {
+        //     fill: var(--base);
+        // }
     }
 }
 
