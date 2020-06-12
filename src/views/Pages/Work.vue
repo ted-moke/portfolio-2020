@@ -1,6 +1,9 @@
 <template>
   <transition name="turn">
     <section v-show="shown" ref="el" class="work">
+      <div class="section-header-container" v-if="!$root.store.clientInfo.isDesktop">
+        <h2 class="section-header email-header">iam@<span class="highlight">TedMoke</span>.com</h2>
+        </div>
       <ShowcaseWrapper :open="shown"></ShowcaseWrapper>
       <div ref="helperSwipe" class="helper helper-swipe">
         <svg class="icon icon-swipe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448.01 490.65">

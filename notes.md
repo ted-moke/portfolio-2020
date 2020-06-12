@@ -3,7 +3,6 @@ Post v1 launch
 * 100vh recalc/workaround for nav disappearing on mobile
 
 Lesser
-* cycle jumbo titles
 * preloader
 * recaptcha
 * mobile contact form links layout/text-size

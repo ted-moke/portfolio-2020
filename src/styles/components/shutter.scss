@@ -162,34 +162,6 @@
     }
 }
 
-@media screen and (max-height: 799px) {
-    .slat {
-        p {
-            font-size: var(--spacing-lg);
-        }
-
-        &.project {
-            p {
-                font-size: calc(var(--spacing-xl) - 4px);
-                line-height: 0.85;
-            }
-        }
-
-        &.description {
-            p {
-                font-size: var(--spacing-md);
-            }
-        }
-    }
-
-    .slat-label {
-        padding-top: var(--spacing-xs);
-        label {
-            font-size: 12px;
-        }
-    }
-}
-
 @media screen and (max-width: $breakpoint-lg-max) {
     .slat {
         p {
@@ -236,6 +208,48 @@
         &.description {
             &::after {
                 width: calc(100% - 16px);
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 799px) {
+    .slat {
+        p {
+            font-size: var(--spacing-lg);
+        }
+
+        &.project {
+            p {
+                font-size: calc(var(--spacing-xl) - 4px);
+                line-height: 0.85;
+            }
+        }
+
+        &.description {
+            p {
+                font-size: var(--spacing-md);
+            }
+        }
+    }
+
+    .slat-label {
+        padding-top: var(--spacing-xs);
+        label {
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .slat {
+        p {
+            font-size: calc(var(--spacing-lg) - 4px);
+        }
+
+        &.project {
+            p {
+                font-size: calc(var(--spacing-lg) - 4px)
             }
         }
     }
