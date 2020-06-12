@@ -86,20 +86,22 @@ export default {
       return;
     });
 
-    this.$root.eventHub.$on("currentShowcaseId-update", ()=>{
-      this.currentShowcaseId = this.$root.store.currentShowcaseId;
-    }) 
   },
   methods: {
     ON_SHUTTER_HIDE: function() {
       if (this.nextShowcaseId) {
+        this.currentShowcaseId = this.$root.store.currentShowcaseId;
         this.$root.store.currentShowcaseId = this.nextShowcaseId;
         
-        this.shutterOpen = true;
+        window.setTimeout(()=>{
+          this.shutterOpen = true;
+          
+          if (this.$route.path.includes('work')) {
+            this.$router.push("/work/" + this.currentShowcaseId);
+          }
+
+        }, 350)
         
-        if (this.$route.path.includes('work')) {
-          this.$router.push("/work/" + this.currentShowcaseId);
-        }
       }
     },
     ON_SHUTTER_SHOW: function() {

@@ -73,7 +73,7 @@
 
 .feature-wrapper-enter-active,
 .feature-wrapper-leave-active {
-  transition: transform 1s var(--bezier);
+  transition: transform 1.35s var(--bezier); 
 }
 
 .feature-wrapper-enter,
