@@ -1,6 +1,6 @@
 <template>
 <transition name="grow">
-  <nav ref="nav" class="nav" v-bind:class="[padding ? 'no-fill' : '']" >
+  <nav ref="nav" class="nav" >
     <div class="nav-section">
       <div
       v-for="(item) of navContent"

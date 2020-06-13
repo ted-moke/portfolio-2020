@@ -152,7 +152,9 @@ export default {
   mounted: function() {
     this.masterTl = this.setupLogoAnim();
 
-    let { logo, jumboLeft, jumboRight } = this.$refs;
+    let { logo, jumboLeft, jumboRight, jumbotron } = this.$refs;
+
+    gsap.set(jumbotron, { height: window.innerHeight })
 
     this.masterTl.eventCallback('onComplete', ()=> {
       
