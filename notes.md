@@ -1,21 +1,14 @@
 TO DO
-Post v1 launch
-* 100vh recalc/workaround for nav disappearing on mobile
-
-Lesser
-* preloader
-* recaptcha
-* mobile contact form links layout/text-size
+* add demos section
+* contact form error animation
+* paint bucket color switcher
+* turn logo to 3d chip
 
 Nice to have
-* add demos section
-* nav redesign
-* turn logo to 3d chip
-* contact form error animation
+* recaptcha
 * vimeo autohide controls
 * resize slats on browser resize
 * hover link animation
-* paint bucket color switcher
 * create dribble
 * button hover animation
 * funky jumbo effect
