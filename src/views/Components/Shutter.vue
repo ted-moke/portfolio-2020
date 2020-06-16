@@ -2,7 +2,7 @@
   <div
     ref="shutter"
     class="shutter"
-    v-bind:class="[{ 'horizontal': horizontal}, { 'bottom-expands': bottomExpands}, open ? '' : 'closed'] "
+    v-bind:class="[{ 'horizontal': horizontal}, { 'bottom-expands': bottomExpands }, open ? '' : 'closed'] "
   >
     <Slat
       ref="slat"
@@ -190,6 +190,7 @@ export default {
   },
   watch: {
     open: function() {
+      this.shutter.style.opacity = 1;
       this.toggleSlats(this.open, this.$root.SHUTTER_PAUSE);
     }
   },

@@ -1,10 +1,17 @@
-TO DO
+## TO DO
+
+### Bugs
+* iphone desc label bar off
+
+### Features
+* make mobile nav
 * add demos section
+* add smash bros?
 * contact form error animation
 * paint bucket color switcher
 * turn logo to 3d chip
 
-Nice to have
+### Nice to have
 * recaptcha
 * vimeo autohide controls
 * resize slats on browser resize

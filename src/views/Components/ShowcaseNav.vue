@@ -1,5 +1,5 @@
 <template>
-  <div class="showcase-nav-container">
+  <div class="showcase-nav-wrapper">
     <div class="showcase-nav">
       <h3 class="showcase-nav-label">Projects</h3>
       <FeatureControl v-show="$root.store.clientInfo.isDesktop"></FeatureControl>

@@ -34,6 +34,11 @@
         @include flex-col;
         @include flex-center-j;
         @include flex-center-a;
+
+        .shutter {
+            display: block !important;
+            opacity: 0;
+        }
     }
 
     .content-right {
