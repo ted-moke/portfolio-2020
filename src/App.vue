@@ -7,7 +7,7 @@
       <Work :shown="$route.path.includes('work')"></Work>
       <Play :shown="$route.path.includes('play')"></Play>
       <footer>
-        <p><span class="highlight">Ted Moke</span> | JavaScript Developer</p>
+        <p>Ted Moke | JavaScript Developer</p>
       </footer>
     </PageWrapper>
   </div>
