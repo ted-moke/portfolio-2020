@@ -23,7 +23,7 @@
           <p>- Work</p>
         </h2>
         </div>
-      <ShowcaseWrapper :open="shown"></ShowcaseWrapper>
+      <ShowcaseWrapper :open="open" :shown="shown"></ShowcaseWrapper>
       <div ref="helperSwipe" class="helper helper-swipe">
         <svg class="icon icon-swipe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448.01 490.65">
           <title>swipe</title>
@@ -49,6 +49,10 @@ export default {
   },
   props: {
     shown: {
+      type: Boolean,
+      default: false
+    },
+    open: {
       type: Boolean,
       default: false
     }

@@ -31,7 +31,8 @@ import Shutter from "@/views/Components/Shutter.vue";
 
 export default {
   props: {
-    open: Boolean
+    open: Boolean,
+    shown: Boolean
   },
   data: function() {
     return {
@@ -90,7 +91,7 @@ export default {
   methods: {
     ON_SHUTTER_HIDE: function() {
       if (this.nextShowcaseId) {
-        this.currentShowcaseId = this.$root.store.currentShowcaseId;
+        // this.currentShowcaseId = this.$root.store.currentShowcaseId;
         this.$root.store.currentShowcaseId = this.nextShowcaseId;
         
         window.setTimeout(()=>{

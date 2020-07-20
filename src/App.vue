@@ -4,7 +4,7 @@
     <Jumbotron></Jumbotron>
     <PageWrapper>
       <!-- <router-view></router-view> -->
-      <Work :shown="$route.path.includes('work')"></Work>
+      <Work :shown="$route.path === '/' || $route.path.includes('work')" :open="$route.path.includes('work')"></Work>
       <Play :shown="$route.path.includes('play')"></Play>
       <footer>
         <p>Ted Moke | JavaScript Developer</p>

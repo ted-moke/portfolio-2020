@@ -39,6 +39,10 @@
             display: block !important;
             opacity: 0;
         }
+
+        .logo-tedmoke {
+            pointer-events: none;
+        }
     }
 
     .content-right {
