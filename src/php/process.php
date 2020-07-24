@@ -40,12 +40,13 @@ if (empty($_POST["email"])) {
 if (empty($_POST["message"])) {
 	$errorMSG .= "Message is required ";
 } else {
-	$inquiry = $_POST["message"];
+	$message = $_POST["message"];
 }
 
 //Phone, not required
-$phone = $_POST["phone"];
-
+if (!empty($_POST["phone"])) {
+	$message = $message . ' User phone is ' . $_POST["phone"];
+}
 
 $EmailTo = "iam@tedmoke.com";
 $Subject = "Portfolio Contact Form Inquiry";
