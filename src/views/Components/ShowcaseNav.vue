@@ -1,7 +1,7 @@
 <template>
   <div class="showcase-nav-wrapper">
     <div class="showcase-nav">
-      <h3 class="showcase-nav-label">Projects</h3>
+      <h3 class="showcase-nav-label">Work</h3>
       <FeatureControl v-show="$root.store.clientInfo.isDesktop"></FeatureControl>
       <div ref="featureWrapper">
         <Feature
