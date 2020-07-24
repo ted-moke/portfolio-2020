@@ -73,18 +73,18 @@
 
 .feature-wrapper-enter-active,
 .feature-wrapper-leave-active {
-  // transition: opacity 1.35s var(--bezier); 
+  transition: transform 1.35s var(--bezier);
 }
 
 .feature-wrapper-enter,
 .feature-wrapper-leave-to {
-  opacity: 0;
+  transform: translateX(-100%)
 }
 
 @media screen and (max-width: $breakpoint-md-max) {
   .feature-wrapper-enter,
   .feature-wrapper-leave-to {
-    opacity: 0;
+    transform: translateY(-100%)
   }
   
 }

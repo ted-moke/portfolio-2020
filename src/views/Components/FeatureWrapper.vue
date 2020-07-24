@@ -39,13 +39,7 @@ export default {
     }
 
     this.$root.eventHub.$on('intro-complete', ()=>{
-      if (this.$root.store.clientInfo.isDesktop) {
-        this.buildPlayer();
-      } else {
-        if (this.shown || this.$root.store.routingToShowcase === this.content.id) {
-          this.buildPlayer();
-        }
-      }
+      this.buildPlayer();
     })
   },
   methods: {
@@ -70,14 +64,23 @@ export default {
   },
   watch: {
     shown: function(newVal) {
+      console.log('Shown:', newVal, this.content.id);
       if (!this.player) {
+        console.error('Was not built yet');
+        debugger
         this.buildPlayer(()=>{
           this.togglePlayerState(newVal);
         });
         return
       }
 
-      this.togglePlayerState(newVal);
+      if (newVal) {
+        this.$root.eventHub.$once('showcase-in', ()=>{
+          this.togglePlayerState(newVal);
+        })
+      } else {
+        this.togglePlayerState(newVal);
+      }
     }
   }
 };
