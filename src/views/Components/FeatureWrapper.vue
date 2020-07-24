@@ -77,10 +77,9 @@ export default {
       if (newVal) {
         this.$root.eventHub.$once('showcase-in', ()=>{
           this.togglePlayerState(newVal);
+          this.togglePlayerState(newVal);
         })
-      } else {
-        this.togglePlayerState(newVal);
-      }
+      } 
     }
   }
 };
