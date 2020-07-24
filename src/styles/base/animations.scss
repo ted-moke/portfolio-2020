@@ -84,7 +84,7 @@
 @media screen and (max-width: $breakpoint-md-max) {
   .feature-wrapper-enter,
   .feature-wrapper-leave-to {
-    transform: translateY(-100%)
+    transform: translateY(100%)
   }
   
 }
