@@ -3,7 +3,7 @@ var thumbQuiz = require("../assets/images/project-quiz-thumb.png");
 var thumbPanels = require("../assets/images/project-panels-thumb.jpg");
 
 let data = {
-  order: ['quiz', 'stepCounter', 'vuePanels'],
+  order: ['stepCounter', 'quiz', 'vuePanels'],
   list: {
     quiz: {
       id: 'quiz',

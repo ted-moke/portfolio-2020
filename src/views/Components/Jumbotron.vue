@@ -110,12 +110,11 @@ export default {
   data: function() {
     return {
       JOB_DESC: [
-        { job: "full-stack" },
-        { job: "web" },
-        { job: "javascript" },
         { job: "front-end" },
-        { job: "back-end" },
-        { job: "interactive" }
+        { job: "UI" },
+        { job: "react" },
+        { job: "javascript" },
+        { job: "node" },
       ],
       currentDesc: 0,
       fullCycles: 0,
@@ -140,7 +139,7 @@ export default {
         },
         {
           title: "role",
-          text: "developer"
+          text: "engineer"
         },
         {
           title: "description",
