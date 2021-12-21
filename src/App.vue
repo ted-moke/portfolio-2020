@@ -5,7 +5,7 @@
     <PageWrapper>
       <!-- <router-view></router-view> -->
       <Work :shown="$route.path === '/' || $route.path.includes('work')" :open="$route.path.includes('work')"></Work>
-      <Play :shown="$route.path.includes('play')"></Play>
+      <!-- <Play :shown="$route.path.includes('play')"></Play> -->
       <footer>
         <p>Ted Moke | JavaScript Developer</p>
       </footer>
@@ -24,7 +24,7 @@ import Globals from "@/views/Pages/Globals.vue";
 import Jumbotron from "@/views/Components/Jumbotron.vue";
 import PageWrapper from "@/views/Pages/PageWrapper.vue";
 import Work from '@/views/Pages/Work.vue';
-import Play from '@/views/Pages/Play.vue';
+// import Play from '@/views/Pages/Play.vue';
 import Utils from "@/js/Utils.js";
 
 import PROJECT_DATA from "@/js/projects.js";
@@ -153,7 +153,7 @@ export default {
     Jumbotron,
     PageWrapper,
     Work,
-    Play
+    // Play
   }
 };
 </script>
