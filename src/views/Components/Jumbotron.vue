@@ -110,10 +110,9 @@ export default {
   data: function() {
     return {
       JOB_DESC: [
-        { job: "front-end" },
-        { job: "UI" },
-        { job: "react" },
+        { job: "web" },
         { job: "javascript" },
+        { job: "react" },
         { job: "node" },
       ],
       currentDesc: 0,
