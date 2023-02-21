@@ -83,7 +83,7 @@
         }
     }
 
-    &.client {
+    &.client, &.company {
         .slat-label {
             background: var(--tertiary);
         }

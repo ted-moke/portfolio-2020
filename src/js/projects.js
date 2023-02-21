@@ -1,10 +1,35 @@
 var thumbStepCounter = require("../assets/images/project-stepCounter-thumb.png");
 var thumbQuiz = require("../assets/images/project-quiz-thumb.png");
 var thumbPanels = require("../assets/images/project-panels-thumb.jpg");
+var thumbAV = require("../assets/images/project-autonomous-vehicle-thumb.jpg");
 
 let data = {
-  order: ['stepCounter', 'quiz', 'vuePanels'],
+  order: ['autonomousVehicles', 'stepCounter', 'quiz', 'vuePanels'],
   list: {
+    autonomousVehicles: {
+      id: 'autonomousVehicles',
+      label: 'Autonomous Vehicles',
+      slats: [
+        {
+          title: 'project',
+          text: "Autonomous<br>Vehicle UI",
+        },
+        {
+          title: 'company',
+          text: 'ISEE'
+        },
+        {
+          title: 'role',
+          text: 'Lead Developer',
+        },
+        {
+          title: 'description',
+          text: 'Building an autonomous vehicle requires innovative thinking to solve novel problems. At ISEE I designed, built, and iterate on a web application to enable users to monitor and command autonomous yard tractors remotely. I lead software integration discussions with Fortune 100 customers and oversee the implementation by our backend engineers.<br><br>I continue to lead cross-functional initiatives to improve the application based on data-driven decisions and user feedback. One recent project focused on autonomously transitioning between successful tasks which netted an 11.16% improvement in average move time for our customers.',
+        }
+      ],
+      video: "https://player.vimeo.com/video/801731806",
+      thumbnail: thumbAV
+    },
     quiz: {
       id: 'quiz',
       label: 'Quiz Platform',
