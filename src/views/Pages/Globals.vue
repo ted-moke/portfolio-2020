@@ -16,7 +16,7 @@
           <a href="https://tedmoke.com/ted_moke-resume-developer.pdf" target="_blank" rel="noreferrer" class="social-link">
             <h3>Resume</h3>
           </a>
-          <a href="http://github.com/peppahjackk" class="social-link" target="_blank" rel="noreferrer">
+          <a href="http://github.com/ted-moke" class="social-link" target="_blank" rel="noreferrer">
             <h3>Github</h3>
           </a>
           <a href="http://codepen.io/peppahjackk" class="social-link" target="_blank" rel="noreferrer">
